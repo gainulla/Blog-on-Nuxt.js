@@ -1,0 +1,32 @@
+{
+  "name": "md-blog",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxt/content": "^1.11.1",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "lodash": "^4.17.20",
+    "nuxt": "^2.14.6",
+    "parse-md": "^2.0.4",
+    "prism-themes": "^1.5.0",
+    "prismjs": "^1.23.0",
+    "write": "^2.0.0",
+    "yaml": "^1.10.0"
+  },
+  "devDependencies": {
+    "fibers": "^5.0.0",
+    "sass": "^1.32.0",
+    "sass-loader": "^10.1.0"
+  }
+}
