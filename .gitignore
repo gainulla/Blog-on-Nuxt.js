@@ -91,5 +91,5 @@ sw.*
 
 ## Ignore also these:
 
-assets/
-content/
+#assets/
+#content/
