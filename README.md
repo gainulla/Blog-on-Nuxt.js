@@ -18,3 +18,4 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Deployment: https://mystifying-aryabhata-4a0ee2.netlify.app/blog
