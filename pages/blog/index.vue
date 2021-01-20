@@ -34,9 +34,11 @@ export default {
     const currentLocale = app.i18n.locale
 
     const articles = await $content(`${currentLocale}/blog`)
-      .only(['title', 'description', 'image', 'slug'])
+      .only(['title', 'description', 'image', 'slug', 'path'])
       .sortBy('createdAt', 'desc')
       .fetch()
+
+    console.log('ARTICLES', articles)
 
     return {
       articles: articles.map(article => ({
