@@ -10,12 +10,6 @@
 <script>
 export default {
   name: 'NewPost',
-
-  data() {
-    return {
-      message: "",
-    }
-  }
 }
 </script>
 

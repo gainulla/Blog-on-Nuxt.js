@@ -18,6 +18,7 @@
     "express-fileupload": "^1.2.0",
     "lodash": "^4.17.20",
     "nuxt": "^2.14.6",
+    "nuxt-i18n": "^6.18.0",
     "parse-md": "^2.0.4",
     "prism-themes": "^1.5.0",
     "prismjs": "^1.23.0",

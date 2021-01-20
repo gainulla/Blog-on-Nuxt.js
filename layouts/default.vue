@@ -60,6 +60,7 @@ a {
 
 ul {
   margin: 0;
+  list-style: none;
 }
 
 h1, h2, h3, h4, h5 {
@@ -84,11 +85,6 @@ h1, h2, h3, h4, h5 {
 }
 .mb-2 {
   margin-bottom: 2rem !important;
-}
-
-.admin-btn {
-  text-transform: uppercase;
-  font-weight: bold;
 }
 
 .message {
@@ -117,4 +113,17 @@ span.icon {
     background-size: 36px;
   }
 }
+
+.admin-area {
+  text-align: right;
+  margin-bottom: 2rem;
+  .btn {
+    text-transform: uppercase;
+    margin-left: .5rem;
+    background-color: cornflowerblue;
+    color: white;
+    padding: .5rem .8rem;
+  }
+}
+
 </style>

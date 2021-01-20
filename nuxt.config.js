@@ -1,3 +1,5 @@
+const path = require('path')
+
 export default {
   target: 'static',
 
@@ -35,7 +37,33 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    '@nuxt/content'
+    '@nuxt/content',
+    [
+      'nuxt-i18n',
+      {
+        locales: [
+          {
+            code: 'ru',
+            iso: 'ru-RU',
+            name: 'Russian'
+          },
+          {
+            code: 'en',
+            iso: 'en-US',
+            name: 'English'
+          },
+        ],
+        defaultLocale: 'en',
+        noPrefixDefaultLocale: true,
+        vueI18n: {
+          fallbackLocale: 'en',
+          messages: {
+            en: require('./locales/en-us.json'),
+            ru: require('./locales/ru-ru.json')
+          }
+        },
+      }
+    ]
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

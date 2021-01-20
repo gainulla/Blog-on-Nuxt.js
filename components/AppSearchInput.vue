@@ -4,13 +4,15 @@
       v-model="searchQuery"
       type="search"
       autocomplete="off"
-      placeholder="Search Posts"
+      :placeholder="$t('searchPH')"
     >
     <ul v-if="articles.length">
       <li v-for="article of articles" :key="article.slug">
-        <NuxtLink :to="{ name: 'posts-slug', params: { slug: article.slug } }">
-          {{ article.title }}
-        </NuxtLink>
+        <NuxtLink :to="{
+            name: `blog-slug___${locale}`,
+            params: { slug: article.slug }
+          }"
+        >{{ article.title }}</NuxtLink>
       </li>
     </ul>
   </div>
@@ -24,13 +26,16 @@ export default {
       articles: [],
     }
   },
+
+  props: ['locale'],
+  
   watch: {
     async searchQuery(searchQuery) {
       if (!searchQuery) {
         this.articles = []
         return
       }
-      this.articles = await this.$content('posts')
+      this.articles = await this.$content(`${this.locale}/blog`)
         .limit(6)
         .search(searchQuery)
         .fetch()

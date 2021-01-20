@@ -78,7 +78,7 @@ export default {
       type: Object,
       default: () => ({
         article: null,
-        content: "Content..."
+        content: "Article..."
       })
     }
   },
@@ -95,7 +95,11 @@ export default {
           image: 'default.jpg',
           alt: 'Alt',
           slug: 'post-slug',
-          tags: 'tag1, tag2'
+          tags: 'tag1, tag2',
+          allLanguages: [
+            { locale: 'en', slug: 'post-slug' },
+            { locale: 'ru', slug: 'слаг-поста' }
+          ]
         }
       } else {
         metadata = {
@@ -104,7 +108,8 @@ export default {
           image: this.data.article.image,
           alt: this.data.article.alt,
           slug: this.data.article.slug,
-          tags: this.data.article.tags
+          tags: this.data.article.tags,
+          allLanguages: this.data.article.allLanguages
         }
       }
 
@@ -128,17 +133,19 @@ export default {
 
       try {
         data = parseMD(this.simpleMde.value())
-        console.log('DATA OBJECT', data)
       } catch(e) {
-        this.error = "Can't parse submitted content!"
+        this.error = this.$t('postForm.error')
         alert(this.error)
         return;
       }
+
+      this.error = ""
 
       const formData = new FormData()
       formData.append('isNewPost', this.isNewPost)
       formData.append('metadata', JSON.stringify(data.metadata))
       formData.append('mdeValue', this.simpleMde.value())
+      formData.append('language', this.$i18n.locale)
 
       if (this.files) {
         const files = Array.from(this.files).map(file => {
@@ -153,9 +160,12 @@ export default {
     },
 
     submit(data) {
+      // for (let value of data.values()) {
+      //   console.log('FORM VALUE', value)
+      // }
       axios.post('http://localhost:3000/api/write-file', data)
         .then(res => {
-          alert('Saved!')
+          alert(res.data.message)
         })
     }
  

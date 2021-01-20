@@ -1,22 +1,23 @@
 <template>
   <div class="prev-next-links">
     <div class="inner">
-      <NuxtLink
-        v-if="prev"
-        :to="{ name: 'posts-slug', params: { slug: prev.slug } }"
+
+      <NuxtLink v-if="prev"
+        :to="{ name: `blog-slug___${$i18n.locale}`, params: { slug: prev.slug } }"
         class="link prev"
       >
         <span class="icon arrow-left" /><span>{{ prev.title }}</span>
       </NuxtLink>
       <span v-else>&nbsp;</span>
-      <NuxtLink
-        v-if="next"
-        :to="{ name: 'posts-slug', params: { slug: next.slug } }"
+      
+      <NuxtLink v-if="next"
+        :to="{ name: `blog-slug___${$i18n.locale}`, params: { slug: next.slug } }"
         class="link next"
       >
         <span>{{ next.title }}</span><span class="icon arrow-right" />
       </NuxtLink>
       <span v-else>&nbsp;</span>
+      
     </div>
   </div>
 </template>
@@ -65,7 +66,7 @@ export default {
       padding-left: .5rem;
     }
     .icon {
-      transform: scale(.6);
+      transform: scale(.5);
     }
   }
 }

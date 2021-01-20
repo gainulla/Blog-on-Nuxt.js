@@ -1,0 +1,12 @@
+{
+  "home": {
+    "headline": "Home Page"
+  },
+  "blog": {
+    "headline": "Latest Posts"
+  },
+  "postForm": {
+    "error": "Can't parse some submitted data!"
+  },
+  "searchPH": "Search..."
+}

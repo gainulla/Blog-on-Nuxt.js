@@ -4,7 +4,8 @@
       <nuxt-link to="/" class="logo">Nuxt Blog</nuxt-link>
       <ul class="nav-list">
         <nuxt-link to="/">Home</nuxt-link>
-        <a href="/admin/posts/edit/new">New Post</a>
+        <nuxt-link to="/blog">Blog</nuxt-link>
+        <!-- <a href="/admin/blog/edit/new">New Post</a> -->
         <nuxt-link to="/about">About</nuxt-link>
       </ul>
     </div>

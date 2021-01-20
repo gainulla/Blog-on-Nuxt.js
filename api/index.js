@@ -26,6 +26,7 @@ router.post('/write-file', async (req, res) => {
   try {
     let imgData = []
     const metadata = JSON.parse(req.body.metadata)
+    const defImage = 'default.jpg'
 
     if (req.files) {
       let files = []
@@ -55,7 +56,7 @@ router.post('/write-file', async (req, res) => {
       }) // forEach
 
       if (req.body.isNewPost == 'false' && uploadedImage) {
-        if (req.body.image != uploadedImage) {
+        if (req.body.image != uploadedImage && req.body.image != defImage) {
           await fs.unlink(
             path.normalize(`assets/images/featured/${req.body.image}`),
             err => {
@@ -71,14 +72,18 @@ router.post('/write-file', async (req, res) => {
         uploadedImage: uploadedImage
       })
 
-    } // if req.files
-    
-    const filename = path.normalize(`content/posts/${metadata.slug}.md`)
+    } else {
+      imgData.push('No file uploaded')
+    }
+
+    let filename = `content/${req.body.language}/blog/${metadata.slug}.md`
+      filename = path.normalize(filename)
 
     write(filename, req.body.mdeValue).then(() => {
       res.send({
         status: true,
-        message: 'Markdown file created',
+        message: 'Check Markdown in folder',
+        filename: filename,
         imgData: imgData
       })
     })

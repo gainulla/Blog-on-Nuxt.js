@@ -11,14 +11,15 @@
 export default {
   name: 'EditPost',
 
-  async asyncData({ $content, params }) {
-    const article = await $content('posts', { text: true }, params.slug)
-      .fetch()
+  async asyncData({ $content, params, app }) {
+    const article = await $content(`${app.i18n.locale}/blog`,
+      { text: true }, params.slug
+      ).fetch()
 
     return {
       data: {
         article,
-        content: article.text
+        content: article.text,
       }
     }
   }
