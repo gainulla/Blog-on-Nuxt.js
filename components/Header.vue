@@ -1,28 +1,38 @@
 <template>
   <header>
+
     <div class="container clearfix">
-      
-      <ul v-if="!isContentPage" class="lang-switcher">
-        <li :class="{ 'active': $i18n.locale == 'en' }">
-          <nuxt-link :to="switchLocalePath('en')">en</nuxt-link>
-        </li>
-        <li :class="{ 'active': $i18n.locale == 'ru' }">
-          <nuxt-link :to="switchLocalePath('ru')">ru</nuxt-link>
-        </li>
-      </ul>
-      
-      <ul v-if="allLanguages.length" class="lang-switcher">
-        <li v-for="(lang, key) in allLanguages" :key="key"
-          :class="{ 'active': $i18n.locale == lang.locale }"
-        >
-          <nuxt-link :to="postOnLangRoute(lang)">
-            {{ key == 1 ? '&nbsp;' : '' }}{{ lang.locale }}
-          </nuxt-link>
-        </li>
-      </ul>
+
+      <div class="top-info-box"></div>
+
+      <div class="header-layer-fst">
+        <a :href="pathFor('/')" class="logo">
+          <img :src="require('~/assets/images/logo.png')" />
+        </a>
+        <ul v-if="!isContentPage" class="lang-switcher">
+          <li v-for="(lang, key) in allLanguages" :key="key"
+            :class="{ 'active': $i18n.locale == lang.locale }"
+          >
+            <nuxt-link :to="switchLocalePath(lang.locale)">
+              {{ lang.locale }}
+            </nuxt-link>
+          </li>
+        </ul>
+        <ul v-else class="lang-switcher">
+          <li v-for="(lang, key) in allLanguages" :key="key"
+            :class="{ 'active': $i18n.locale == lang.locale }"
+          >
+            <nuxt-link :to="pathFor('/blog', lang.locale, lang.slug)">
+              {{ lang.locale }}
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
+
+      <Nav />
 
     </div>
-    <Nav />
+    
   </header>
 </template>
 
@@ -35,48 +45,67 @@ export default {
       return this.$route.name.includes('slug')
     }
   },
-  
+
   props: {
     allLanguages: {
       type: Array,
-      default: () => []
-    }
-  },
-
-  methods: {
-    postOnLangRoute(lang) {
-      if (lang.locale == this.$i18n.defaultLocale) {
-        return `/blog/${lang.slug}`
-      } else {
-        return `/${lang.locale}/blog/${lang.slug}`
-      }
+      default: () => [
+        { locale: 'en', slug: false },
+        { locale: 'ru', slug: false }
+      ]
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.top-info-box {
+  background-color: #F1F1F1;
+  height: 2.7rem;
+}
+
+.header-layer-fst {
+  position: relative;
+  background-color: white;
+  display: flex;
+
+  .logo {
+    padding: 1.3rem;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    img {
+      width: 60px;
+      height: 50px;
+      display: block;
+    }
+  }
+}
+
 ul.lang-switcher {
+  position: absolute;
+  right: 0;
+  line-height: 6rem;
+  padding-right: 1rem;
   text-align: right;
-  padding: 1rem;
 
   li {
     display: inline-block;
     background-color: white;
 
     &.active {
-      background-color: rgb(141, 188, 233);
       a {
-        color: white;
+        color:hsl(206, 6%, 50%);
+        font-weight: bold;
       }
     }
 
     a {
+      font-size: .9rem;
       display: block;
       text-transform: uppercase;
-      padding: .1rem .5rem;
-      color: rgb(150, 186, 219);
-      border: 1px solid rgb(217, 224, 230);
+      padding: .1rem .3rem;
+      color: hsl(206, 6%, 50%);
     }
   }
 }

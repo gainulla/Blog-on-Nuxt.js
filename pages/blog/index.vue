@@ -4,7 +4,7 @@
     <div class="container content-wrapper">
       <AppSearchInput :locale='locale' />
 
-      <h1 class="text-center">{{ $t('blog.headline') }}</h1>
+      <h1 class="text-center">{{ $t('headline1.blog') }}</h1>
 
       <div v-if="articles" class="articles">
         <article v-for="(article, i) in articles" :key="i">
@@ -37,8 +37,6 @@ export default {
       .only(['title', 'description', 'image', 'slug', 'path'])
       .sortBy('createdAt', 'desc')
       .fetch()
-
-    console.log('ARTICLES', articles)
 
     return {
       articles: articles.map(article => ({

@@ -1,5 +1,7 @@
 <template>
-  <Nuxt />
+  <div class="nuxt-wrapper">
+    <Nuxt />
+  </div>
 </template>
 
 <style lang="scss">
@@ -15,7 +17,13 @@ html {
 body {
   margin: 0;
   font-family: Helvetica, Arial, sans-serif;
-  background-color: #F5F5F5;
+  background-color: #E9EAEE;
+}
+
+.nuxt-wrapper {
+  max-width: 1046px;
+  margin: 0 auto;
+  background-color: white;
 }
 
 .container {
@@ -26,6 +34,7 @@ body {
 .content-wrapper {
   padding: 1rem;
   background-color: transparent;
+  background-color: #F6F6F4;
 }
 
 .clearfix, button {
@@ -115,12 +124,16 @@ span.icon {
 }
 
 .admin-area {
-  text-align: right;
   margin-bottom: 2rem;
+  border-bottom: 1px solid #e9e9e6;
+  padding-bottom: .5rem;
+  display: flex;
+  justify-content: flex-end;
+
   .btn {
     text-transform: uppercase;
-    margin-left: .5rem;
-    background-color: cornflowerblue;
+    margin-left: .2rem;
+    background-color: rgb(175, 177, 182);
     color: white;
     padding: .5rem .8rem;
   }

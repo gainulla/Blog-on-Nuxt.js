@@ -1,9 +1,11 @@
 {
-  "home": {
-    "headline": "Home Page"
+  "nav": {
+    "home": "Home",
+    "blog": "Blog"
   },
-  "blog": {
-    "headline": "Latest Posts"
+  "headline1": {
+    "home": "Home Page",
+    "blog": "Latest Posts"
   },
   "postForm": {
     "error": "Can't parse some submitted data!"

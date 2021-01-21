@@ -2,7 +2,7 @@
   <div>
     <Header />
     <div class="container content-wrapper">
-      <h1 class="text-center">{{ $t('home.headline') }}</h1>
+      <h1 class="text-center">{{ $t('headline1.home') }}</h1>
     </div>
   </div>
 </template>
@@ -12,3 +12,9 @@ export default {
   name: 'Home',
 }
 </script>
+
+<style scoped>
+.content-wrapper {
+  height: 100vh;
+}
+</style>

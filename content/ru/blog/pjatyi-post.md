@@ -6,9 +6,9 @@ alt: Alt
 slug: pjatyi-post
 tags: tag1, tag2
 allLanguages:
-  - locale: ru
-    slug: pjatyi-post
   - locale: en
     slug: fifth-post
+  - locale: ru
+    slug: pjatyi-post
 ---
 Hi there, it is new 5-th post.
