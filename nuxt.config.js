@@ -86,5 +86,12 @@ export default {
         theme: 'prism-themes/themes/prism-base16-ateliersulphurpool.light.css'
       }
     }
+  },
+
+  generate: {
+    exclude: [
+      /^\/admin/, // path starts with /admin
+      /^\/ru\/admin/ // path starts with ru/admin
+    ]
   }
 }
