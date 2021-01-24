@@ -1,6 +1,6 @@
 <template>
   <div class="slug-page">
-    <Header :all-languages="article.allLanguages" />
+    <Header :allLanguages="article.allLanguages" />
 
     <div class="container content-wrapper">
       <div v-show="hostname == 'localhost'" class="admin-area">

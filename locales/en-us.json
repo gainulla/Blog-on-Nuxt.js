@@ -4,11 +4,13 @@
     "blog": "Blog"
   },
   "headline1": {
-    "home": "Home Page",
+    "home": "Hey, I'm Gainulla",
     "blog": "Latest Posts"
   },
   "postForm": {
     "error": "Can't parse some submitted data!"
   },
-  "searchPH": "Search..."
+  "searchPH": "Search...",
+  "metier": "Web developer",
+  "blog": "blog"
 }

@@ -1,13 +1,12 @@
 <template>
-  <div class="nuxt-wrapper">
-    <Nuxt />
-  </div>
+  <Nuxt />
 </template>
 
 <style lang="scss">
 
 html {
   box-sizing: border-box;
+  --body-bg: #E9EAEE;
 }
 
 *, *::before, *::after {
@@ -17,22 +16,26 @@ html {
 body {
   margin: 0;
   font-family: Helvetica, Arial, sans-serif;
-  background-color: #E9EAEE;
+  background-color: var(--body-bg);
 }
 
 .nuxt-wrapper {
-  max-width: 1046px;
+  max-width: 1200px;
+  height: 100vh;
   margin: 0 auto;
   background-color: white;
+  padding-bottom: 5rem;
 }
 
 .container {
-  max-width: 1024px;
+  max-width: 1160px;
   margin: 0 auto;
 }
 
 .content-wrapper {
-  padding: 1rem;
+  padding-top: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
   background-color: transparent;
   background-color: #F6F6F4;
 }
@@ -54,10 +57,10 @@ a {
 
   &:link {
     text-decoration: none;
-    color: cadetblue;
+    color: hsl(206, 6%, 50%);
   }
   &:visited {
-    color: darkcyan;
+     color: rgb(116, 82, 116);
   }
   &:hover {
     color: darkcyan;

@@ -19,7 +19,7 @@ export default {
 
 <style lang="scss" scoped>
 nav {
-  overflow: hidden;
+  height: 3.5rem;
   background-color: #F1F1F1;
 
   ul.nav-list {
@@ -35,9 +35,10 @@ nav {
       letter-spacing: .05em;
 
       &.nuxt-link-exact-active {
-        border-bottom: 2px solid hsl(150, 2%, 52%);
         font-weight: bold;
         letter-spacing: initial;
+        margin-bottom: -5px;
+        background-color: #F1F1F1;
       }
     }
   }
