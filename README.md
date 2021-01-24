@@ -16,6 +16,6 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
-Demo: https://mystifying-aryabhata-4a0ee2.netlify.app/blog
+Demo: https://mystifying-aryabhata-4a0ee2.netlify.app/
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
