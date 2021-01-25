@@ -6,7 +6,12 @@
 
 html {
   box-sizing: border-box;
-  --body-bg: #E9EAEE;
+  --body-bg: white;
+
+  --link: darkslategray;
+  --link-visited: palevioletred;
+  --link-hover: cadetblue;
+  --link-active: darkcyan;
 }
 
 *, *::before, *::after {
@@ -34,10 +39,9 @@ body {
 
 .content-wrapper {
   padding-top: 2rem;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   background-color: transparent;
-  background-color: #F6F6F4;
 }
 
 .clearfix, button {
@@ -57,16 +61,16 @@ a {
 
   &:link {
     text-decoration: none;
-    color: hsl(206, 6%, 50%);
+    color: var(--link);
   }
   &:visited {
-     color: rgb(116, 82, 116);
+    color: var(--link-visted); //palevioletred;
   }
   &:hover {
-    color: darkcyan;
+    color: var(--link-hover);
   }
   &:active {
-    color: darkcyan;
+    color: var(--link-active);
   }
 }
 
@@ -79,6 +83,10 @@ h1, h2, h3, h4, h5 {
   font-weight: normal;
 }
 
+ul {
+  padding: 0;
+}
+
 .text-center {
   text-align: center;
 }
@@ -86,17 +94,26 @@ h1, h2, h3, h4, h5 {
 .pt-0 {
   padding-top: 0 !important;
 }
+.mt-0 {
+  margin-top: 0 !important;
+}
 .mt-1 {
   margin-top: 1rem !important;
 }
 .mt-2 {
   margin-top: 2rem !important;
 }
+.mt-3 {
+  margin-top: 3rem !important;
+}
 .mb-1 {
   margin-bottom: 1rem !important;
 }
 .mb-2 {
   margin-bottom: 2rem !important;
+}
+.mb-3 {
+  margin-bottom: 3rem !important;
 }
 
 .message {
@@ -142,4 +159,52 @@ span.icon {
   }
 }
 
+hr.wide-border {
+  height: 10px;
+  border: 0;
+  box-shadow: inset 0 15px 15px -12px rgba(37, 16, 16, 0.14);
+  margin-top: 4rem;
+  margin-bottom: 0;
+}
+
+.logo {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+}
+
+.polygon {
+  display: block;
+  clip-path: polygon(
+    0 28%, 28% 0,
+    72% 0, 100% 28%,
+    100% 72%, 72% 100%,
+    28% 100%, 0 72%
+  );
+  transform: rotate(24deg);
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  background-image: linear-gradient(66deg, #F8F8F8 50%, #F2F2F2 50%);
+  padding: 1rem 1rem .6rem .6rem;
+
+  img {
+    width: 80px;
+    height: 72px;
+  }
+  .polygon-rotate {
+    transform: rotate(-22.5deg) !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .polygon {
+    min-width: 130px;
+    min-height: 130px;
+    img {
+      width: 108px;
+      height: 98px;
+    }
+  }
+}
 </style>

@@ -30,15 +30,24 @@ nav {
     a {
       display: inline-block;
       padding: .8rem .8rem;
-      color: hsl(150, 1%, 37%);
       text-transform: lowercase;
       letter-spacing: .05em;
+      font-weight: bold;
 
       &.nuxt-link-exact-active {
         font-weight: bold;
         letter-spacing: initial;
         margin-bottom: -5px;
         background-color: #F1F1F1;
+        color: var(--link-active) !important;
+      }
+
+      &:hover {
+        color: var(--link-hover) !important;
+      }
+
+      &:visited {
+        color: var(--link);
       }
     }
   }

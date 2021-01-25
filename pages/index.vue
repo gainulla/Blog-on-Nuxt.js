@@ -95,13 +95,6 @@ export default {
     }
   }
 
-  $octagon: polygon(
-    0 28%, 28% 0,
-    72% 0, 100% 28%,
-    100% 72%, 72% 100%,
-    28% 100%, 0 72%
-  );
-
   .hero {
     position: relative;
     height: 100vh;
@@ -111,52 +104,29 @@ export default {
     justify-content: center;
     align-items: center;
 
-    .polygon {
-      display: block;
-      clip-path: $octagon;
-      transform: rotate(24deg);
-      min-width: 130px;
-      min-height: 130px;
-      background-color: white;
-      background-image: linear-gradient(66deg, #F8F8F8 50%, #F2F2F2 50%);
-
-      .polygon-rotate {
-        transform: rotate(-22.5deg);
-      }
-    }
-
     .button {
       position: absolute;
       bottom: 10%;
       right: 15%;
-      font-weight: bold;
       display: flex;
       flex-flow: column;
       justify-content: center;
       align-items: center;
-      font-size: 2rem;
+      font-size: 1.8rem;
       cursor: pointer;
+      
       a.link {
-        color:  lighten($north, 10); 
+        color:  lighten($north, 10);
+        font-weight: bold;
         &:hover {
           color: lighten($south, 10);
         }
       }
+
       .locale-switch-comp {
         position: absolute;
-        top: -20px;
-        left: -20px;
-      }
-    }
-
-    .logo {
-      position: absolute;
-      top: 10%;
-      left: 15%;
-      padding: 1rem .8rem .6rem .8rem;
-      img {
-        width: 110px;
-        height: 100px;
+        top: 4px;
+        left: 8px;
       }
     }
 
@@ -253,6 +223,20 @@ export default {
 @media (min-width: 576px) {
   .screen {
     .hero {
+      .button {
+        .locale-switch-comp {
+          position: absolute;
+          top: 12px;
+          left: 19px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .screen {
+    .hero {
       .text {
         h1 {
           font-size: 3.4rem;
@@ -265,7 +249,7 @@ export default {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .screen {
     .hero {
       .text {

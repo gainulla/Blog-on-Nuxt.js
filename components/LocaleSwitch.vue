@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <ul v-if="isContentPage" class="lang-switcher">
+    <ul v-if="isContentPage" class="lang-switch">
       <li v-for="(lang, key) in languages" :key="key"
         :class="{ 'active': $i18n.locale == lang.locale }"
       >
@@ -11,7 +11,7 @@
       </li>
     </ul>
 
-    <ul v-else class="lang-switcher">
+    <ul v-else class="lang-switch">
       <li v-for="(lang, key) in languages" :key="key"
         :class="{ 'active': $i18n.locale == lang.locale }"
       >
@@ -50,30 +50,22 @@ export default {
 
 <style lang="scss" scoped>
 
-ul.lang-switcher {
-  line-height: 6rem;
-  padding-right: 1rem;
+ul.lang-switch {
   text-align: right;
 
   li {
     display: inline-block;
     background-color: white;
 
-    &.active {
-      a {
-        color:hsl(206, 6%, 50%);
-        font-weight: bold;
-      }
-    }
-
     a {
       font-size: .9rem;
       display: block;
       text-transform: uppercase;
       padding: .1rem .3rem;
-      
-      &:visited, &:active {
-        color:hsl(206, 6%, 30%);
+      padding-top: .12rem;
+
+      &.nuxt-link-exact-active {
+        background-color: rgb(189, 218, 189);
       }
     }
   }

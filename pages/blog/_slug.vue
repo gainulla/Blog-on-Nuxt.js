@@ -137,8 +137,8 @@ export default {
   }
 
   img.featured {
-    width: 500px;
-    height: 300px;
+    width: 100%;
+    height: auto;
     float: left;
     margin-right: 1.5rem;
     margin-bottom: .5rem;

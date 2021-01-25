@@ -45,10 +45,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .search-wrapper {
-  text-align: center;
-  margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+
   input {
+    width: 100%;
+    height: 2.5rem;
     font-size: 1.1rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -56,14 +61,22 @@ export default {
     border: 1px solid #EEE;
     border-radius: .4rem;
     outline: none;
-    margin-bottom: 1rem;
   }
   ul {
-    padding: 0;
-    margin: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: #F2F2F2;
     li {
-      margin: 0;
-      padding: 0;
+      padding: .2rem 0;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .search-wrapper {
+    width: 320px;
+    input {
+      margin-top: 7rem;
     }
   }
 }

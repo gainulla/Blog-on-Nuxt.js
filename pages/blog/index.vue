@@ -2,9 +2,8 @@
   <div>
     <Header />
     <div class="container content-wrapper">
-      <AppSearchInput :locale='locale' />
 
-      <h1 class="text-center">{{ $t('headline1.blog') }}</h1>
+      <h1 class="text-center mt-3 mb-3">{{ $t('headline1.blog') }}</h1>
 
       <div v-if="articles" class="articles">
         <article v-for="(article, i) in articles" :key="i">
@@ -52,16 +51,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .articles {
   article > div {
     background-color: white;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     border: 1px solid #F0F0F0;
     border-radius: .4rem;
     overflow: auto;
+
     a {
       display: flex;
       color: #444;
+      
       img {
         display: block;
         height: 250px;
@@ -69,6 +71,7 @@ export default {
         margin: 0 1.5rem 0 0;
         object-fit: cover;
       }
+
       .details {
         p {
           &:last-child::after {
@@ -79,5 +82,6 @@ export default {
       }
     }
   }
+
 }
 </style>
