@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="container content-wrapper pt-0">
+    <div class="container">
       <PostEditForm :data="data" />
     </div>
   </div>

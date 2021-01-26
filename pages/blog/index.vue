@@ -1,26 +1,32 @@
 <template>
   <div>
     <Header />
-    <div class="container content-wrapper">
 
+    <div class="container">
       <h1 class="text-center mt-3 mb-3">{{ $t('headline1.blog') }}</h1>
 
       <div v-if="articles" class="articles">
         <article v-for="(article, i) in articles" :key="i">
-          <div>
-            <nuxt-link :to="article.path">
-              <img :src="require(`~/assets/images/featured/${article.image}`)" />
-              <div class="details">
-                <h2>{{ article.title }}</h2>
-                <p>{{ article.description }}</p>
+          <nuxt-link :to="article.path">
+            <div class="row">
+              <div class="column col-5">
+                <img :src="require(`~/assets/images/featured/${article.image}`)" />
               </div>
-            </nuxt-link>
-          </div>
+              <div class="column">
+                <div class="details">
+                  <h2 class="title">{{ article.title }}</h2>
+                  <p class="description">{{ article.description }}</p>
+                </div>
+              </div>
+            </div>
+          </nuxt-link>
         </article>
       </div>
+
       <div v-else class="message">
         <h3 class="text-center mt-2">No posts yet.</h3>
       </div>
+
     </div>
   </div>
 </template>
@@ -53,27 +59,28 @@ export default {
 <style lang="scss" scoped>
 
 .articles {
-  article > div {
+  article {
     background-color: white;
-    margin-bottom: 2rem;
-    border: 1px solid #F0F0F0;
+    padding: 1rem;
     border-radius: .4rem;
-    overflow: auto;
 
     a {
-      display: flex;
-      color: #444;
-      
       img {
-        display: block;
-        height: 250px;
-        width: 360px;
+        width: 100%;
+        height: 100%;
+        max-height: 300px;
         margin: 0 1.5rem 0 0;
         object-fit: cover;
       }
 
       .details {
-        p {
+        text-align: left;
+
+        .title {
+          margin: 0;
+        }
+
+        .description {
           &:last-child::after {
             content: '...';
             display: inline-block;
@@ -82,6 +89,25 @@ export default {
       }
     }
   }
+}
 
+@media (min-width: 768px) {
+  .articles {
+    article {
+      a {
+        img {
+          border-top-left-radius: .4rem;
+          border-bottom-left-radius: .4rem;
+        }
+        .details {
+          padding: 25px;
+          border: 1px solid #EEE;
+          height: 100%;
+          border-top-right-radius: .4rem;
+          border-bottom-right-radius: .4rem;
+        }
+      }
+    }
+  }
 }
 </style>

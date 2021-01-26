@@ -24,39 +24,8 @@ body {
   background-color: var(--body-bg);
 }
 
-.nuxt-wrapper {
-  max-width: 1200px;
-  height: 100vh;
-  margin: 0 auto;
-  background-color: white;
-  padding-bottom: 5rem;
-}
-
-.container {
-  max-width: 1160px;
-  margin: 0 auto;
-}
-
-.content-wrapper {
-  padding-top: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background-color: transparent;
-}
-
-.clearfix, button {
-  &::before, &::after {
-    content: " ";
-    display: table;
-  }
-  &::after {
-    clear: both;
-  }
-}
-
 a {
   font-family: Helvetica, Arial, sans-serif;
-  line-height: 1.5;
   transition: color 200ms ease-in;
 
   &:link {
@@ -76,44 +45,12 @@ a {
 
 ul {
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 h1, h2, h3, h4, h5 {
   font-weight: normal;
-}
-
-ul {
-  padding: 0;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.pt-0 {
-  padding-top: 0 !important;
-}
-.mt-0 {
-  margin-top: 0 !important;
-}
-.mt-1 {
-  margin-top: 1rem !important;
-}
-.mt-2 {
-  margin-top: 2rem !important;
-}
-.mt-3 {
-  margin-top: 3rem !important;
-}
-.mb-1 {
-  margin-bottom: 1rem !important;
-}
-.mb-2 {
-  margin-bottom: 2rem !important;
-}
-.mb-3 {
-  margin-bottom: 3rem !important;
 }
 
 .message {
@@ -197,6 +134,46 @@ hr.wide-border {
   }
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1160px;
+  min-width: 320px;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+
+    .column {
+      text-align: center;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 1;
+      //background-color: #efefef;
+      //border: 1px solid #dedede;
+      padding: 0;
+
+      &.col-1 {
+        max-width: calc(100% / 12);
+      }
+      &.col-2 {
+        max-width: calc(100% / 12 * 2);
+      }
+      &.col-3 {
+        max-width: calc(100% / 12 * 3);
+      }
+      &.col-4 {
+        max-width: calc(100% / 12 * 4);
+      }
+      &.col-5 {
+        max-width: calc(100% / 12 * 5);
+      }
+      &.col-6 {
+        max-width: calc(100% / 2);
+      }
+    }
+  }
+}
+
 @media (min-width: 576px) {
   .polygon {
     min-width: 130px;
@@ -206,5 +183,67 @@ hr.wide-border {
       height: 98px;
     }
   }
+}
+
+@media (max-width: 767px) {
+  .container {
+    overflow: auto;
+
+    .column {
+      min-width: 100%;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+    }
+  }
+}
+
+/*
+ * ------------ Helper classes ------------ */
+
+.clearfix {
+  &::before, &::after {
+    content: " ";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+.mt-0 {
+  margin-top: 0 !important;
+}
+.mt-1 {
+  margin-top: 1rem !important;
+}
+.mt-2 {
+  margin-top: 2rem !important;
+}
+.mt-3 {
+  margin-top: 3rem !important;
+}
+.mb-1 {
+  margin-bottom: 1rem !important;
+}
+.mb-2 {
+  margin-bottom: 2rem !important;
+}
+.mb-3 {
+  margin-bottom: 3rem !important;
 }
 </style>

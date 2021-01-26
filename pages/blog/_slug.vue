@@ -2,7 +2,7 @@
   <div class="slug-page">
     <Header :allLanguages="article.allLanguages" />
 
-    <div class="container content-wrapper">
+    <div class="container">
       <div v-show="hostname == 'localhost'" class="admin-area">
         <nuxt-link :to="editArticleRoute" class="btn"
         >Edit</nuxt-link>
