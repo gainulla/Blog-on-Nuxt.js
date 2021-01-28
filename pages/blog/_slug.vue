@@ -122,9 +122,9 @@ export default {
 
 .page-content {
   padding-bottom: 3rem;
+  margin-top: 2rem;
 
   .admin-area {
-    margin-top: 2rem;
     margin-bottom: 2rem;
     border-bottom: 1px solid #e9e9e6;
     padding-bottom: .5rem;
