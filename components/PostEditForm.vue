@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <h1 class="text-center">Edit post</h1>
+    <h1 class="text-center mt-0">Edit post</h1>
     
     <p v-if="error" class="error">{{ error }}</p>
 
@@ -174,6 +174,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .page {
   background-color: white;
   margin-left: -1rem;
@@ -193,7 +194,6 @@ p.error {
 }
 
 .editForm {
-  padding-top: 1rem;
   display: flex;
   flex-flow: row wrap;
 
@@ -203,7 +203,6 @@ p.error {
 
     label {
       display: block;
-      font-family: serif;
       font-weight: bold;
       letter-spacing: .02em;
       margin-bottom: .2rem;

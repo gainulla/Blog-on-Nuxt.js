@@ -58,14 +58,17 @@ ul.lang-switch {
     background-color: white;
 
     a {
-      font-size: .9rem;
+      font-size: 1.2rem;
+      font-weight: 500;
       display: block;
       text-transform: uppercase;
-      padding: .1rem .3rem;
-      padding-top: .12rem;
+      padding: .6rem .7rem;
+      color: rgb(41, 41, 42);
+      transition: opacity 200ms ease;
 
       &.nuxt-link-exact-active {
-        background-color: rgb(189, 218, 189);
+        color: rgb(10, 6, 226);
+        background-color:  rgb(233, 233, 233);
       }
     }
   }

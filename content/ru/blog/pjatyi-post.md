@@ -11,4 +11,4 @@ allLanguages:
   - locale: ru
     slug: pjatyi-post
 ---
-Hi there, it is new 5-th post.
+Здесь статья на русском языке. Здесь статья на русском языке. Здесь статья на русском языке. 

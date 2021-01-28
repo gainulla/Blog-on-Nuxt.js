@@ -113,11 +113,15 @@ export default {
       justify-content: center;
       align-items: center;
       font-size: 1.8rem;
+      text-transform: capitalize;
       cursor: pointer;
       
       a.link {
         color:  lighten($north, 10);
         font-weight: bold;
+        display: block;
+        margin-bottom: -1rem;
+        margin-right: -.5rem;
         &:hover {
           color: lighten($south, 10);
         }
@@ -125,8 +129,8 @@ export default {
 
       .locale-switch-comp {
         position: absolute;
-        top: 4px;
-        left: 8px;
+        top: 3px;
+        left: -8px;
       }
     }
 
@@ -135,7 +139,9 @@ export default {
 
       h1 {
         font-size: 2.4rem;
+        font-family: var(--bold-font);
         font-weight: 900;
+        letter-spacing: .02em;
         color: #F2F2F2;
         margin: 0;
       }
@@ -227,7 +233,7 @@ export default {
         .locale-switch-comp {
           position: absolute;
           top: 12px;
-          left: 19px;
+          left: 3px;
         }
       }
     }

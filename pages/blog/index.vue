@@ -3,7 +3,7 @@
     <Header />
 
     <div class="container">
-      <h1 class="text-center mt-3 mb-3">{{ $t('headline1.blog') }}</h1>
+      <h1 class="headline text-center">{{ $t('headline1.blog') }}</h1>
 
       <div v-if="articles" class="articles">
         <article v-for="(article, i) in articles" :key="i">
@@ -23,7 +23,7 @@
         </article>
       </div>
 
-      <div v-else class="message">
+      <div v-else class="articles">
         <h3 class="text-center mt-2">No posts yet.</h3>
       </div>
 
@@ -58,14 +58,26 @@ export default {
 
 <style lang="scss" scoped>
 
+.headline {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  font-family: var(--primary-font);
+  font-weight: 700;
+}
+
 .articles {
+  padding-bottom: 2rem;
+
   article {
     background-color: white;
-    padding: 1rem;
     border-radius: .4rem;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
 
     a {
       img {
+        display: block;
         width: 100%;
         height: 100%;
         max-height: 300px;
@@ -78,9 +90,12 @@ export default {
 
         .title {
           margin: 0;
+          font-family: var(--secondary-font);
         }
 
         .description {
+          font-family: var(--secondary-font);
+
           &:last-child::after {
             content: '...';
             display: inline-block;
@@ -91,23 +106,56 @@ export default {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .articles {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
     article {
+      a {
+        img {
+          min-height: 320px;
+          max-height: 320px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .headline {
+    margin-bottom: 3rem;
+  }
+
+  .articles {
+    padding-left: 0;
+    padding-right: 0;
+
+    article {
+      margin-bottom: 2rem;
       a {
         img {
           border-top-left-radius: .4rem;
           border-bottom-left-radius: .4rem;
+          min-height: 250px;
+          max-height: 250px;
         }
         .details {
           padding: 25px;
-          border: 1px solid #EEE;
           height: 100%;
+          border: 1px solid #EEE;
           border-top-right-radius: .4rem;
           border-bottom-right-radius: .4rem;
         }
       }
     }
+  }
+}
+
+@media (min-width: 992px) {
+  .articles {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 </style>

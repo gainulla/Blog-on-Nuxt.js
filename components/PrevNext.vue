@@ -40,30 +40,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .prev-next-links {
-  margin-right: -2rem;
+  border-top: 1px solid #EEE;
+  margin-top: 2rem;
 
   .inner {
+    position: relative;
     display: flex;
-    justify-content: center;
+    flex-flow: row wrap;
+    justify-content: space-between;
     align-items: center;
   }
 
   .link {
     display: flex;
+    flex-grow: 1;
     align-items: center;
+    font-family: var(--secondary-font);
+    font-weight: 700;
     font-size: 1.2rem;
     text-transform: lowercase;
     color: #000;
-    span::first-letter {
-      text-transform: capitalize;
-    }
+    padding-top: .5rem;
+    text-transform: capitalize;
+
     &.prev {
-      margin-right: 2rem;
-      padding-right: .5rem;
+      padding-right: 2.5rem;
     }
     &.next {
       padding-left: .5rem;
+      justify-content: flex-end;
     }
     .icon {
       transform: scale(.5);

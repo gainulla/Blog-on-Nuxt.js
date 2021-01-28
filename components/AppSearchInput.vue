@@ -1,11 +1,15 @@
 <template>
   <div class="search-wrapper">
+    
     <input
       v-model="searchQuery"
       type="search"
       autocomplete="off"
       :placeholder="$t('searchPH')"
     >
+
+    <span v-if="articles.length == 0" class="icon search" />
+    
     <ul v-if="articles.length">
       <li v-for="article of articles" :key="article.slug">
         <NuxtLink :to="{
@@ -15,6 +19,7 @@
         >{{ article.title }}</NuxtLink>
       </li>
     </ul>
+
   </div>
 </template>
 
@@ -47,6 +52,7 @@ export default {
 <style lang="scss" scoped>
 
 .search-wrapper {
+  position: relative;
   width: 100%;
   display: flex;
   flex-flow: column;
@@ -55,13 +61,20 @@ export default {
     width: 100%;
     height: 2.5rem;
     font-size: 1.1rem;
-    font-family: 'Roboto', sans-serif;
     font-weight: 300;
     padding: .5rem .8rem;
     border: 1px solid #EEE;
     border-radius: .4rem;
     outline: none;
   }
+
+  .icon.search {
+    align-self: flex-end;
+    margin-top: -34px;
+    opacity: .24;
+    cursor: pointer;
+  }
+
   ul {
     width: 100%;
     padding: 1rem;

@@ -39,7 +39,7 @@ export default {
 
 .flex-container {
   position: relative;
-  height: 8.5rem;
+  height: 12rem;
   display: flex;
   flex-flow: row wrap;
 
@@ -49,6 +49,8 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     font-weight: bold;
+    z-index: 101;
+    font-size: 1.2rem;
 
     &:hover {
       color: initial;
@@ -58,18 +60,18 @@ export default {
 
   .logo-wrap {
     width: 8rem;
-    height: 100%;
+    height: 8.5rem;
     padding: 8px;
 
     .logo {
       position: relative;
       top: 10px;
-      left: 15px;
+      left: 0;
     }
   }
 
   .app-search-comp {
-    padding: 0 15px;
+    padding: 0;
     display: flex;
     align-items: flex-end;
   }
@@ -77,17 +79,16 @@ export default {
   .locale-switch-comp {
     position: absolute;
     top: 15px;
-    right: 15px;
+    right: 0;
   }
 
 }
 
 @media (min-width: 576px) {
   .flex-container {
-    height: 10.5rem;
-
     .logo-wrap {
       width: 10rem;
+      height: 10.5rem;
     }
 
     .app-search-comp {

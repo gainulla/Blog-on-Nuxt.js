@@ -12,6 +12,9 @@ html {
   --link-visited: palevioletred;
   --link-hover: cadetblue;
   --link-active: darkcyan;
+  --primary-font: 'Bellota Text', cursive;
+  --secondary-font: 'Inria Serif', serif;
+  --bold-font: 'Roboto', sans-serif;
 }
 
 *, *::before, *::after {
@@ -20,12 +23,12 @@ html {
 
 body {
   margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: var(--primary-font);
   background-color: var(--body-bg);
 }
 
 a {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: var(--primary-font);
   transition: color 200ms ease-in;
 
   &:link {
@@ -72,27 +75,12 @@ span.icon {
   }
   &.arrow-left {
     background-image: url('~assets/svg/icon-arrow-left.svg');
-    background-size: 36px;
   }
   &.arrow-right {
     background-image: url('~assets/svg/icon-arrow-right.svg');
-    background-size: 36px;
   }
-}
-
-.admin-area {
-  margin-bottom: 2rem;
-  border-bottom: 1px solid #e9e9e6;
-  padding-bottom: .5rem;
-  display: flex;
-  justify-content: flex-end;
-
-  .btn {
-    text-transform: uppercase;
-    margin-left: .2rem;
-    background-color: rgb(175, 177, 182);
-    color: white;
-    padding: .5rem .8rem;
+  &.search {
+    background-image: url('~assets/svg/icon-search.svg');
   }
 }
 
@@ -122,8 +110,8 @@ hr.wide-border {
   width: 100px;
   height: 100px;
   background-color: white;
-  background-image: linear-gradient(66deg, #F8F8F8 50%, #F2F2F2 50%);
-  padding: 1rem 1rem .6rem .6rem;
+  background-image: linear-gradient(66deg, #F6F6F8 50%, #f0f2f3 50%);
+  padding: 1rem .85rem .6rem .75rem;
 
   img {
     width: 80px;
@@ -138,6 +126,8 @@ hr.wide-border {
   margin: 0 auto;
   max-width: 1160px;
   min-width: 320px;
+  padding-left: 15px;
+  padding-right: 15px;
 
   .row {
     display: flex;
@@ -245,5 +235,22 @@ hr.wide-border {
 }
 .mb-3 {
   margin-bottom: 3rem !important;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-family:  var(--primary-font);
+  color: #A7A7A7 !important;
+  font-weight: 300 !important;
+  opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-family: var(--primary-font);
+  color: #A7A7A7 !important;
+  font-weight: 300 !important;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  font-family: var(--primary-font);
+  color: #A7A7A7 !important;
+  font-weight: 300 !important;
 }
 </style>

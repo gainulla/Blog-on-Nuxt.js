@@ -22,4 +22,4 @@ function foo(bar) {
 ```
 <v-img src="vorobey-el-golubaya.jpg" alt="Index"></v-img>
 
-Write you article here... Exellent second Post
+Здесь статья на русском языке. Здесь статья на русском языке. Здесь статья на русском языке. 

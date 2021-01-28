@@ -1,38 +1,40 @@
 <template>
-  <div class="slug-page">
+  <div>
     <Header :allLanguages="article.allLanguages" />
 
-    <div class="container">
-      <div v-show="hostname == 'localhost'" class="admin-area">
-        <nuxt-link :to="editArticleRoute" class="btn"
-        >Edit</nuxt-link>
-        <nuxt-link :to="newArticleRoute" class="btn"
-        >Add New</nuxt-link>
+    <div class="page-content">
+      <div class="container">
+
+        <div v-show="hostname == 'localhost'" class="admin-area">
+          <nuxt-link :to="editArticleRoute" class="btn"
+          >Edit</nuxt-link>
+          <nuxt-link :to="newArticleRoute" class="btn"
+          >Add New</nuxt-link>
+        </div>
+
+        <article>
+          <div class="row">
+            <div class="column col-6">
+              <img
+                :src="require(`~/assets/images/featured/${article.image}`)"
+                :alt="article.alt"
+                class="featured"
+              >
+            </div>
+            <div class="column article-head">
+              <h1>{{ article.title }}</h1>
+              <p>{{ article.description }}</p>
+              <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
+            </div>
+          </div>
+          <nuxt-content :document="article" class="content clearfix mb-1" />
+        </article>
+
+        <PrevNext :prev="prev" :next="next" class="mb-2" />
+
       </div>
-
-      <nav class="mt-1">
-        <ul>
-          <li v-for="link of article.toc" :key="link.id">
-            <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
-          </li>
-        </ul>
-      </nav>
-
-      <article>
-        <h1>{{ article.title }}</h1>
-        <p>{{ article.description }}</p>
-        <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
-        <img
-          :src="require(`~/assets/images/featured/${article.image}`)"
-          :alt="article.alt"
-          class="featured"
-        >
-        <nuxt-content :document="article" class="content clearfix mb-1" />
-      </article>
-
-      <PrevNext :prev="prev" :next="next" class="mb-2" />
-
     </div>
+
   </div>
 </template>
 
@@ -117,46 +119,95 @@ export default {
 </script>
 
 <style lang="scss">
-.slug-page {
-  h1 {
-    margin-top: 0;
-  }
 
-  .nuxt-content h2 {
-    font-weight: bold;
-    font-size: 28px;
-  }
+.page-content {
+  padding-bottom: 3rem;
 
-  .nuxt-content h3 {
-    font-weight: bold;
-    font-size: 22px;
-  }
+  .admin-area {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e9e9e6;
+    padding-bottom: .5rem;
+    display: flex;
+    justify-content: flex-end;
 
-  .nuxt-content p {
-    line-height: 1.5;
-  }
-
-  img.featured {
-    width: 100%;
-    height: auto;
-    float: left;
-    margin-right: 1.5rem;
-    margin-bottom: .5rem;
-    object-fit: cover;
-  }
-
-  .icon.icon-link {
-    background-image: url('~assets/svg/icon-hashtag.svg');
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-size: 20px 20px;
-  }
-
-  .content {
-    img {
-      max-width: 100%;
+    .btn {
+      text-transform: uppercase;
+      margin-left: .2rem;
+      background-color: rgb(103, 126, 182);
+      color: white;
+      padding: .5rem .8rem;
     }
+  }
+
+  article {
+    font-size: 1.2rem;
+    font-family: var(--primary-font);
+
+    .article-head {
+      text-align: left !important;
+    }
+
+    h1 {
+      font-family: var(--secondary-font);
+      margin-top: 0;
+    }
+
+    .nuxt-content h2 {
+      font-weight: bold;
+      font-size: 28px;
+    }
+
+    .nuxt-content h3 {
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    .nuxt-content p {
+      line-height: 1.6;
+    }
+
+    img.featured {
+      width: 100%;
+      max-width: 580px;
+      height: auto;
+      float: left;
+      margin-right: 1.5rem;
+      margin-bottom: 1.5rem;
+      object-fit: cover;
+    }
+
+    .icon.icon-link {
+      background-image: url('~assets/svg/icon-hashtag.svg');
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-size: 20px 20px;
+    }
+
+    .content {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .page-content {
+    article {
+      .article-head {
+        text-align: left !important;
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .slug-page {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 </style>

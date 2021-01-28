@@ -9,12 +9,7 @@
 
 <script>
 export default {
-  name: 'NewPost',
+  name: 'NewPost'
+
 }
 </script>
-
-<style scoped>
-.message {
-  margin-top: 2rem;
-}
-</style>
