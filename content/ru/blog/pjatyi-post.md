@@ -1,6 +1,6 @@
 ---
-title: Новый пятый пост
-description: Описание 5-го поста
+title: Кролики
+description: Описание поста про кроликов
 image: hazen.jpg
 alt: Alt
 slug: pjatyi-post

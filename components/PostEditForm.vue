@@ -7,7 +7,7 @@
     <form class="editForm"
       @submit.prevent="onSubmit"
       enctype="multipart/form-data"
-      style="font-size:1.1em; line-height:1.7em; font-family:'Roboto', sans-serif; font-weight:300 !important;"
+      style="font-size:1.1em; line-height:1.7em; font-family:'Bellota Text', sans-serif; font-weight:400 !important;"
     >
       <p class="w-100">
         <label>Images</label>

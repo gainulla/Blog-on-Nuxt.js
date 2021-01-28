@@ -1,6 +1,6 @@
 ---
-title: Fifth post
-description: The 5-th post description
+title: Rabbits
+description: The post short description
 image: hazen.jpg
 alt: Alt
 slug: fifth-post

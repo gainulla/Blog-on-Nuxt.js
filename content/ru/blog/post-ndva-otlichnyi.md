@@ -1,5 +1,5 @@
 ---
-title: Второй пост
+title: Симпатичный котик
 description: Описание второго поста
 image: koshka-dom-uiut-26.jpg
 alt: Featured Second

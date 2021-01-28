@@ -1,6 +1,6 @@
 ---
-title: The 6-th post
-description: Description of 6-th post
+title: House in the valley
+description: Description of the post
 image: valley-home.jpg
 alt: Alt
 slug: post-sixth

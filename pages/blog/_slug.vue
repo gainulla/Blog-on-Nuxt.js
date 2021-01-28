@@ -126,15 +126,15 @@ export default {
 
   .admin-area {
     margin-bottom: 2rem;
-    border-bottom: 1px solid #e9e9e6;
-    padding-bottom: .5rem;
+    border-top: 1px solid #e9e9e6;
+    padding-top: .5rem;
     display: flex;
     justify-content: flex-end;
 
     .btn {
       text-transform: uppercase;
       margin-left: .2rem;
-      background-color: rgb(103, 126, 182);
+      background-color: rgb(92, 95, 100);
       color: white;
       padding: .5rem .8rem;
     }
@@ -188,6 +188,8 @@ export default {
     .content {
       img {
         max-width: 100%;
+        margin-top: 1.7rem;
+        margin-bottom: 1.5rem;
       }
     }
   }
@@ -195,6 +197,8 @@ export default {
 
 @media (min-width: 768px) {
   .page-content {
+    margin-top: 4rem;
+
     article {
       .article-head {
         text-align: left !important;

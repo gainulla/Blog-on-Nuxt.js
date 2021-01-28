@@ -1,6 +1,6 @@
 ---
-title: Шестой пост
-description: Короткое описание 6-го поста
+title: Домишка в долине
+description: Короткое описание поста
 image: valley-home.jpg
 alt: Alt
 slug: post-shestoi

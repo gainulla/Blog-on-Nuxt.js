@@ -1,5 +1,5 @@
 ---
-title: First post
+title: Butterfly
 description: First post description
 image: babochka-cvety-rozmytost.jpg
 alt: Featured

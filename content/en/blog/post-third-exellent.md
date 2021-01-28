@@ -1,5 +1,5 @@
 ---
-title: Third Exellent
+title: Lion - the King of animals
 description: Description
 image: lev-belyi-zoopark.jpg
 alt: Featured Alt

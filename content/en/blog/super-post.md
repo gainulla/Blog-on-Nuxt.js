@@ -1,6 +1,6 @@
 ---
-title: This post is on English
-description: Super title short description
+title: The sleeping fox
+description: Post entry text
 image: lisa-les-trava-son.jpg
 alt: Image alt
 slug: super-post

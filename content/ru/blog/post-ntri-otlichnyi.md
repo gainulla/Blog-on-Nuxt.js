@@ -1,6 +1,6 @@
 ---
-title: Третий пост отлично
-description: Описание
+title: Лев - цар зверей
+description: Описание поста про царя зверей
 image: lev-belyi-zoopark.jpg
 alt: Featured Alt
 slug: post-ntri-otlichnyi

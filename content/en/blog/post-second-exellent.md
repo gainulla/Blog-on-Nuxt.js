@@ -1,6 +1,6 @@
 ---
-title: Post Second Exellent
-description: Post Second Description
+title: The cute cat
+description: The post entry text or description
 image: koshka-dom-uiut-26.jpg
 alt: Featured Second
 slug: post-second-exellent

@@ -1,5 +1,5 @@
 ---
-title: Этот пост на русском
+title: Спящая лиса
 description: Это короткое описание поста
 image: lisa-les-trava-son.jpg
 alt: Image alt

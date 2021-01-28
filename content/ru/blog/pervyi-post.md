@@ -1,5 +1,5 @@
 ---
-title: Первый пост на русском языке
+title: Эффект бабочки
 description: Вводный текст первого поста
 image: babochka-cvety-rozmytost.jpg
 alt: Featured
