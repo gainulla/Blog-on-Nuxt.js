@@ -9,7 +9,7 @@
         <article v-for="(article, i) in articles" :key="i">
           <nuxt-link :to="article.path">
             <div class="row">
-              <div class="column col-5">
+              <div class="column col-md-5 col-lg-4">
                 <img :src="require(`~/assets/images/featured/${article.image}`)" />
               </div>
               <div class="column">
@@ -128,9 +128,6 @@ export default {
   }
 
   .articles {
-    padding-left: 0;
-    padding-right: 0;
-
     article {
       margin-bottom: 2rem;
       a {
@@ -152,10 +149,4 @@ export default {
   }
 }
 
-@media (min-width: 992px) {
-  .articles {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
 </style>

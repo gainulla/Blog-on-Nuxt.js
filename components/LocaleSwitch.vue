@@ -58,7 +58,6 @@ ul.lang-switch {
     background-color: white;
 
     a {
-      font-size: 1.2rem;
       font-weight: 500;
       display: block;
       text-transform: uppercase;

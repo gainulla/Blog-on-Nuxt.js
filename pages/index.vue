@@ -112,16 +112,16 @@ export default {
       flex-flow: column;
       justify-content: center;
       align-items: center;
-      font-size: 1.8rem;
       text-transform: capitalize;
       cursor: pointer;
       
       a.link {
         color:  lighten($north, 10);
+        font-size: 1.6rem;
         font-weight: bold;
         display: block;
-        margin-bottom: -1rem;
-        margin-right: -.5rem;
+        margin-bottom: -25px;
+        margin-left: 10px;
         &:hover {
           color: lighten($south, 10);
         }
@@ -129,8 +129,8 @@ export default {
 
       .locale-switch-comp {
         position: absolute;
-        top: 3px;
-        left: -8px;
+        top: 10px;
+        left: -3px;
       }
     }
 
@@ -232,8 +232,8 @@ export default {
       .button {
         .locale-switch-comp {
           position: absolute;
-          top: 12px;
-          left: 3px;
+          top: 20px;
+          left: 10px;
         }
       }
     }
