@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="container clearfix">
-      <div class="flex-container">
+      <div class="header">
     
         <div class="logo-wrap">
           <a :href="pathFor('/')" class="logo polygon">
@@ -15,29 +15,24 @@
 
         <AppSearchInput :locale="$i18n.locale" class="app-search-comp" />
 
-        <LocaleSwitch :allLanguages="allLanguages" class="locale-switch-comp" />
+        <div class="locale-switch-comp">
+          <slot name="locale-switch" />
+        </div>
 
       </div>
     </div>
-
   </header>
 </template>
 
 <script>
 export default {
   name: 'Header',
-
-  props: {
-    allLanguages: {
-      default: null
-    }
-  }
 }
 </script>
 
 <style lang="scss" scoped>
 
-.flex-container {
+.header {
   position: relative;
   height: 12rem;
   display: flex;
@@ -81,11 +76,10 @@ export default {
     top: 15px;
     right: 0;
   }
-
 }
 
 @media (min-width: 576px) {
-  .flex-container {
+  .header {
     .logo-wrap {
       width: 10rem;
       height: 10.5rem;
@@ -102,7 +96,7 @@ export default {
 }
 
 @media (min-width: 768px) {
-  .flex-container {
+  .header {
     .locale-switch-comp {
       position: relative;
       width: 10rem;

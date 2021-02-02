@@ -2,17 +2,21 @@
   <div>
 
     <ul v-if="isContentPage" class="lang-switch">
-      <li v-for="(lang, key) in languages" :key="key"
+      <li v-for="(lang, key) in allLanguages" :key="key"
         :class="{ 'active': $i18n.locale == lang.locale }"
       >
-        <nuxt-link :to="pathFor('/blog', lang.locale, lang.slug)">
-          {{ lang.locale }}
-        </nuxt-link>
+        <nuxt-link v-if="path == '/blog'"
+          :to="pathFor(path, lang.locale, lang.slug)"
+        >{{ lang.locale }}</nuxt-link>
+
+        <nuxt-link v-if="path == '/blog/tag'"
+          :to="pathFor(path, lang.locale, $tagsArr(lang.tags)[tagPriority])"
+        >{{ lang.locale }}</nuxt-link>
       </li>
     </ul>
 
     <ul v-else class="lang-switch">
-      <li v-for="(lang, key) in languages" :key="key"
+      <li v-for="(lang, key) in allLanguages" :key="key"
         :class="{ 'active': $i18n.locale == lang.locale }"
       >
         <nuxt-link :to="switchLocalePath(lang.locale)">
@@ -28,23 +32,38 @@
 export default {
   name: 'LocaleSwitch',
 
-  computed: {
-    isContentPage() {
-      return this.$route.name.includes('slug')
+  props: {
+    allLanguages: {
+      type: Array,
+      default: () => ([
+        { locale: 'en', slug: '', tags: '' },
+        { locale: 'ru', slug: '', tags: '' }        
+      ])
     },
-    languages() {
-      if (this.allLanguages == null) {
-        return [
-          { locale: 'en', slug: false },
-          { locale: 'ru', slug: false }
-        ]
-      } else {
-        return this.allLanguages
-      }
-    }
+    path: {
+      default: () => '/'
+    },
   },
 
-  props: ['allLanguages']
+  computed: {
+    isContentPage() {
+      return (
+        this.$route.name.includes('slug') ||
+        this.$route.name.includes('tag')
+      )
+    },
+    tagPriority() {
+      let arrKey = 0
+      const tagsArr = this.$tagsArr(this.allLanguages)
+      tagsArr.forEach((tag, i) => {
+        const tagDec = decodeURI(this.$route.params.tag).trim()
+        if (tag == tagDec) {
+          arrKey = i
+        }
+      })
+      return arrKey;
+    }
+  }
 }
 </script>
 

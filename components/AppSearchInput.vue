@@ -59,18 +59,18 @@ export default {
 
   input {
     width: 100%;
-    height: 2.5rem;
     font-size: 1.1rem;
     font-weight: 300;
-    padding: .5rem .8rem;
+    padding: .46rem .8rem;
     border: 1px solid #EEE;
-    border-radius: .4rem;
+    border-radius: 1.2rem;
     outline: none;
   }
 
   .icon.search {
     align-self: flex-end;
     margin-top: -34px;
+    margin-right: -2px;
     opacity: .24;
     cursor: pointer;
   }

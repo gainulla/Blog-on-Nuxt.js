@@ -1,6 +1,12 @@
 <template>
   <div>
-    <Header :allLanguages="article.allLanguages" />
+    <Header>
+      <LocaleSwitch
+        slot="locale-switch"
+        :path="'/blog'"
+        :allLanguages="article.allLanguages"
+      />
+    </Header>
 
     <div class="page-content">
       <div class="container">

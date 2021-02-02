@@ -29,7 +29,8 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '@/plugins/prism',
-    '@/plugins/vue-mixins'
+    '@/plugins/vue-mixins',
+    '@/plugins/glob-funcs'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

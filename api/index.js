@@ -79,10 +79,18 @@ router.post('/write-file', async (req, res) => {
     let filename = `content/${req.body.language}/blog/${metadata.slug}.md`
       filename = path.normalize(filename)
 
+    let message = ""
+
+    if (req.body.language == 'en') {
+      message = 'Recorded!'
+    } else if (req.body.language == 'ru') {
+      message = 'Записано!'
+    }
+
     write(filename, req.body.mdeValue).then(() => {
       res.send({
         status: true,
-        message: 'Check Markdown in folder',
+        message: message,
         filename: filename,
         imgData: imgData
       })

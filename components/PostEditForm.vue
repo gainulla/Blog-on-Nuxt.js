@@ -97,8 +97,8 @@ export default {
           slug: 'post-slug',
           tags: 'tag1, tag2',
           allLanguages: [
-            { locale: 'en', slug: 'post-slug' },
-            { locale: 'ru', slug: 'слаг-поста' }
+            { locale: 'en', slug: 'post-slug', tags: '' },
+            { locale: 'ru', slug: 'слаг-поста', tags: '' },
           ]
         }
       } else {
@@ -108,7 +108,6 @@ export default {
           image: this.data.article.image,
           alt: this.data.article.alt,
           slug: this.data.article.slug,
-          tags: this.data.article.tags,
           allLanguages: this.data.article.allLanguages
         }
       }

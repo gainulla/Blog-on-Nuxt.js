@@ -8,7 +8,7 @@
     "blog": "Latest Posts"
   },
   "postForm": {
-    "error": "Can't parse some submitted data!"
+    "error": "Fail to parse something!"
   },
   "searchPH": "Search...",
   "metier": "Web developer",

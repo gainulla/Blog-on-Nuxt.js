@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Header />
+    <Header>
+      <LocaleSwitch slot="locale-switch" />
+    </Header>
+
     <div class="container">
       <PostEditForm :data="data" />
     </div>
