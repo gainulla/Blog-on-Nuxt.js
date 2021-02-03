@@ -4,7 +4,7 @@ description: First post description
 image: babochka-cvety-rozmytost.jpg
 alt: Featured
 slug: 2021-01-31-butterfly
-allLanguages:
+localesData:
   - locale: en
     slug: 2021-01-31-butterfly
     tags: butterfly, flowers, test

@@ -47,7 +47,7 @@ export default {
       ],
       script: [
         {
-          id: 'script',
+          id: 'simplemdeScript',
           src: 'https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js',
           async: true,
           defer: true,
@@ -58,7 +58,7 @@ export default {
   },
 
   mounted() {
-    if (document.getElementById('script')) {
+    if (document.getElementById('simplemdeScript')) {
       window.onload = () => this.init()
     }
   },
@@ -93,12 +93,11 @@ export default {
           title: 'Title',
           description: 'Description',
           image: 'default.jpg',
-          alt: 'Alt',
+          alt: 'Image',
           slug: 'post-slug',
-          tags: 'tag1, tag2',
-          allLanguages: [
-            { locale: 'en', slug: 'post-slug', tags: '' },
-            { locale: 'ru', slug: 'слаг-поста', tags: '' },
+          localesData: [
+            { locale: 'en', slug: 'post-slug', tags: 'no tag' },
+            { locale: 'ru', slug: 'слаг-поста', tags: 'no tag' },
           ]
         }
       } else {
@@ -108,7 +107,7 @@ export default {
           image: this.data.article.image,
           alt: this.data.article.alt,
           slug: this.data.article.slug,
-          allLanguages: this.data.article.allLanguages
+          localesData: this.data.article.localesData
         }
       }
 

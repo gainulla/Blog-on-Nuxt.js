@@ -4,7 +4,7 @@
       <LocaleSwitch
         slot="locale-switch"
         :path="'/blog'"
-        :allLanguages="article.allLanguages"
+        :localesData="article.localesData"
       />
     </Header>
 

@@ -89,18 +89,11 @@ export default {
       display: flex;
       align-items: flex-end;
       flex-grow: 1;
-      max-width: 400px;
-      margin: 0 auto;
+      width: auto;
+      margin: 7.2rem auto;
+      margin-left: -9.6rem;
     }
   }
 }
 
-@media (min-width: 768px) {
-  .header {
-    .locale-switch-comp {
-      position: relative;
-      width: 10rem;
-    }
-  }
-}
 </style>

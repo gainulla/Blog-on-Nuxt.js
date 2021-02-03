@@ -4,7 +4,7 @@
       <LocaleSwitch
         slot="locale-switch"
         :path="'/blog/tag'"
-        :allLanguages="firstArticle.allLanguages"
+        :localesData="firstArticle.localesData"
       />
     </Header>
 
@@ -27,14 +27,14 @@ export default {
     const currentLocale = app.i18n.locale
 
     const allArticles = await $content(`${currentLocale}/blog`)
-      .only(['title', 'description', 'image', 'slug', 'allLanguages', 'path'])
+      .only(['title', 'description', 'image', 'slug', 'localesData', 'path'])
       .sortBy('createdAt', 'desc')
       .fetch()
 
     let tagArticles = []
 
     allArticles.forEach(article => {
-      const tagsArr = $tagsArr(article.allLanguages)
+      const tagsArr = $tagsArr(article.localesData)
       tagsArr.forEach(tag => {
         const tagDec = decodeURI(params.tag).trim()
         if (tag == tagDec) {

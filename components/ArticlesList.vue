@@ -20,10 +20,10 @@
               </p>
               <div class="tags">
                 <nuxt-link
-                  v-for="(tag, i) of $tagsArr(article.allLanguages)"
+                  v-for="(tag, i) of $tagsArr(article.localesData)"
                   :to="pathFor('/blog/tag', $i18n.locale, tag)"
                   :key="i"
-                >{{ $tagsArr(article.allLanguages).length > (i + 1)
+                >{{ $tagsArr(article.localesData).length > (i + 1)
                   ? `${tag},` : tag }}
                 </nuxt-link>
               </div>

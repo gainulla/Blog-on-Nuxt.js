@@ -2,7 +2,7 @@
   <div>
 
     <ul v-if="isContentPage" class="lang-switch">
-      <li v-for="(lang, key) in allLanguages" :key="key"
+      <li v-for="(lang, key) in localesData" :key="key"
         :class="{ 'active': $i18n.locale == lang.locale }"
       >
         <nuxt-link v-if="path == '/blog'"
@@ -16,7 +16,7 @@
     </ul>
 
     <ul v-else class="lang-switch">
-      <li v-for="(lang, key) in allLanguages" :key="key"
+      <li v-for="(lang, key) in localesData" :key="key"
         :class="{ 'active': $i18n.locale == lang.locale }"
       >
         <nuxt-link :to="switchLocalePath(lang.locale)">
@@ -33,7 +33,7 @@ export default {
   name: 'LocaleSwitch',
 
   props: {
-    allLanguages: {
+    localesData: {
       type: Array,
       default: () => ([
         { locale: 'en', slug: '', tags: '' },
@@ -54,7 +54,7 @@ export default {
     },
     tagPriority() {
       let arrKey = 0
-      const tagsArr = this.$tagsArr(this.allLanguages)
+      const tagsArr = this.$tagsArr(this.localesData)
       tagsArr.forEach((tag, i) => {
         const tagDec = decodeURI(this.$route.params.tag).trim()
         if (tag == tagDec) {

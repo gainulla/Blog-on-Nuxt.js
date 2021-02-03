@@ -177,8 +177,6 @@ hr.wide-border {
 
 @media (max-width: 767px) {
   .container {
-    overflow: auto;
-
     .column {
       min-width: 100%;
       width: 100%;

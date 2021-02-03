@@ -1,25 +1,27 @@
 <template>
-  <div class="search-wrapper">
-    
-    <input
-      v-model="searchQuery"
-      type="search"
-      autocomplete="off"
-      :placeholder="$t('searchPH')"
-    >
+  <div class="search">
+    <div class="search-inner">
+      
+      <input
+        v-model="searchQuery"
+        type="search"
+        autocomplete="off"
+        :placeholder="$t('searchPH')"
+      >
 
-    <span v-if="articles.length == 0" class="icon search" />
-    
-    <ul v-if="articles.length">
-      <li v-for="article of articles" :key="article.slug">
-        <NuxtLink :to="{
-            name: `blog-slug___${locale}`,
-            params: { slug: article.slug }
-          }"
-        >{{ article.title }}</NuxtLink>
-      </li>
-    </ul>
+      <span v-if="articles.length == 0" class="icon search" />
+      
+      <ul v-if="articles.length">
+        <li v-for="article of articles" :key="article.slug">
+          <NuxtLink :to="{
+              name: `blog-slug___${locale}`,
+              params: { slug: article.slug }
+            }"
+          >{{ article.title }}</NuxtLink>
+        </li>
+      </ul>
 
+    </div>
   </div>
 </template>
 
@@ -51,46 +53,54 @@ export default {
 
 <style lang="scss" scoped>
 
-.search-wrapper {
-  position: relative;
+$search-height: 2.4rem;
+
+.search {
   width: 100%;
-  display: flex;
-  flex-flow: column;
+  height: $search-height;
 
-  input {
-    width: 100%;
-    font-size: 1.1rem;
-    font-weight: 300;
-    padding: .46rem .8rem;
-    border: 1px solid #EEE;
-    border-radius: 1.2rem;
-    outline: none;
-  }
+  .search-inner {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    width: 260px;
+    height: $search-height;
+    margin: 0 auto;
 
-  .icon.search {
-    align-self: flex-end;
-    margin-top: -34px;
-    margin-right: -2px;
-    opacity: .24;
-    cursor: pointer;
-  }
+    input {
+      width: 100%;
+      font-size: 1.1rem;
+      font-weight: 300;
+      padding: .46rem .8rem;
+      border: 1px solid #EEE;
+      border-radius: 1.2rem;
+      outline: none;
+    }
 
-  ul {
-    width: 100%;
-    padding: 1rem;
-    background-color: #F2F2F2;
-    li {
-      padding: .2rem 0;
+    .icon.search {
+      position: absolute;
+      top: 4px;
+      right: 0;
+      align-self: flex-end;
+      width: 34px;
+      opacity: .24;
+      cursor: pointer;
+    }
+
+    ul {
+      width: 100%;
+      padding: 1rem;
+      background-color: #F2F2F2;
+      li {
+        padding: .2rem 0;
+      }
     }
   }
 }
 
-@media (min-width: 576px) {
-  .search-wrapper {
-    width: 320px;
-    input {
-      margin-top: 7rem;
-    }
+@media (min-width: 768px) {
+  .search .search-inner {
+    min-width: 320px;
   }
 }
 </style>

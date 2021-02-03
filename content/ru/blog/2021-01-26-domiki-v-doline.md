@@ -4,7 +4,7 @@ description: Короткое описание поста
 image: valley-home.jpg
 alt: Alt
 slug: 2021-01-26-domiki-v-doline
-allLanguages:
+localesData:
   - locale: en
     slug: 2021-01-26-houses-in-valley
     tags: houses, valley
