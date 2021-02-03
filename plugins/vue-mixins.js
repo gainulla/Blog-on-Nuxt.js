@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import CyrillicToTranslit from 'cyrillic-to-translit-js'
 
 Vue.mixin({
   methods: {
@@ -10,6 +11,7 @@ Vue.mixin({
       if (locale == this.$i18n.defaultLocale) {
         return path + param
       } else {
+        param = CyrillicToTranslit().transform(param, '-')
         return '/' + locale + path + param
       }
     }

@@ -56,6 +56,14 @@ h1, h2, h3, h4, h5 {
   font-weight: normal;
 }
 
+.headline {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  font-family: var(--primary-font);
+  font-weight: 700;
+}
+
 .message {
   background-color: #EEE;
   padding: 1rem 1.6rem;
@@ -82,14 +90,6 @@ span.icon {
   &.search {
     background-image: url('~assets/svg/icon-search.svg');
   }
-}
-
-hr.wide-border {
-  height: 10px;
-  border: 0;
-  box-shadow: inset 0 15px 15px -12px rgba(37, 16, 16, 0.14);
-  margin-top: 4rem;
-  margin-bottom: 0;
 }
 
 .logo {
@@ -206,6 +206,10 @@ hr.wide-border {
     &.col-md-6 {
       max-width: calc(100% / 2);
     }
+  }
+
+  .headline {
+    margin-bottom: 3rem;
   }
 }
 

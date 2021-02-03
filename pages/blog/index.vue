@@ -38,21 +38,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-
-.headline {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-size: 2.4rem;
-  font-family: var(--primary-font);
-  font-weight: 700;
-}
-
-@media (min-width: 768px) {
-  .headline {
-    margin-bottom: 3rem;
-  }
-}
-
-</style>

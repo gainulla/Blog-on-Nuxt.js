@@ -4,7 +4,7 @@
       <LocaleSwitch
         slot="locale-switch"
         :path="'/blog/tag'"
-        :localesData="firstArticle.localesData"
+        :localesData="localesData"
       />
     </Header>
 
@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import CyrillicToTranslit from 'cyrillic-to-translit-js'
+
 export default {
   name: 'Blog',
 
@@ -37,7 +39,8 @@ export default {
       const tagsArr = $tagsArr(article.localesData)
       tagsArr.forEach(tag => {
         const tagDec = decodeURI(params.tag).trim()
-        if (tag == tagDec) {
+        
+        if (CyrillicToTranslit().transform(tag, '-' ) == tagDec) {
           tagArticles.push(article)
         }
       })
@@ -51,7 +54,7 @@ export default {
               : article.path,
       })),
 
-      firstArticle: tagArticles[0]
+      localesData: tagArticles[0].localesData
     }
   }
 

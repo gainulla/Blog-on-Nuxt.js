@@ -11,23 +11,26 @@
   "dependencies": {
     "@nuxt/content": "^1.11.1",
     "axios": "^0.21.1",
-    "body-parser": "^1.19.0",
     "core-js": "^3.6.5",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "express-fileupload": "^1.2.0",
-    "lodash": "^4.17.20",
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.18.0",
-    "parse-md": "^2.0.4",
     "prism-themes": "^1.5.0",
-    "prismjs": "^1.23.0",
-    "write": "^2.0.0",
-    "yaml": "^1.10.0"
+    "prismjs": "^1.23.0"
   },
   "devDependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cyrillic-to-translit-js": "^3.1.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
     "fibers": "^5.0.0",
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.20",
+    "parse-md": "^2.0.4",
+    "path": "^0.12.7",
     "sass": "^1.32.0",
-    "sass-loader": "^10.1.0"
+    "sass-loader": "^10.1.0",
+    "write": "^2.0.0",
+    "yaml": "^1.10.0"
   }
 }
