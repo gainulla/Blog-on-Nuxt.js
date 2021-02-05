@@ -135,7 +135,7 @@ span.icon {
 
 .container {
   margin: 0 auto;
-  max-width: 1160px;
+  max-width: 1024px;
   min-width: 320px;
   padding-left: 15px;
   padding-right: 15px;
