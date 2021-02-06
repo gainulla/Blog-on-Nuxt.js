@@ -5,7 +5,8 @@
     
         <div class="logo-wrap">
           <a :href="pathFor('/')" class="logo polygon">
-            <img :src="require('~/assets/images/logo.png')" class="polygon-rotate" />
+            <!-- <img :src="require('~/assets/images/logo.png')" class="polygon-rotate" /> -->
+            <img :src="require('~/assets/images/site-logo.svg')" class="polygon-rotate" />
           </a>
         </div>
 

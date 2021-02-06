@@ -111,7 +111,7 @@ span.icon {
   height: 100px;
   background-color: white;
   background-image: linear-gradient(66deg, #F6F6F8 50%, #f0f2f3 50%);
-  padding: 1rem .85rem .6rem .75rem;
+  padding: 16px 16px 10px 10px;
 
   img {
     width: 80px;

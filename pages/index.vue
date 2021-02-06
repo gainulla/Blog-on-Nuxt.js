@@ -9,7 +9,7 @@
     <div class="hero">
 
       <a :href="pathFor('/')" class="logo polygon">
-        <img :src="require('~/assets/images/logo.png')" class="polygon-rotate" />
+        <img :src="require('~/assets/images/site-logo.svg')" class="polygon-rotate" />
       </a>
 
       <div class="button polygon">
@@ -44,11 +44,12 @@ export default {
   $north: #1B3865;
 
   background: linear-gradient(
-    to top right, $south 50%, $north 50%);
+    to top right, #9CACBF 50%,#AAA8B1 50%);
+    //to top right, #EFD091 50%, #B49F88 50%);
     //to top right, #1E383C 50%, #1B3865 50%);
+    //to top right, $south 50%, $north 50%);
     //to top right, #1C7ED5 50%, #C7375F 50%);
-    //to top right, #AAA8B1 50%, #B49F88 50%); 
-    //to top right, #9CACBF 50%,#EFD091 50%);
+
 
   // background: radial-gradient(ellipse at bottom,#1b2735 0%,#090a0f 100%);
   // filter: drop-shadow(0 0 10px white);  
@@ -136,19 +137,20 @@ export default {
 
     .text {
       display: inline-block;
+      color: #544;
+      padding-top: 2rem;
 
       h1 {
         font-size: 2.4rem;
         font-family: var(--bold-font);
         font-weight: 900;
         letter-spacing: .02em;
-        color: #F2F2F2;
         margin: 0;
       }
       p {
         font-size: 1rem;
         letter-spacing: .05rem;
-        color: white;
+        font-weight: 600;
         &:first-letter {
           text-transform: capitalize;
         }
