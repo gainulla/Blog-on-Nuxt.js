@@ -58,18 +58,17 @@ export default {
     Prism.highlightAll()
   },
 
-  data() {
-    return { hostname: "" }
-  },
-
-  created() {
-    if (process.client) {
-      this.hostname = window.location.hostname
+  computed: {
+    hostname() {
+      if (process.server) {
+        return this.host
+      }
+      return window.location.hostname
     }
   },
 
   async asyncData(context) {
-    const { $content, params, app, route, redirect } = context
+    const { $content, params, app, route, redirect, ssrContext } = context
     const article = await $content(`${app.i18n.locale}/blog`, params.slug)
                             .fetch()
 
@@ -89,7 +88,8 @@ export default {
       },
       newArticleRoute: {
         name: `admin-blog-new___${ app.i18n.locale }`,
-      }
+      },
+      host: (process.server && !context.payload ) ? ssrContext.req.headers.host : ''
     }
   },
 
@@ -108,22 +108,22 @@ export default {
       },
       meta: [
         {
-          hid: 'og:description',
-          property: 'og:description',
-          content: this.article.description,
-        },
-        {
           property: 'og:title',
           hid: 'og:title',
-          content: this.article.title,
+          content: this.article.title
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.article.description
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.article.media,
-        },
-      ],
-    };
+          content: this.hostname + '/' + this.article.image
+        }
+      ]
+    }
   }
 }
 </script>
@@ -133,11 +133,11 @@ export default {
 .page-content {
   margin-bottom: 3rem;
   margin-top: 2rem;
+  padding-top: 2rem;
   padding-bottom: 1rem;
 
   .admin-area {
     margin-bottom: 2rem;
-    padding-top: 2rem;
     display: flex;
     justify-content: flex-end;
 
