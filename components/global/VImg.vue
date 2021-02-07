@@ -1,5 +1,12 @@
 <template>
-  <img :src="imgSrc()" :alt="alt" />
+  <img
+    :srcset="`
+      ${contImg(src)} 1024w,
+      ${contImg($appendImgSize(src, '_small'))} 600w,
+      ${contImg($appendImgSize(src, '_thumb'))} 320w
+    `"
+    :alt="alt"
+  />
 </template>
 
 <script>

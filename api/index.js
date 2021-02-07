@@ -7,6 +7,7 @@ const fileUpload = require('express-fileupload')
 const cors = require('cors')
 const fs = require('fs')
 const jimp = require('jimp')
+const glob = require('../plugins/_global-fn.js')
 
 const app = express()
 
@@ -22,7 +23,7 @@ router.use((req, res, next) => {
   next()
 })
 
-router.post('/write-file', async (req, res) => {
+router.post('/handle-form', async (req, res) => {
 
   let imgData = []
   const metadata = JSON.parse(req.body.metadata)
@@ -64,8 +65,8 @@ router.post('/write-file', async (req, res) => {
       if (req.body.image != featImgName && req.body.image != defImage) {
         const featDir = 'assets/images/featured'
         const featImgOld = path.normalize(`${featDir}/${req.body.image}`)
-        const small = appendImgSize(featImgOld, '_small')
-        const thumb = appendImgSize(featImgOld, '_thumb')
+        const small = glob.appendImgSize(featImgOld, '_small')
+        const thumb = glob.appendImgSize(featImgOld, '_thumb')
         await fs.unlink(featImgOld, err => console.log(err))
         await fs.unlink(small, err => console.log(err))
         await fs.unlink(thumb, err => console.log(err))
@@ -108,14 +109,10 @@ const multiResizeImage = async (filename) => {
   await image.writeAsync(filename)
 
   await image.resize(600, jimp.AUTO)
-  const small = appendImgSize(filename, '_small')
+  const small = glob.appendImgSize(filename, '_small')
   await image.writeAsync(small)
 
   await image.resize(320, jimp.AUTO)
-  const thumb = appendImgSize(filename, '_thumb')
+  const thumb = glob.appendImgSize(filename, '_thumb')
   await image.writeAsync(thumb)
-}
-
-const appendImgSize = (filename, append="") => {
-  return filename.replace(/(\.[\w\d?=_-]+)$/i, `${append}$1`)
 }

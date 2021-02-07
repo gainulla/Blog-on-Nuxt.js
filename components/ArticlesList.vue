@@ -5,8 +5,12 @@
         <div class="row">
           
           <div class="column col-md-5 col-lg-4">
-            <nuxt-link :to="article.path">
-              <img :src="require(`~/assets/images/featured/${article.image}`)" />
+            <nuxt-link :to="article.path" class="image-link">
+              <img :srcset="`
+                ${featImg(article.image)} 1024w,
+                ${featImg($appendImgSize(article.image, '_small'))} 600w,
+                ${featImg($appendImgSize(article.image, '_thumb'))} 320w
+              `" />
             </nuxt-link>
           </div>
 
@@ -41,10 +45,12 @@
 </template>
 
 <script>
+import path from 'path'
+
 export default {
   name: 'ArticlesList',
 
-  props: ['articles'],
+  props: ['articles']
 }
 </script>
 
@@ -112,16 +118,21 @@ export default {
       margin-bottom: 2rem;
 
       .article-inner {
+        display: block;
+        box-shadow: 1px 1px 20px 7px rgba(#DDD, .3);
+
         img {
+          box-shadow: -4px -1px 16px 4px rgba(#DDD, .3);
+
           border-top-left-radius: .4rem;
           border-bottom-left-radius: .4rem;
           min-height: 250px;
           max-height: 250px;
         }
         .details {
+          background-color: lighten(#DDD, 10);
           padding: 25px;
           height: 100%;
-          border: 1px solid #EEE;
           border-top-right-radius: .4rem;
           border-bottom-right-radius: .4rem;
         }

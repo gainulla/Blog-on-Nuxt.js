@@ -14,6 +14,26 @@ Vue.mixin({
         param = CyrillicToTranslit().transform(param, '-')
         return '/' + locale + path + param
       }
+    },
+
+    featImg(name) {
+      return this.imgByType(name, 'featured')
+    },
+
+    contImg(name) {
+      return this.imgByType(name, 'content')
+    },
+
+    imgByType(name, type) {
+      if (name == '' || name == 'default.jpg') {
+        return require('~/assets/images/default.jpg')
+      } else {
+        if (type == 'featured') {
+          return require(`~/assets/images/featured/${name}`)
+        } else if (type == 'content') {
+          return require(`~/assets/images/content/${name}`)
+        }
+      }
     }
 
   }

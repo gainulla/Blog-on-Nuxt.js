@@ -161,7 +161,7 @@ export default {
       // for (let value of data.values()) {
       //   console.log('FORM VALUE', value)
       // }
-      axios.post('http://localhost:3000/api/write-file', data)
+      axios.post('http://localhost:3000/api/handle-form', data)
         .then(res => {
           alert(res.data.message)
         })

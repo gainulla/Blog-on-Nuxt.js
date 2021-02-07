@@ -30,7 +30,7 @@ export default {
   plugins: [
     '@/plugins/prism',
     '@/plugins/vue-mixins',
-    '@/plugins/glob-funcs'
+    '@/plugins/nuxt-funcs'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

@@ -9,9 +9,7 @@
     </Header>
 
     <div class="container">
-      <h1 class="headline text-center">
-        {{ decodeURI($route.params.tag).trim() }}
-      </h1>
+      <h1 class="headline text-center">{{ pageTag }}</h1>
 
       <ArticlesList :articles="articles" />
 
@@ -34,6 +32,7 @@ export default {
       .fetch()
 
     let tagArticles = []
+    let pageTag = ''
 
     allArticles.forEach(article => {
       const tagsArr = $tagsArr(article.localesData)
@@ -41,6 +40,7 @@ export default {
         const tagDec = decodeURI(params.tag).trim()
         
         if (CyrillicToTranslit().transform(tag, '-' ) == tagDec) {
+          pageTag = tag
           tagArticles.push(article)
         }
       })
@@ -54,7 +54,8 @@ export default {
               : article.path,
       })),
 
-      localesData: tagArticles[0].localesData
+      localesData: tagArticles[0].localesData,
+      pageTag: pageTag
     }
   }
 

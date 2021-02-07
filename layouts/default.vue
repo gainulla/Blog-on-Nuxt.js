@@ -6,7 +6,7 @@
 
 html {
   box-sizing: border-box;
-  --body-bg: white;
+  --body-bg: #FFF;
 
   --link: darkslategray;
   --link-visited: palevioletred;
@@ -111,24 +111,25 @@ span.icon {
   height: 100px;
   background-color: white;
   background-image: linear-gradient(66deg, #F6F6F8 50%, #f0f2f3 50%);
-  padding: 16px 16px 10px 10px;
+  padding: 20px;
 
   img {
-    width: 80px;
-    height: 72px;
+    width: 60px;
+    height: 60px;
   }
   .polygon-rotate {
     transform: rotate(-22.5deg) !important;
   }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .polygon {
     min-width: 130px;
     min-height: 130px;
+    padding: 25px;
     img {
-      width: 108px;
-      height: 98px;
+      width: 80px;
+      height: 80px;
     }
   }
 }

@@ -8,8 +8,8 @@
       />
     </Header>
 
-    <div class="page-content">
-      <div class="container">
+    <div class="container">
+      <div class="page-content">
 
         <div v-show="hostname == 'localhost'" class="admin-area">
           <nuxt-link :to="editArticleRoute" class="btn"
@@ -22,7 +22,11 @@
           <div class="row">
             <div class="column col-6">
               <img
-                :src="require(`~/assets/images/featured/${article.image}`)"
+                :srcset="`
+                  ${featImg(article.image)} 1024w,
+                  ${featImg($appendImgSize(article.image, '_small'))} 600w,
+                  ${featImg($appendImgSize(article.image, '_thumb'))} 320w
+                `"
                 :alt="article.alt"
                 class="featured"
               >
@@ -127,13 +131,13 @@ export default {
 <style lang="scss">
 
 .page-content {
-  padding-bottom: 3rem;
+  margin-bottom: 3rem;
   margin-top: 2rem;
+  padding-bottom: 1rem;
 
   .admin-area {
     margin-bottom: 2rem;
-    border-top: 1px solid #e9e9e6;
-    padding-top: .5rem;
+    padding-top: 2rem;
     display: flex;
     justify-content: flex-end;
 
@@ -203,7 +207,10 @@ export default {
 
 @media (min-width: 768px) {
   .page-content {
-    margin-top: 4rem;
+    margin-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: lighten(#DDD, 11);
 
     article {
       .article-head {
@@ -215,9 +222,10 @@ export default {
 }
 
 @media (min-width: 992px) {
-  .slug-page {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .page-content {
+    margin-top: 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 </style>

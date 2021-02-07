@@ -45,11 +45,10 @@ export default {
 
   background: linear-gradient(
     to top right, #9CACBF 50%,#AAA8B1 50%);
-    //to top right, #EFD091 50%, #B49F88 50%);
-    //to top right, #1E383C 50%, #1B3865 50%);
-    //to top right, $south 50%, $north 50%);
+    //to top right, #EFD091 50%, #9CACBF 50%);
     //to top right, #1C7ED5 50%, #C7375F 50%);
-
+    //to top right, $south 50%, $north 50%);
+    //to top right, #1E383C 50%, #1B3865 50%);
 
   // background: radial-gradient(ellipse at bottom,#1b2735 0%,#090a0f 100%);
   // filter: drop-shadow(0 0 10px white);  
@@ -137,13 +136,13 @@ export default {
 
     .text {
       display: inline-block;
-      color: #544;
-      padding-top: 2rem;
+      color: #656767;
+      padding-top: 4.5rem;
 
       h1 {
         font-size: 2.4rem;
-        font-family: var(--bold-font);
-        font-weight: 900;
+        font-family: var(--primary-font);
+        font-weight: 600;
         letter-spacing: .02em;
         margin: 0;
       }

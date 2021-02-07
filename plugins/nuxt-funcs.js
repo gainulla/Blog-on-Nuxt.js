@@ -1,3 +1,5 @@
+const glob = require('./_global-fn')
+
 export default (context, inject) => {
 
   inject('tagsArr', data => {
@@ -17,5 +19,7 @@ export default (context, inject) => {
     }
     return tagsArr
   })
+
+  inject('appendImgSize', glob.appendImgSize)
 
 }
