@@ -278,6 +278,7 @@ p.error {
     text-transform: uppercase;
     float: right;
     cursor: pointer;
+    outline: none;
   }
 }
 

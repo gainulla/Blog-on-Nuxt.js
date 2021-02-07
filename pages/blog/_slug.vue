@@ -9,15 +9,15 @@
     </Header>
 
     <div class="container">
+
+      <div v-show="hostname == 'localhost'" class="admin-area">
+        <nuxt-link :to="editArticleRoute" class="btn"
+        >Edit</nuxt-link>
+        <nuxt-link :to="newArticleRoute" class="btn"
+        >Add New</nuxt-link>
+      </div>
+
       <div class="page-content">
-
-        <div v-show="hostname == 'localhost'" class="admin-area">
-          <nuxt-link :to="editArticleRoute" class="btn"
-          >Edit</nuxt-link>
-          <nuxt-link :to="newArticleRoute" class="btn"
-          >Add New</nuxt-link>
-        </div>
-
         <article>
           <div class="row">
             <div class="column col-6">
@@ -130,25 +130,26 @@ export default {
 
 <style lang="scss">
 
+.admin-area {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #DADADA;
+  margin-bottom: -2rem;
+
+  .btn {
+    text-transform: uppercase;
+    margin-left: .2rem;
+    background-color: rgb(92, 95, 100);
+    color: white;
+    padding: .5rem .8rem;
+  }
+}
+
 .page-content {
   margin-bottom: 3rem;
   margin-top: 2rem;
   padding-top: 2rem;
   padding-bottom: 1rem;
-
-  .admin-area {
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: flex-end;
-
-    .btn {
-      text-transform: uppercase;
-      margin-left: .2rem;
-      background-color: rgb(92, 95, 100);
-      color: white;
-      padding: .5rem .8rem;
-    }
-  }
 
   article {
     font-size: 1.2rem;
@@ -210,6 +211,7 @@ export default {
     margin-top: 3rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-top: 3rem;
     background-color: lighten(#DDD, 11);
 
     article {
