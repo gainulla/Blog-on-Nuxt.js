@@ -13,9 +13,7 @@
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
-    "nuxt-i18n": "^6.18.0",
-    "prism-themes": "^1.5.0",
-    "prismjs": "^1.23.0"
+    "nuxt-i18n": "^6.18.0"
   },
   "devDependencies": {
     "@jimp/plugin-resize": "^0.16.1",
@@ -29,6 +27,8 @@
     "jimp": "^0.16.1",
     "parse-md": "^2.0.4",
     "path": "^0.12.7",
+    "prism-themes": "^1.5.0",
+    "prismjs": "^1.23.0",
     "sass": "^1.32.0",
     "sass-loader": "^10.1.0",
     "write": "^2.0.0",
