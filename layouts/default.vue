@@ -106,19 +106,15 @@ span.icon {
     100% 72%, 72% 100%,
     28% 100%, 0 72%
   );
-  transform: rotate(24deg);
   width: 100px;
   height: 100px;
   background-color: white;
-  background-image: linear-gradient(66deg, #F6F6F8 50%, #f0f2f3 50%);
+  background-image: linear-gradient(45deg, #F6F6F8 50%, #f0f2f3 50%);
   padding: 20px;
 
   img {
     width: 60px;
     height: 60px;
-  }
-  .polygon-rotate {
-    transform: rotate(-22.5deg) !important;
   }
 }
 

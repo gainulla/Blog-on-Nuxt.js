@@ -5,7 +5,7 @@
     
         <div class="logo-wrap">
           <nuxt-link :to="pathFor('/')" class="logo polygon">
-            <img :src="require('~/assets/images/site-logo.svg')" class="polygon-rotate" />
+            <img :src="require('~/assets/images/site-logo.svg')" />
           </nuxt-link>
         </div>
 

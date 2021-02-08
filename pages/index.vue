@@ -9,12 +9,12 @@
     <div class="hero">
 
       <span class="logo polygon">
-        <img :src="require('~/assets/images/site-logo.svg')" class="polygon-rotate" />
+        <img :src="require('~/assets/images/site-logo.svg')" />
       </span>
 
       <div class="button polygon">
-        <LocaleSwitch class="locale-switch-comp polygon-rotate" />
-        <nuxt-link :to="pathFor('/blog')" class="link polygon-rotate">
+        <LocaleSwitch class="locale-switch-comp" />
+        <nuxt-link :to="pathFor('/blog')" class="link">
           {{$t('blog') }}
         </nuxt-link>
       </div>
@@ -120,8 +120,7 @@ export default {
         font-size: 1.6rem;
         font-weight: bold;
         display: block;
-        margin-bottom: -25px;
-        margin-left: 10px;
+        margin-bottom: -30px;
         &:hover {
           color: lighten($south, 10);
         }
@@ -130,7 +129,11 @@ export default {
       .locale-switch-comp {
         position: absolute;
         top: 10px;
-        left: -3px;
+        left: 50%;
+        width: 100px;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
       }
     }
 
@@ -145,6 +148,7 @@ export default {
         font-weight: 600;
         letter-spacing: .02em;
         margin: 0;
+        line-height: 3rem;
       }
       p {
         font-size: 1rem;
@@ -227,46 +231,30 @@ export default {
   }
 }
 
-@media (min-width: 576px) {
-  .screen {
-    .hero {
-      .button {
-        .locale-switch-comp {
-          position: absolute;
-          top: 20px;
-          left: 10px;
-        }
-      }
-    }
-  }
-}
+// @media (min-width: 576px) {
+//   .screen .hero .button .locale-switch-comp {
+//     position: absolute;
+//   }
+// }
 
 @media (min-width: 768px) {
-  .screen {
-    .hero {
-      .text {
-        h1 {
-          font-size: 3.4rem;
-        }
-        p {
-          font-size: 1.4rem;
-        }
-      }
+  .screen .hero .text {
+    h1 {
+      font-size: 3.4rem;
+    }
+    p {
+      font-size: 1.4rem;
     }
   }
 }
 
 @media (min-width: 992px) {
-  .screen {
-    .hero {
-      .text {
-        h1 {
-          font-size: 4.4rem;
-        }
-        p {
-          font-size: 1.8rem;
-        }
-      }
+  .screen .hero .text {
+    h1 {
+      font-size: 4.4rem;
+    }
+    p {
+      font-size: 1.8rem;
     }
   }
 }

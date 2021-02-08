@@ -119,10 +119,10 @@ export default {
 
       .article-inner {
         display: block;
-        box-shadow: 1px 1px 20px 7px rgba(#DDD, .3);
+        box-shadow: -1px 1px 32px 8px rgba(#b3b3b3, .3);
 
         img {
-          box-shadow: -4px -1px 16px 4px rgba(#DDD, .3);
+          box-shadow: -1px 1px 12px 4px rgba(#b3b3b3, .2);
 
           border-top-left-radius: .4rem;
           border-bottom-left-radius: .4rem;

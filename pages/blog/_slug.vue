@@ -1,5 +1,17 @@
 <template>
   <div>
+
+    <div v-show="hostname == 'localhost'" class="admin-area">
+      <div class="container">
+        <div class="row">
+          <nuxt-link :to="editArticleRoute" class="btn"
+          >Edit</nuxt-link>
+          <nuxt-link :to="newArticleRoute" class="btn"
+          >Add New</nuxt-link>
+        </div>
+      </div>
+    </div>  
+    
     <Header>
       <LocaleSwitch
         slot="locale-switch"
@@ -10,12 +22,7 @@
 
     <div class="container">
 
-      <div v-show="hostname == 'localhost'" class="admin-area">
-        <nuxt-link :to="editArticleRoute" class="btn"
-        >Edit</nuxt-link>
-        <nuxt-link :to="newArticleRoute" class="btn"
-        >Add New</nuxt-link>
-      </div>
+
 
       <div class="page-content">
         <article>
@@ -40,9 +47,9 @@
           <nuxt-content :document="article" class="content clearfix mb-1" />
         </article>
 
-        <PrevNext :prev="prev" :next="next" class="mb-2" />
-
       </div>
+
+      <PrevNext :prev="prev" :next="next" class="mb-2" />
     </div>
 
   </div>
@@ -73,7 +80,7 @@ export default {
                             .fetch()
 
     const [prev, next] = await $content(`${app.i18n.locale}/blog`)
-      .only(['title', 'slug'])
+      .only(['title', 'slug', 'image'])
       .sortBy('createdAt', 'asc')
       .surround(params.slug)
       .fetch()
@@ -131,25 +138,24 @@ export default {
 <style lang="scss">
 
 .admin-area {
-  display: flex;
-  justify-content: flex-end;
-  background-color: #DADADA;
-  margin-bottom: -2rem;
-
-  .btn {
+  width: 100%;
+  background-color: rgb(176, 185, 201);
+  a.btn {
     text-transform: uppercase;
     margin-left: .2rem;
-    background-color: rgb(92, 95, 100);
+    background-color: rgb(85, 110, 151);
     color: white;
     padding: .5rem .8rem;
+    
+    &:first-of-type {
+      margin-left: auto;
+    }
   }
 }
 
 .page-content {
-  margin-bottom: 3rem;
   margin-top: 2rem;
   padding-top: 2rem;
-  padding-bottom: 1rem;
 
   article {
     font-size: 1.2rem;
@@ -228,6 +234,7 @@ export default {
     margin-top: 4rem;
     padding-left: 4rem;
     padding-right: 4rem;
+    padding-bottom: 1rem;
   }
 }
 </style>
