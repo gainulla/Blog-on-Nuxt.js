@@ -8,15 +8,15 @@
 
     <div class="hero">
 
-      <a :href="pathFor('/')" class="logo polygon">
+      <span class="logo polygon">
         <img :src="require('~/assets/images/site-logo.svg')" class="polygon-rotate" />
-      </a>
+      </span>
 
       <div class="button polygon">
         <LocaleSwitch class="locale-switch-comp polygon-rotate" />
-        <a :href="pathFor('/blog')" class="link polygon-rotate">
+        <nuxt-link :to="pathFor('/blog')" class="link polygon-rotate">
           {{$t('blog') }}
-        </a>
+        </nuxt-link>
       </div>
 
       <div class="text">
