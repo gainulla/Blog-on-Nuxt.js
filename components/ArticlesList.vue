@@ -119,18 +119,16 @@ export default {
 
       .article-inner {
         display: block;
-        box-shadow: -1px 1px 32px 8px rgba(#b3b3b3, .3);
+        border-radius: .4rem;
 
         img {
-          box-shadow: -1px 1px 12px 4px rgba(#b3b3b3, .2);
-
           border-top-left-radius: .4rem;
           border-bottom-left-radius: .4rem;
           min-height: 250px;
           max-height: 250px;
         }
         .details {
-          background-color: lighten(#DDD, 10);
+          background-color: #FAFAFA;
           padding: 25px;
           height: 100%;
           border-top-right-radius: .4rem;

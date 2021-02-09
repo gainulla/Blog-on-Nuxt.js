@@ -75,9 +75,8 @@ export default {
     font-size: 1.2rem;
     text-transform: lowercase;
     color: #000;
-    padding-bottom: .5rem;
     text-transform: capitalize;
-    margin: 0 15px 20px 15px;
+    margin: 0 15px;
 
     nav {
       display: flex;
@@ -128,13 +127,4 @@ export default {
   }
 }
 
-// @media (max-width: 320px) {
-//   .prev-next-links {
-//     .inner {
-//       background-color: tan;
-//       padding-left: 15px;
-//       padding-right: 15px;
-//     }
-//   }
-// }
 </style>

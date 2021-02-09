@@ -218,7 +218,7 @@ export default {
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 3rem;
-    background-color: lighten(#DDD, 11);
+    background-color: #FAFAFA;
 
     article {
       .article-head {
