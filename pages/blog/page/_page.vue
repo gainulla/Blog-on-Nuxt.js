@@ -7,7 +7,12 @@
     <div class="container">
       <h1 class="headline text-center">{{ $t('headline1.blog') }}</h1>
 
-      <ArticlesList :articles="articles" :total="total" :locale="locale" />
+      <ArticlesList
+        :articles="articles"
+        :total="total"
+        :per-page="perPage"
+        :locale="locale"
+      />
 
     </div>
   </div>
@@ -20,12 +25,13 @@ export default {
   name: 'Blog',
 
   async asyncData({ $content, app, params, error }) {
-
-    const content = await getContent($content, app, params, error)
+    const perPage = 4
+    const content = await getContent($content, app, params, perPage, error)
 
     return {
       locale: app.i18n.locale,
       total: content.allArticles.length,
+      perPage: perPage,
       articles: content.paginatedArticles.map(article => ({
         ...article,
         path: app.i18n.locale == app.i18n.defaultLocale

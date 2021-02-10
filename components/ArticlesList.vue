@@ -38,7 +38,10 @@
       </div>
     </article>
 
-    <Pagination v-if="total > 5" :total="total" :locale="locale" />
+    <Pagination v-if="total > perPage"
+      :total="total"
+      :perPage="perPage"
+      :locale="locale" />
   </div>
 
   <div v-else class="articles">
@@ -60,6 +63,10 @@ export default {
     total: {
       type: Number,
       default: 0
+    },
+    perPage: {
+      type: Number,
+      required: true
     },
     locale: {
       type: String,
@@ -97,6 +104,7 @@ export default {
           margin: 0;
           font-family: var(--secondary-font);
           cursor: pointer;
+          word-wrap: break-word;
         }
 
         .description {

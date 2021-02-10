@@ -11,7 +11,7 @@
 
       <span v-if="articles.length == 0" class="icon search" />
       
-      <ul v-if="articles.length">
+      <ul v-if="articles.length > 0">
         <li v-for="article of articles" :key="article.slug">
           <NuxtLink :to="{
               name: `blog-slug___${locale}`,

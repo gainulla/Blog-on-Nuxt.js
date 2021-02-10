@@ -63,7 +63,7 @@
 <script>
 export default {
   created() {
-    console.log('PARAMS PAGE', this.$route.params.page)
+    console.log('CURRENT PAGE', this.currentPage)
     console.log('TOTAL PAGES', this.totalPages)
   },
   props: {
@@ -77,7 +77,7 @@ export default {
     },
     perPage: {
       type: Number,
-      default: 3
+      required: true
     }
   },
   computed: {
