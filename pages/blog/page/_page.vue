@@ -1,0 +1,39 @@
+<template>
+  <div>
+    <Header>
+      <LocaleSwitch slot="locale-switch" :path="'/blog'" />
+    </Header>
+
+    <div class="container">
+      <h1 class="headline text-center">{{ $t('headline1.blog') }}</h1>
+
+      <ArticlesList :articles="articles" :total="total" :locale="locale" />
+
+    </div>
+  </div>
+</template>
+
+<script>
+import getContent from '@/utils/get-content'
+
+export default {
+  name: 'Blog',
+
+  async asyncData({ $content, app, params, error }) {
+
+    const content = await getContent($content, app, params, error)
+
+    return {
+      locale: app.i18n.locale,
+      total: content.allArticles.length,
+      articles: content.paginatedArticles.map(article => ({
+        ...article,
+        path: app.i18n.locale == app.i18n.defaultLocale
+              ? article.path.replace(`/${app.i18n.locale}`, "")
+              : article.path,
+      })),
+    }
+  
+  }
+}
+</script>

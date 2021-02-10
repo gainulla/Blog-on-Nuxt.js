@@ -37,6 +37,8 @@
         </div>
       </div>
     </article>
+
+    <Pagination v-if="total > 5" :total="total" :locale="locale" />
   </div>
 
   <div v-else class="articles">
@@ -50,7 +52,20 @@ import path from 'path'
 export default {
   name: 'ArticlesList',
 
-  props: ['articles']
+  props: {
+    articles: {
+      type: Array,
+      default: Array
+    },
+    total: {
+      type: Number,
+      default: 0
+    },
+    locale: {
+      type: String,
+      required: true 
+    }
+  }
 }
 </script>
 

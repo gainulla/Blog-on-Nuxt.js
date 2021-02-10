@@ -7,7 +7,7 @@ const fileUpload = require('express-fileupload')
 const cors = require('cors')
 const fs = require('fs')
 const jimp = require('jimp')
-const glob = require('../plugins/_global-fn.js')
+const glob = require('../utils/global-funcs.js')
 
 const app = express()
 

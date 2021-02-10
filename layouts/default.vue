@@ -64,13 +64,6 @@ h1, h2, h3, h4, h5 {
   font-weight: 700;
 }
 
-.message {
-  background-color: #EEE;
-  padding: 1rem 1.6rem;
-  padding-bottom: 1.5rem;
-  border-radius: 1.2rem;
-}
-
 span.icon {
   background-repeat: no-repeat;
   display: inline-block;
@@ -89,6 +82,12 @@ span.icon {
   }
   &.search {
     background-image: url('~assets/svg/icon-search.svg');
+  }
+  &.cheveron-right {
+    background-image: url('~assets/svg/icon-cheveron-right.svg');
+  }
+  &.cheveron-left {
+    background-image: url('~assets/svg/icon-cheveron-left.svg');
   }
 }
 

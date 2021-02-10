@@ -1,4 +1,4 @@
-const glob = require('./_global-fn')
+const glob = require('../utils/global-funcs')
 
 export default (context, inject) => {
 

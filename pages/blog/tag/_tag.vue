@@ -11,7 +11,7 @@
     <div class="container">
       <h1 class="headline text-center">{{ pageTag }}</h1>
 
-      <ArticlesList :articles="articles" />
+      <ArticlesList :articles="articles" :locale="locale" />
 
     </div>
   </div>
@@ -47,15 +47,15 @@ export default {
     })
 
     return {
+      locale: app.i18n.locale,
+      pageTag: pageTag,
+      localesData: tagArticles[0].localesData,
       articles: tagArticles.map(article => ({
         ...article,
         path: currentLocale == app.i18n.defaultLocale
               ? article.path.replace(`/${currentLocale}`, "")
               : article.path,
-      })),
-
-      localesData: tagArticles[0].localesData,
-      pageTag: pageTag
+      }))
     }
   }
 

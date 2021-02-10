@@ -7,11 +7,11 @@ Vue.mixin({
     pathFor(path, locale=false, param=false) {
       locale = locale ? locale : this.$i18n.locale
       param = param ? `/${param}` : ""
+      param = CyrillicToTranslit().transform(param, '-')
 
       if (locale == this.$i18n.defaultLocale) {
-        return path + (param).replace(/ /g, '-')
+        return path + (param).replace(/\s+/g, '-')
       } else {
-        param = CyrillicToTranslit().transform(param, '-')
         return '/' + locale + path + param
       }
     },
