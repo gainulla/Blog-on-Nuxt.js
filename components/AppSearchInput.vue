@@ -91,6 +91,7 @@ $search-height: 2.4rem;
       width: 100%;
       padding: 1rem;
       background-color: #F2F2F2;
+      z-index: 401;
       li {
         padding: .2rem 0;
       }

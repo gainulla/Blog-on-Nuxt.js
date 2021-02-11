@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header>
-      <LocaleSwitch slot="locale-switch" :path="'/blog'" />
+      <LocaleSwitch slot="locale-switch" :path="`/blog/page/${$route.params.page}`" />
     </Header>
 
     <div class="container">

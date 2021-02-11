@@ -95,7 +95,8 @@ export default {
   generate: {
     exclude: [
       /^\/admin/, // path starts with /admin
-      /^\/ru\/admin/ // path starts with ru/admin
+      /^\/ru\/admin/, // path starts with ru/admin
+      /^\/en\/admin/
     ]
   }
 }

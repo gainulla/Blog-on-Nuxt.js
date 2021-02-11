@@ -25,7 +25,7 @@ export default async ($content, app, params, perPage, error) => {
   }
 
   const paginatedArticles = await $content(`${app.i18n.locale}/blog`)
-    .only(['title', 'description', 'image', 'alt', 'slug', 'published', 'localesData'])
+    .only(['title', 'description', 'image', 'alt', 'slug', 'published', 'localesData', 'path'])
     .sortBy('published', 'desc')
     .limit(perPage)
     .skip(skipNumber())
