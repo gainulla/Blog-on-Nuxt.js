@@ -79,16 +79,17 @@ ul.lang-switch {
     background-color: white;
 
     a {
-      font-weight: 500;
+      font-family: var(--tertiary-font);
       display: block;
       text-transform: uppercase;
       padding: .6rem .7rem;
-      color: rgb(41, 41, 42);
+      background-color:  #f4f8f7;
+      color: #9393ac;
       transition: opacity 200ms ease;
 
       &.nuxt-link-exact-active {
-        color: rgb(10, 6, 226);
-        background-color:  rgb(233, 233, 233);
+        color: #10a578;
+        background-color:  #c9fcec;
       }
     }
   }

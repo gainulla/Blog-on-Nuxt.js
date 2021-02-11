@@ -118,7 +118,6 @@ export default {
       a.link {
         color:  lighten($north, 10);
         font-size: 1.6rem;
-        font-weight: bold;
         display: block;
         margin-bottom: -30px;
         &:hover {
@@ -128,7 +127,7 @@ export default {
 
       .locale-switch-comp {
         position: absolute;
-        top: 10px;
+        top: 15px;
         left: 50%;
         width: 100px;
         transform: translateX(-50%);
@@ -144,8 +143,7 @@ export default {
 
       h1 {
         font-size: 2.4rem;
-        font-family: var(--bold-font);
-        font-weight: 700;
+        font-family: var(--secondary-font);
         margin: 0;
         line-height: 3rem;
       }

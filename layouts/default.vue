@@ -12,9 +12,9 @@ html {
   --link-visited: palevioletred;
   --link-hover: cadetblue;
   --link-active: darkcyan;
-  --primary-font: 'Bellota Text', cursive;
-  --secondary-font: 'Inria Serif', serif;
-  --bold-font: 'Ubuntu Mono', monospace;
+  --primary-font: 'Nunito', sans-serif;
+  --secondary-font: 'Ubuntu Mono', monospace;
+  --tertiary-font: 'Marmelad', sans-serif;
 }
 
 *, *::before, *::after {
@@ -24,11 +24,12 @@ html {
 body {
   margin: 0;
   font-family: var(--primary-font);
+  font-weight: 300;
   background-color: var(--body-bg);
 }
 
 a {
-  font-family: var(--primary-font);
+  font-family: var(--secondary-font);
   transition: color 200ms ease-in;
 
   &:link {
@@ -43,6 +44,11 @@ a {
   }
   &:active {
     color: var(--link-active);
+  }
+
+  &.featured {
+    text-transform: uppercase;
+    font-family: var(--tertiary-font);
   }
 }
 
@@ -60,8 +66,7 @@ h1, h2, h3, h4, h5 {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 2.4rem;
-  font-family: var(--primary-font);
-  font-weight: 700;
+  font-family: var(--tertiary-font);
 }
 
 span.icon {
@@ -108,7 +113,7 @@ span.icon {
   width: 100px;
   height: 100px;
   background-color: white;
-  background-image: linear-gradient(45deg, #F6F6F8 50%, #f0f2f3 50%);
+  background-image: linear-gradient(45deg, #f0f2f3 50%, #F6F6F8 50%);
   padding: 20px;
 
   img {

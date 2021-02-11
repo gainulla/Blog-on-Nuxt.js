@@ -109,6 +109,7 @@ export default {
     align-items: center;
     justify-content: center;
     flex-grow: 1;
+    font-family: var(--primary-font);
 
     .text {
       display: none;

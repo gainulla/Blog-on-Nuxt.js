@@ -9,7 +9,7 @@
           </nuxt-link>
         </div>
 
-        <nuxt-link :to="pathFor('/blog')" class="to-blog">
+        <nuxt-link :to="pathFor('/blog')" class="to-blog featured">
           {{ $t('nav.blog') }}
         </nuxt-link>
 
@@ -43,7 +43,6 @@ export default {
     top: 60px;
     left: 50%;
     transform: translateX(-50%);
-    font-weight: bold;
     z-index: 101;
     font-size: 1.2rem;
 

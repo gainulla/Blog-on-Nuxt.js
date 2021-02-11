@@ -64,7 +64,7 @@ export default {
     },
     perPage: {
       type: Number,
-      required: true
+      default: 2
     },
     locale: {
       type: String,
@@ -137,11 +137,12 @@ export default {
 
         .title {
           margin: 0;
-          font-family: var(--secondary-font);
+          font-family: var(--primary-font);
+          color: #444;
           cursor: pointer;
         }
         .description {
-          font-family: var(--secondary-font);
+          font-family: var(--primary-font);
           color: initial !important;
         }
         .tags {
@@ -212,7 +213,7 @@ export default {
     article:first-of-type {
       .article-inner {
         padding-top: 0;
-        margin-top: 2rem;
+        margin-top: 4rem;
       }
     }
   }
