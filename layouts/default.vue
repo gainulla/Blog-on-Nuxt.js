@@ -14,7 +14,7 @@ html {
   --link-active: darkcyan;
   --primary-font: 'Bellota Text', cursive;
   --secondary-font: 'Inria Serif', serif;
-  --bold-font: 'Roboto', sans-serif;
+  --bold-font: 'Ubuntu Mono', monospace;
 }
 
 *, *::before, *::after {

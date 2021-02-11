@@ -15,7 +15,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
-      { href: 'https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inria+Serif:wght@300;400;700&family=Roboto:wght@900&display=swap', rel: 'stylesheet' }
+      { href: 'https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inria+Serif:wght@300;400;700&family=Ubuntu+Mono:ital,wght@1,700&display=swap', rel: 'stylesheet' }
     ],
     script: [
       { src: 'https://apis.google.com/js/api:client.js' }
@@ -58,10 +58,10 @@ export default {
             name: 'English'
           },
         ],
-        defaultLocale: 'en',
+        defaultLocale: 'ru',
         noPrefixDefaultLocale: true,
         vueI18n: {
-          fallbackLocale: 'en',
+          fallbackLocale: 'ru',
           messages: {
             en: require('./locales/en-us.json'),
             ru: require('./locales/ru-ru.json')

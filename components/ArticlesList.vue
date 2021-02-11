@@ -16,12 +16,10 @@
 
           <div class="column _md-56 _lg-62">
             <div class="details">
-              <h2 class="title">
-                <nuxt-link :to="article.path">{{ article.title }}</nuxt-link>
-              </h2>
-              <p class="description">
-                {{ article.description }}<nuxt-link :to="article.path">...</nuxt-link>
-              </p>
+              <nuxt-link :to="article.path">
+                <h2 class="title">{{ article.title }}</h2>
+                <p class="description">{{ article.description }}...</p>
+              </nuxt-link>
               <div class="tags">
                 <nuxt-link
                   v-for="(tag, i) of $tagsArr(article.localesData)"
@@ -144,8 +142,11 @@ export default {
         }
         .description {
           font-family: var(--secondary-font);
+          color: initial !important;
         }
         .tags {
+          border-top: 1px dashed #DDD;
+          padding-top: .2rem;
           align-self: flex-end;
         }
       }
@@ -160,6 +161,7 @@ export default {
         background-color: #f6f7f8;
         padding-left: 2rem;
         padding-right: 2rem;
+        border: 1px solid #f1f2f3;
       }
     }
     article:first-of-type {

@@ -121,7 +121,7 @@ export default {
   .prev-next-links {
     margin-top: 1rem;
     .inner {
-      justify-content: space-around;
+      justify-content: space-between;
     }
   }
 }

@@ -144,16 +144,16 @@ export default {
 
       h1 {
         font-size: 2.4rem;
-        font-family: var(--primary-font);
-        font-weight: 600;
-        letter-spacing: .02em;
+        font-family: var(--bold-font);
+        font-weight: 700;
+        //letter-spacing: .02em;
         margin: 0;
         line-height: 3rem;
       }
       p {
         font-size: 1rem;
         letter-spacing: .05rem;
-        font-weight: 600;
+        font-family: var(--bold-font);
         &:first-letter {
           text-transform: capitalize;
         }
