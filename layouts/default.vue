@@ -135,100 +135,18 @@ span.icon {
   min-width: 320px;
   padding-left: 15px;
   padding-right: 15px;
-
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-
-    .column {
-      text-align: center;
-      flex-grow: 1;
-      flex-shrink: 1;
-      flex-basis: 1;
-      //background-color: #efefef;
-      //border: 1px solid #dedede;
-      padding: 0;
-
-      &.col-1 {
-        max-width: calc(100% / 12);
-      }
-      &.col-2 {
-        max-width: calc(100% / 12 * 2);
-      }
-      &.col-3 {
-        max-width: calc(100% / 12 * 3);
-      }
-      &.col-4 {
-        max-width: calc(100% / 12 * 4);
-      }
-      &.col-5 {
-        max-width: calc(100% / 12 * 5);
-      }
-      &.col-6 {
-        max-width: calc(100% / 2);
-      }
-    }
-  }
 }
 
-@media (max-width: 767px) {
-  .container {
-    .column {
-      min-width: 100%;
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-    }
-  }
-}
+/*
+ * ------------ Customizable flexbox grid ------------ */
 
-@media (min-width: 768px) {
-  .container .row  .column {
-    &.col-md-1 {
-      max-width: calc(100% / 12);
-    }
-    &.col-md-2 {
-      max-width: calc(100% / 12 * 2);
-    }
-    &.col-md-3 {
-      max-width: calc(100% / 12 * 3);
-    }
-    &.col-md-4 {
-      max-width: calc(100% / 12 * 4);
-    }
-    &.col-md-5 {
-      max-width: calc(100% / 12 * 5);
-    }
-    &.col-md-6 {
-      max-width: calc(100% / 2);
-    }
-  }
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
-  .headline {
-    margin-bottom: 3rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .container .row .column {
-    &.col-lg-1 {
-      max-width: calc(100% / 12);
-    }
-    &.col-lg-2 {
-      max-width: calc(100% / 12 * 2);
-    }
-    &.col-lg-3 {
-      max-width: calc(100% / 12 * 3);
-    }
-    &.col-lg-4 {
-      max-width: calc(100% / 12 * 4);
-    }
-    &.col-lg-5 {
-      max-width: calc(100% / 12 * 5);
-    }
-    &.col-lg-6 {
-      max-width: calc(100% / 2);
-    }
+  .column {
+    flex-basis: 100%;
   }
 }
 

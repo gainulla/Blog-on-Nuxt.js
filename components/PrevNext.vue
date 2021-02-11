@@ -105,7 +105,6 @@ export default {
       height: 190px;
       overflow: hidden;
       img {
-        min-width: 244px;
         width: 100%;
         height: 100%;
         object-fit: cover;

@@ -1,6 +1,8 @@
 ---
 title: Butterfly
-description: The description of the post about Butterfly
+description: The description of the post about Butterfly The description of the
+  post about Butterfly The description of the post about Butterfly The
+  description of the post about Butterfly
 image: babochka-cvety-rozmytost.jpg
 alt: Featured
 slug: 2021-01-31-butterfly

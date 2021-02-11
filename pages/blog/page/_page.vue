@@ -25,7 +25,7 @@ export default {
   name: 'Blog',
 
   async asyncData({ $content, app, params, error }) {
-    const perPage = 4
+    const perPage = 5
     const content = await getContent($content, app, params, perPage, error)
 
     return {

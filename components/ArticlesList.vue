@@ -4,7 +4,7 @@
       <div class="article-inner">
         <div class="row">
           
-          <div class="column col-md-5 col-lg-4">
+          <div class="column _md-44 _lg-38">
             <nuxt-link :to="article.path" class="image-link">
               <img :srcset="`
                 ${featImg(article.image)} 1024w,
@@ -14,7 +14,7 @@
             </nuxt-link>
           </div>
 
-          <div class="column">
+          <div class="column _md-56 _lg-62">
             <div class="details">
               <h2 class="title">
                 <nuxt-link :to="article.path">{{ article.title }}</nuxt-link>
@@ -77,40 +77,74 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+/* Customize flexbox grid for image */
+
+@media (min-width: 768px) {
+  .row .column {
+    &._md-44 {
+      flex: 4.4;
+    }
+    &._md-56 {
+      flex: 5.6;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .row .column {
+    &._lg-38 {
+      flex: 3.8;
+    }
+    &._lg-62 {
+      flex: 6.2;
+    }
+  }
+}
+
+/* Article Styles */
+
 .articles {
   padding-bottom: 2rem;
 
   article {
     background-color: white;
     border-radius: .4rem;
-    margin-bottom: .5rem;
     font-size: 1.2rem;
 
     .article-inner {
-      img {
+      .image-link {
         display: block;
         width: 100%;
         height: 100%;
-        max-height: 300px;
-        margin: 0 1.5rem 0 0;
-        object-fit: cover;
+        min-height: 240px;
+        max-height: 320px;
+        overflow: hidden;
         cursor: pointer;
+
+        img {
+          display: block;
+          margin: 0 auto;
+          width: 100%;
+          max-width: 600px;
+          height: 100%;
+          object-fit: cover;
+        }
       }
 
       .details {
         text-align: left;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
 
         .title {
           margin: 0;
           font-family: var(--secondary-font);
           cursor: pointer;
-          word-wrap: break-word;
         }
-
         .description {
           font-family: var(--secondary-font);
         }
-
         .tags {
           align-self: flex-end;
         }
@@ -121,15 +155,16 @@ export default {
 
 @media (min-width: 576px) {
   .articles {
-    padding-left: 1rem;
-    padding-right: 1rem;
-
     article {
       .article-inner {
-        img {
-          min-height: 320px;
-          max-height: 320px;
-        }
+        background-color: #f6f7f8;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+    article:first-of-type {
+      .article-inner {
+        padding-top: 1.5rem;
       }
     }
   }
@@ -141,22 +176,29 @@ export default {
       margin-bottom: 2rem;
 
       .article-inner {
-        display: block;
+        padding-left: 0;
+        padding-right: 0;
         border-radius: .4rem;
 
-        img {
-          border-top-left-radius: .4rem;
-          border-bottom-left-radius: .4rem;
-          min-height: 250px;
-          max-height: 250px;
+        .image-link {
+          position: relative;
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-top-left-radius: .4rem;
+            border-bottom-left-radius: .4rem;
+          }
         }
         .details {
-          background-color: #FAFAFA;
-          padding: 25px;
-          height: 100%;
-          border-top-right-radius: .4rem;
-          border-bottom-right-radius: .4rem;
+          padding: 1rem 1.5rem;
         }
+      }
+    }
+    article:first-of-type {
+      .article-inner {
+        padding-top: 0;
+        margin-top: 2rem;
       }
     }
   }

@@ -62,10 +62,6 @@
 
 <script>
 export default {
-  created() {
-    console.log('CURRENT PAGE', this.currentPage)
-    console.log('TOTAL PAGES', this.totalPages)
-  },
   props: {
     locale: {
       type: String,
@@ -101,8 +97,8 @@ export default {
 
 <style lang="scss" scoped>
 .pagination {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
 
@@ -145,6 +141,8 @@ export default {
 
 @media (min-width: 576px) {
   .pagination {
+    margin-top: 3rem;
+
     .btn {
       .text {
         display: block;
@@ -162,6 +160,12 @@ export default {
     *.btn + * {
       margin-left: 1.5rem;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .pagination {
+    margin-top: 4rem;
   }
 }
 </style>
