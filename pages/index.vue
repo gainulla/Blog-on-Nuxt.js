@@ -146,7 +146,6 @@ export default {
         font-size: 2.4rem;
         font-family: var(--bold-font);
         font-weight: 700;
-        //letter-spacing: .02em;
         margin: 0;
         line-height: 3rem;
       }
@@ -164,7 +163,7 @@ export default {
   .border {
     position: fixed;
     display: block;
-    background-color: white; //lime;
+    background-color: white;
     height: 32px;
 
     &.t {
@@ -230,12 +229,6 @@ export default {
     }
   }
 }
-
-// @media (min-width: 576px) {
-//   .screen .hero .button .locale-switch-comp {
-//     position: absolute;
-//   }
-// }
 
 @media (min-width: 768px) {
   .screen .hero .text {

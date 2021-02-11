@@ -16,7 +16,7 @@
 
           <div class="column _md-56 _lg-62">
             <div class="details">
-              <nuxt-link :to="article.path">
+              <nuxt-link :to="article.path" class="entry-text">
                 <h2 class="title">{{ article.title }}</h2>
                 <p class="description">{{ article.description }}...</p>
               </nuxt-link>
@@ -149,6 +149,9 @@ export default {
           padding-top: .2rem;
           align-self: flex-end;
         }
+        .entry-text {
+          flex-grow: 1;
+        }
       }
     }
   }
@@ -194,6 +197,15 @@ export default {
         }
         .details {
           padding: 1rem 1.5rem;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .tags {
+            width: 100%;
+            padding-top: .5rem;
+          }
         }
       }
     }
