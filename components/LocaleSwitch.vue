@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <ul v-if="isContentPage" class="lang-switch">
+    <ul v-if="isContentPage || isTagPage" class="lang-switch">
       <li v-for="(lang, key) in localesData" :key="key"
         :class="{ 'active': $i18n.locale == lang.locale }"
       >
@@ -49,11 +49,13 @@ export default {
 
   computed: {
     isContentPage() {
-      return (
-        this.$route.name.includes('slug') ||
-        this.$route.name.includes('tag')
-      )
+      return this.$route.name.includes('slug')
     },
+
+    isTagPage() {
+      return this.$route.name.includes('tag')
+    },
+    
     tagPriority() {
       let arrKey = 0
       const tagsArr = this.$tagsArr(this.localesData)
