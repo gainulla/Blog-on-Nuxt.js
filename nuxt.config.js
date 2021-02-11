@@ -16,9 +16,6 @@ export default {
 
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       { href: 'https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inria+Serif:wght@300;400;700&family=Ubuntu+Mono:ital,wght@1,700&display=swap', rel: 'stylesheet' }
-    ],
-    script: [
-      { src: 'https://apis.google.com/js/api:client.js' }
     ]
   },
 
