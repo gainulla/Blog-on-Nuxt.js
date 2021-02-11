@@ -27,7 +27,7 @@
       <div class="page-content">
         <article>
           <div class="row">
-            <div class="column col-6">
+            <div class="column _md-50">
               <img
                 :srcset="`
                   ${featImg(article.image)} 1024w,
@@ -38,7 +38,7 @@
                 class="featured"
               >
             </div>
-            <div class="column article-head">
+            <div class="column _md-50">
               <h1>{{ article.title }}</h1>
               <p>{{ article.description }}</p>
               <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
@@ -137,6 +137,22 @@ export default {
 
 <style lang="scss">
 
+@media (min-width: 768px) {
+  .row .column {
+    &._md-50 {
+      flex: 5;
+    }
+    &._md-50 {
+      flex: 5;
+      
+      &:nth-child(2) {
+        text-align: left !important;
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+
 .admin-area {
   width: 100%;
   background-color: rgb(176, 185, 201);
@@ -185,13 +201,11 @@ export default {
     }
 
     img.featured {
+      display: block;
+      margin: 0 auto;
       width: 100%;
-      max-width: 580px;
-      height: auto;
-      float: left;
-      margin-right: 1.5rem;
+      max-width: 600px;
       margin-bottom: 1.5rem;
-      object-fit: cover;
     }
 
     .icon.icon-link {
@@ -219,13 +233,6 @@ export default {
     padding-right: 2rem;
     padding-top: 3rem;
     background-color: #FAFAFA;
-
-    article {
-      .article-head {
-        text-align: left !important;
-        margin-left: 2rem;
-      }
-    }
   }
 }
 
