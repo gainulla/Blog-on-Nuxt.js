@@ -93,6 +93,7 @@ export default {
           title: 'Title',
           description: 'Description',
           image: 'default.jpg',
+          published: 'yy-mm-dd',
           alt: 'Image',
           slug: 'post-slug',
           localesData: [
@@ -106,6 +107,7 @@ export default {
           description: this.data.article.description,
           image: this.data.article.image,
           alt: this.data.article.alt,
+          published: this.data.article.published,
           slug: this.data.article.slug,
           localesData: this.data.article.localesData
         }

@@ -3,13 +3,14 @@ title: Rabbits
 description: The post short description
 image: hazen.jpg
 alt: Alt
-slug: 2021-01-27-rabbits
+published: 2021-02-01T00:00:00.000Z
+slug: rabbits
 localesData:
   - locale: en
-    slug: 2021-01-27-rabbits
+    slug: rabbits
     tags: rabbits, flowers
   - locale: ru
-    slug: 2021-01-27-kroliki
+    slug: kroliki
     tags: кролики, цветы
 ---
 The Rabbits

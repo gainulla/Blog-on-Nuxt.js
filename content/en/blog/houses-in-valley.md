@@ -3,13 +3,14 @@ title: Houses in valley
 description: Description of the post
 image: valley-home.jpg
 alt: Alt
-slug: 2021-01-26-houses-in-valley
+published: 2021-01-31
+slug: houses-in-valley
 localesData:
   - locale: en
-    slug: 2021-01-26-houses-in-valley
+    slug: houses-in-valley
     tags: houses, valley
   - locale: ru
-    slug: 2021-01-26-domiki-v-doline
+    slug: domiki-v-doline
     tags: домики, долина
 ---
 # Beautiful Landscape

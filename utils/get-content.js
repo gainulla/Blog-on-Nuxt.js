@@ -1,6 +1,8 @@
 export default async ($content, app, params, perPage, error) => {
   const currentPage = parseInt(params.page)
-  const allArticles = await $content(`${app.i18n.locale}/blog`).fetch()
+  const allArticles = await $content(`${app.i18n.locale}/blog`)
+                      .without('body')
+                      .fetch()
   const totalArticles = allArticles.length
   const lastPage = Math.ceil(totalArticles / perPage)
   const lastPageCount = (totalArticles % perPage != 0)
@@ -23,8 +25,8 @@ export default async ($content, app, params, perPage, error) => {
   }
 
   const paginatedArticles = await $content(`${app.i18n.locale}/blog`)
-    .only(['title', 'description', 'image', 'alt', 'slug', 'localesData'])
-    .sortBy('createdAt', 'desc')
+    .only(['title', 'description', 'image', 'alt', 'slug', 'published', 'localesData'])
+    .sortBy('published', 'desc')
     .limit(perPage)
     .skip(skipNumber())
     .fetch()
