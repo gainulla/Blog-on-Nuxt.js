@@ -1,7 +1,9 @@
 {
   "nav": {
     "home": "Home",
-    "blog": "Blog"
+    "blog": "Blog",
+    "prev": "Prev",
+    "next": "Next"
   },
   "headline1": {
     "home": "Hello, I'm Gainoolla",
@@ -12,5 +14,6 @@
   },
   "searchPH": "Search...",
   "metier": "Web developer",
-  "blog": "blog"
+  "blog": "blog",
+  "published": "Article published"
 }

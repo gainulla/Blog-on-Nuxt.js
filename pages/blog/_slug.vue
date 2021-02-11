@@ -41,7 +41,7 @@
             <div class="column _md-50">
               <h1>{{ article.title }}</h1>
               <p>{{ article.description }}</p>
-              <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
+              <small>{{ $t('published') }}: {{ formatDate(article.published) }}</small>
             </div>
           </div>
           <nuxt-content :document="article" class="content clearfix mb-1" />
