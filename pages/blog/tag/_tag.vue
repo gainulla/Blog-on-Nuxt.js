@@ -18,12 +18,10 @@
 </template>
 
 <script>
-import CyrillicToTranslit from 'cyrillic-to-translit-js'
-
 export default {
   name: 'Blog',
 
-  async asyncData({ $content, params, app, $tagsArr }) {
+  async asyncData({ $content, params, app, $tagsArr, $compareTags }) {
     const currentLocale = app.i18n.locale
 
     const allArticles = await $content(`${currentLocale}/blog`)
@@ -37,9 +35,7 @@ export default {
     allArticles.forEach(article => {
       const tagsArr = $tagsArr(article.localesData)
       tagsArr.forEach(tag => {
-        const tagDec = decodeURI(params.tag).trim()
-        
-        if (CyrillicToTranslit().transform(tag, '-' ) == tagDec) {
+        if ($compareTags(tag, params.tag)) {
           pageTag = tag
           tagArticles.push(article)
         }

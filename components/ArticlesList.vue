@@ -108,7 +108,7 @@ export default {
   article {
     background-color: white;
     border-radius: .4rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
 
     .article-inner {
       .image-link {
@@ -134,21 +134,28 @@ export default {
         text-align: left;
         padding-top: 1rem;
         padding-bottom: 2rem;
+        color: #444;
 
         .title {
+          font-size: 1.5em;
           margin: 0;
-          font-family: var(--primary-font);
-          color: #444;
+          font-family: var(--tertiary-font);
           cursor: pointer;
         }
         .description {
-          font-family: var(--primary-font);
-          color: initial !important;
+          font-family: var(--tertiary-font);
+          font-weight: 400;
+          font-size: 1.1em;
+          color: #444 !important;
         }
         .tags {
           border-top: 1px dashed #DDD;
           padding-top: .2rem;
           align-self: flex-end;
+          a {
+            font-size: 1.2em;
+            font-family: var(--secondary-font);
+          }
         }
         .entry-text {
           flex-grow: 1;

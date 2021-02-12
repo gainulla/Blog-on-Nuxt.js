@@ -26,10 +26,11 @@ body {
   font-family: var(--primary-font);
   font-weight: 300;
   background-color: var(--body-bg);
+  line-height: 1.5;
 }
 
 a {
-  font-family: var(--secondary-font);
+  font-family: var(--primary-font);
   transition: color 200ms ease-in;
 
   &:link {
@@ -66,7 +67,7 @@ h1, h2, h3, h4, h5 {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 2.4rem;
-  font-family: var(--tertiary-font);
+  font-family: var(--primary-font);
 }
 
 span.icon {

@@ -1,16 +1,5 @@
 <template>
   <div>
-
-    <div v-show="hostname == 'localhost'" class="admin-area">
-      <div class="container">
-        <div class="row">
-          <nuxt-link :to="editArticleRoute" class="btn"
-          >Edit</nuxt-link>
-          <nuxt-link :to="newArticleRoute" class="btn"
-          >Add New</nuxt-link>
-        </div>
-      </div>
-    </div>  
     
     <Header>
       <LocaleSwitch
@@ -22,28 +11,29 @@
 
     <div class="container">
 
-
+      <div v-show="hostname == 'http://localhost:3000'" class="admin-area">
+        <div class="row">
+          <nuxt-link :to="editArticleRoute" class="btn"
+          >Edit</nuxt-link>
+          <nuxt-link :to="newArticleRoute" class="btn"
+          >Add New</nuxt-link>
+        </div>
+      </div> 
 
       <div class="page-content">
         <article>
-          <div class="row">
-            <div class="column _md-64">
-              <img
-                :srcset="`
-                  ${featImg(article.image)} 1024w,
-                  ${featImg($appendImgSize(article.image, '_small'))} 600w,
-                  ${featImg($appendImgSize(article.image, '_thumb'))} 320w
-                `"
-                :alt="article.alt"
-                class="featured"
-              >
-            </div>
-            <div class="column _md-36">
-              <h1>{{ article.title }}</h1>
-              <p>{{ article.description }}</p>
-              <small>{{ $t('published') }}: {{ formatDate(article.published) }}</small>
-            </div>
-          </div>
+          <img
+            :srcset="`
+              ${featImg(article.image)} 1024w,
+              ${featImg($appendImgSize(article.image, '_small'))} 600w,
+              ${featImg($appendImgSize(article.image, '_thumb'))} 320w
+            `"
+            :alt="article.alt"
+            class="featured"
+          >
+          <h1 class="title">{{ article.title }}</h1>
+          <p class="description">{{ article.description }}</p>
+          <small>{{ $t('published') }}: {{ formatDate(article.published) }}</small>
           <nuxt-content :document="article" class="content clearfix mb-1" />
         </article>
 
@@ -60,6 +50,12 @@ import Prism from '~/plugins/prism'
 
 export default {
   name: 'Article',
+
+  data() {
+    return {
+      hostname: process.env.baseUrl
+    }
+  },
 
   mounted() {
     Prism.highlightAll()
@@ -145,11 +141,12 @@ export default {
 
 .admin-area {
   width: 100%;
-  background-color: rgb(176, 185, 201);
+  background-color:#c2dbd6;
+
   a.btn {
     text-transform: uppercase;
     margin-left: .2rem;
-    background-color: rgb(85, 110, 151);
+    background-color: darken(#b0c4c0, 10);
     color: white;
     padding: .5rem .8rem;
     
@@ -171,9 +168,15 @@ export default {
       text-align: left !important;
     }
 
-    h1 {
-      font-family: var(--secondary-font);
+    .title {
+      font-family: var(--tertiary-font);
       margin-top: 0;
+      color: #444;
+    }
+
+    .description {
+      font-family: var(--tertiary-font);
+      color: #444;
     }
 
     .nuxt-content h2 {
@@ -232,6 +235,10 @@ export default {
     padding-left: 4rem;
     padding-right: 4rem;
     padding-bottom: 1rem;
+    
+    article img.featured {
+      max-width: 100%;
+    }
   }
 }
 </style>

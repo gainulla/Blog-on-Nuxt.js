@@ -29,8 +29,6 @@
 </template>
 
 <script>
-import CyrillicToTranslit from 'cyrillic-to-translit-js'
-
 export default {
   name: 'LocaleSwitch',
 
@@ -59,12 +57,13 @@ export default {
     tagPriority() {
       let arrKey = 0
       const tagsArr = this.$tagsArr(this.localesData)
+      
       tagsArr.forEach((tag, i) => {
-        const tagDec = decodeURI(this.$route.params.tag).trim()
-        if (CyrillicToTranslit().transform(tag, '-') == tagDec) {
+        if (this.$compareTags(tag, this.$route.params.tag)) {
           arrKey = i
         }
       })
+
       return arrKey;
     }
   }
