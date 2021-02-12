@@ -44,11 +44,9 @@ export default {
   $north: #1B3865;
 
   background: linear-gradient(
-    to top right, #9CACBF 50%,#AAA8B1 50%);
-    //to top right, #EFD091 50%, #9CACBF 50%);
-    //to top right, #1C7ED5 50%, #C7375F 50%);
-    //to top right, $south 50%, $north 50%);
-    //to top right, #1E383C 50%, #1B3865 50%);
+    to top right, #FFB629 15%, #Fcdf87 40%, #F6F9CA 50%, #E2D4C4 50%, #CCB9B1 60%, #C08267 85%);
+    //to top right, #F6F9CA 50%, #E2D4C4 50%);
+    //to top right, #FCDF87 50%, #CCB9B1 50%);
 
   // background: radial-gradient(ellipse at bottom,#1b2735 0%,#090a0f 100%);
   // filter: drop-shadow(0 0 10px white);  

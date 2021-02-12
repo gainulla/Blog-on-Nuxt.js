@@ -7,7 +7,7 @@
         class="link prev"
       >
         <nav class="nav prev">
-          <span class="icon arrow-left" />
+          <span class="icon cheveron-left" />
           <span class="">{{ $t('nav.prev') }}</span>
         </nav>
         <span class="thumbnail">
@@ -23,7 +23,7 @@
       >
         <nav class="nav next">
           <span>{{ $t('nav.next') }}</span>
-          <span class="icon arrow-right" />
+          <span class="icon cheveron-right" />
         </nav>
         <span class="thumbnail">
           <img :src="featImg($appendImgSize(next.image, '_thumb'))" />
@@ -95,7 +95,7 @@ export default {
         }
       }
       .icon {
-        transform: scale(.5);
+        transform: scale(.9);
       }
     }
 

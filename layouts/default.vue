@@ -113,7 +113,7 @@ span.icon {
   width: 100px;
   height: 100px;
   background-color: white;
-  background-image: linear-gradient(45deg, #f0f2f3 50%, #F6F6F8 50%);
+  background-image: linear-gradient(25deg, #F6F6F8 50%, #f0f2f3 50%);
   padding: 20px;
 
   img {
@@ -128,8 +128,8 @@ span.icon {
     min-height: 130px;
     padding: 25px;
     img {
-      width: 80px;
-      height: 80px;
+      width: 86px;
+      height: 86px;
     }
   }
 }

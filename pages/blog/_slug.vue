@@ -27,7 +27,7 @@
       <div class="page-content">
         <article>
           <div class="row">
-            <div class="column _md-50">
+            <div class="column _md-64">
               <img
                 :srcset="`
                   ${featImg(article.image)} 1024w,
@@ -38,7 +38,7 @@
                 class="featured"
               >
             </div>
-            <div class="column _md-50">
+            <div class="column _md-36">
               <h1>{{ article.title }}</h1>
               <p>{{ article.description }}</p>
               <small>{{ $t('published') }}: {{ formatDate(article.published) }}</small>
@@ -139,15 +139,15 @@ export default {
 
 @media (min-width: 768px) {
   .row .column {
-    &._md-50 {
-      flex: 5;
+    &._md-64 {
+      flex: 6.4;
     }
-    &._md-50 {
-      flex: 5;
+    &._md-36 {
+      flex: 3.6;
       
       &:nth-child(2) {
         text-align: left !important;
-        margin-left: 2rem;
+        margin-left: 1.5rem;
       }
     }
   }
