@@ -4,7 +4,7 @@ import CyrillicToTranslit from 'cyrillic-to-translit-js'
 Vue.mixin({
   methods: {
 
-    pathFor(path, locale=false, param=false) {
+    pathFor(path, locale = false, param = false) {
       locale = locale ? locale : this.$i18n.locale
       param = param ? `/${param}` : ""
       param = CyrillicToTranslit().transform(param, '-')
