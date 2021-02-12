@@ -65,15 +65,6 @@ export default {
     Prism.highlightAll()
   },
 
-  computed: {
-    hostname() {
-      if (process.server) {
-        return this.host
-      }
-      return window.location.hostname
-    }
-  },
-
   async asyncData(context) {
     const { $content, params, app, route, redirect, ssrContext } = context
     const article = await $content(`${app.i18n.locale}/blog`, params.slug)
@@ -95,8 +86,7 @@ export default {
       },
       newArticleRoute: {
         name: `admin-blog-new___${ app.i18n.locale }`,
-      },
-      host: (process.server && !context.payload ) ? ssrContext.req.headers.host : ''
+      }
     }
   },
 
@@ -127,7 +117,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.hostname + '/' + this.article.image
+          content: this.$config.baseUrl + '/' + this.article.image
         }
       ]
     }

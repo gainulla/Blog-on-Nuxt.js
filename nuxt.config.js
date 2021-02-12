@@ -1,11 +1,9 @@
-const path = require('path')
-
 export default {
   target: 'static',
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'md-blog',
+    title: 'Blog',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -99,5 +97,9 @@ export default {
       /^\/ru\/admin/, // path starts with ru/admin
       /^\/en\/admin/
     ]
+  },
+
+  publicRuntimeConfig: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   }
 }

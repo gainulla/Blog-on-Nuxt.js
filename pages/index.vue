@@ -50,7 +50,7 @@ export default {
   $north: #1B3865;
 
   background: linear-gradient(
-    to top right, #FFB629 15%, #Fcdf87 40%, #F6F9CA 50%, #E2D4C4 50%, #CCB9B1 60%, #C08267 85%);
+    to top right, #FFB629 20%, #Fcdf87 42%, #F6F9CA 50%, #E2D4C4 50.1%, #CCB9B1 58%, #C08267 80%);
     //to top right, #F6F9CA 50%, #E2D4C4 50%);
     //to top right, #FCDF87 50%, #CCB9B1 50%);
 
