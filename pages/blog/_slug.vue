@@ -117,7 +117,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.$config.baseUrl + '/' + this.article.image
+          content: process.env.baseUrl + '/' + this.article.image
         }
       ]
     }
