@@ -1,6 +1,6 @@
 ---
 title: Lion - the King of animals, the long title
-description: The about lion post description
+description: The about lion post description The about lion post description The about lion post description The about lion post description The about lion post description
 image: lev-belyi-zoopark.jpg
 alt: Featured Alt
 published: 2021-02-03T00:00:00.000Z

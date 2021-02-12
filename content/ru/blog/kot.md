@@ -1,9 +1,9 @@
 ---
 title: Кот
-description: Описание поста про кота
+description: Описание поста про кота Описание поста про кота Описание поста про кота Описание поста про кота
 image: koshka-dom-uiut-26.jpg
 alt: Featured Second
-published: 2021-02-04
+published: 2021-02-04T00:00:00.000Z
 slug: kot
 localesData:
   - locale: en

@@ -1,6 +1,6 @@
 ---
 title: Cat
-description: The post entry text or description
+description: The post entry text or description The post entry text or description The post entry text or description The post entry text or description The post entry text or description The post entry text or description
 image: koshka-dom-uiut-26.jpg
 alt: Featured Second
 published: 2021-02-04T00:00:00.000Z

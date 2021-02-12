@@ -1,6 +1,6 @@
 ---
 title: Fox
-description: Post entry text
+description: Short post entry text Short post entry text Short post entry text Short post entry text Short post entry text Short post entry text
 image: lisa-les-trava-son.jpg
 alt: Image alt
 published: 2021-02-02T00:00:00.000Z

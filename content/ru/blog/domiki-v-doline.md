@@ -1,9 +1,9 @@
 ---
 title: Домики в долине
-description: Короткое описание поста
+description: Короткое описание поста Короткое описание поста Короткое описание поста Короткое описание поста Короткое описание поста
 image: valley-home.jpg
 alt: Alt
-published: 2021-01-31
+published: 2021-01-31T00:00:00.000Z
 slug: domiki-v-doline
 localesData:
   - locale: en

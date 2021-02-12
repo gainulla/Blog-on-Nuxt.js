@@ -1,9 +1,9 @@
 ---
 title: Бабочка
-description: Вводный текст поста
+description: Вводный текст для статьи Вводный текст для статьи Вводный текст для статьи Вводный текст для статьи Вводный текст для статьи Вводный текст для статьи Вводный текст для статьи
 image: babochka-cvety-rozmytost.jpg
 alt: Featured
-published: 2021-02-05
+published: 2021-02-05T00:00:00.000Z
 slug: babochka
 localesData:
   - locale: en

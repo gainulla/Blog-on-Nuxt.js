@@ -1,9 +1,9 @@
 ---
 title: Houses in valley
-description: Description of the post
+description: Description of the post Description of the post Description of the post Description of the post Description of the post Description of the post
 image: valley-home.jpg
 alt: Alt
-published: 2021-01-31
+published: 2021-01-31T00:00:00.000Z
 slug: houses-in-valley
 localesData:
   - locale: en

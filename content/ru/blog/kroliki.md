@@ -1,9 +1,9 @@
 ---
 title: Кролики
-description: Описание поста про кроликов
+description: Описание поста про кроликов Описание поста про кроликов Описание поста про кроликов
 image: hazen.jpg
 alt: Alt
-published: 2021-02-01
+published: 2021-02-01T00:00:00.000Z
 slug: kroliki
 localesData:
   - locale: en
