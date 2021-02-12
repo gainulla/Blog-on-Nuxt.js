@@ -39,7 +39,12 @@ export default {
               : article.path,
       })),
     }
-  
+  },
+
+  head() {
+    return {
+      title: 'Blog'
+    }
   }
 }
 </script>
