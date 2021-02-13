@@ -1,34 +1,39 @@
 <template>
-  <div class="page">
-    <h1 class="text-center mt-0">Edit post</h1>
-    
-    <p v-if="error" class="error">{{ error }}</p>
+  <client-only>
+    <div class="post-edit">
+      <h1 class="text-center mt-0">Edit post</h1>
 
-    <form class="editForm"
-      @submit.prevent="onSubmit"
-      enctype="multipart/form-data"
-      style="font-size:1.1em; line-height:1.7em; font-family:'Bellota Text', sans-serif; font-weight:400 !important;"
-    >
-      <p class="w-100">
-        <label>Images</label>
-        <span class="dropper">
-          <input
-            type="file"
-            @change="onFileSelect($event.target.files)"
-            multiple
-            accept="image/*"
-          />
-          <span class="icon hashtag" />
-          <span class="image">{{ textImages }}</span>
-        </span>
-      </p>
-      <p class="w-100">
-        <label>Content</label>
-        <textarea ref="contentEditor" class="content-editor" />
-      </p>
-      <button type="button" @click="onSubmit">Save</button>
-    </form>
-  </div>
+      <p
+        v-if="error"
+        class="error">{{ error }}</p>
+
+      <form
+        class="editForm"
+        @submit.prevent="onSubmit"
+        enctype="multipart/form-data"
+        style="font-size:1.1em; line-height:1.7em; font-family:'Bellota Text', sans-serif; font-weight:400 !important;"
+      >
+        <div class="field w-100">
+          <label>Images</label>
+          <span class="dropper">
+            <input
+              type="file"
+              @change="onFileSelect($event.target.files)"
+              multiple
+              accept="image/*"
+            />
+            <span class="icon hashtag" />
+            <span class="image">{{ textImages }}</span>
+          </span>
+        </div>
+        <div class="field w-100">
+          <label>Content</label>
+          <vue-simplemde v-model="simpleMde" ref="contentEditor" class="content-editor" />
+        </div>
+        <button type="button" @click="onSubmit">Save</button>
+      </form>
+    </div>
+  </client-only>
 </template>
 
 <script>
@@ -37,39 +42,17 @@ import parseMD from 'parse-md'
 import YAML from 'yaml'
 
 export default {
-  head() {
-    return {
-      link: [
-        {
-          rel: 'stylesheet',
-          href: 'https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css'
-        }
-      ],
-      script: [
-        {
-          id: 'simplemdeScript',
-          src: 'https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js',
-          async: true,
-          defer: true,
-          callback: () => this.init()
-        }
-      ]
-    }
+  mounted () {
+    this.init()
   },
 
-  mounted() {
-    if (document.getElementById('simplemdeScript')) {
-      window.onload = () => this.init()
-    }
-  },
-
-  data() {
+  data () {
     return {
       simpleMde: null,
       files: null,
       isNewPost: true,
-      textImages: "",
-      error: ""
+      textImages: '',
+      error: ''
     }
   },
 
@@ -78,15 +61,15 @@ export default {
       type: Object,
       default: () => ({
         article: null,
-        content: "Article..."
+        content: 'Article...'
       })
     }
   },
 
   methods: {
 
-    frontmatter() {
-      let metadata;
+    frontmatter () {
+      let metadata
 
       if (this.isNewPost) {
         metadata = {
@@ -98,7 +81,7 @@ export default {
           slug: 'post-slug',
           localesData: [
             { locale: 'en', slug: 'post-slug', tags: 'no tag' },
-            { locale: 'ru', slug: 'слаг-поста', tags: 'no tag' },
+            { locale: 'ru', slug: 'слаг-поста', tags: 'no tag' }
           ]
         }
       } else {
@@ -116,39 +99,38 @@ export default {
       return '---\n' + YAML.stringify(metadata) + '---\n'
     },
 
-    init() {
+    init () {
       this.isNewPost = (this.data.article === null)
-      this.simpleMde = new SimpleMDE({ element: this.$refs.contentEditor })
-      this.simpleMde.value(this.frontmatter() + this.data.content)
+      this.simpleMde = this.frontmatter() + this.data.content
     },
 
-    onFileSelect(files) {
+    onFileSelect (files) {
       this.files = files
       const imagesArr = Array.from(files).map(image => image.name)
       this.textImages = imagesArr.join(', ')
     },
 
-    onSubmit() {
+    onSubmit () {
       let data = {}
 
       try {
-        data = parseMD(this.simpleMde.value())
-      } catch(e) {
+        data = parseMD(this.simpleMde)
+      } catch (e) {
         this.error = this.$t('postForm.error')
         alert(this.error)
-        return;
+        return
       }
 
-      this.error = ""
+      this.error = ''
 
       const formData = new FormData()
       formData.append('isNewPost', this.isNewPost)
       formData.append('metadata', JSON.stringify(data.metadata))
-      formData.append('mdeValue', this.simpleMde.value())
+      formData.append('mdeValue', this.simpleMde)
       formData.append('language', this.$i18n.locale)
 
       if (this.files) {
-        const files = Array.from(this.files).map(file => {
+        Array.from(this.files).forEach((file) => {
           formData.append('images', file)
           if (!this.isNewPost) {
             formData.append('image', this.data.article.image)
@@ -159,23 +141,23 @@ export default {
       this.submit(formData)
     },
 
-    submit(data) {
+    submit (data) {
       // for (let value of data.values()) {
       //   console.log('FORM VALUE', value)
       // }
       axios.post('http://localhost:3000/api/handle-form', data)
-        .then(res => {
+        .then((res) => {
           alert(res.data.message)
         })
     }
- 
+
   } // methods
 }
 </script>
 
 <style lang="scss" scoped>
 
-.page {
+.post-edit {
   background-color: white;
   margin-left: -1rem;
   margin-right: -1rem;
@@ -197,7 +179,7 @@ p.error {
   display: flex;
   flex-flow: row wrap;
 
-  p {
+  .field {
     margin-top: .2rem;
     margin-bottom: .7rem;
 

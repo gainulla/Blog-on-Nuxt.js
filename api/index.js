@@ -61,17 +61,17 @@ router.post('/handle-form', async (req, res) => {
       })
     } // forEach
 
-    if (req.body.isNewPost == 'false' && featImgName) {
-      if (req.body.image != featImgName && req.body.image != defImage) {
-        const featDir = 'assets/images/featured'
-        const featImgOld = path.normalize(`${featDir}/${req.body.image}`)
-        const small = glob.appendImgSize(featImgOld, '_small')
-        const thumb = glob.appendImgSize(featImgOld, '_thumb')
-        await fs.unlink(featImgOld, err => console.log(err))
-        await fs.unlink(small, err => console.log(err))
-        await fs.unlink(thumb, err => console.log(err))
-      }
-    }
+    // if (req.body.isNewPost == 'false' && featImgName) {
+    //   if (req.body.image != featImgName && req.body.image != defImage) {
+    //     const featDir = 'assets/images/featured'
+    //     const featImgOld = path.normalize(`${featDir}/${req.body.image}`)
+    //     const small = glob.appendImgSize(featImgOld, '_small')
+    //     const thumb = glob.appendImgSize(featImgOld, '_thumb')
+    //     await fs.unlink(featImgOld, err => console.log(err))
+    //     await fs.unlink(small, err => console.log(err))
+    //     await fs.unlink(thumb, err => console.log(err))
+    //   }
+    // }
 
   } // req.files
 

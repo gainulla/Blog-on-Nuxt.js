@@ -29,7 +29,8 @@ export default {
   plugins: [
     '@/plugins/prism',
     '@/plugins/vue-mixins',
-    '@/plugins/nuxt-inject'
+    '@/plugins/nuxt-inject',
+    { src: '@/plugins/simplemde', ssr: false }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
