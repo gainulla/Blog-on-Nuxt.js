@@ -14,15 +14,16 @@
 export default {
   name: 'EditPost',
 
-  async asyncData({ $content, params, app }) {
-    const article = await $content(`${app.i18n.locale}/blog`,
+  async asyncData ({ $content, params, app }) {
+    const article = await $content(
+      `${app.i18n.locale}/blog`,
       { text: true }, params.slug
-      ).fetch()
+    ).fetch()
 
     return {
       data: {
         article,
-        content: article.text,
+        content: article.text
       }
     }
   }

@@ -2,7 +2,8 @@
   <div class="prev-next-links">
     <div class="inner">
 
-      <NuxtLink v-if="prev"
+      <NuxtLink
+        v-if="prev"
         :to="{ name: `blog-slug___${$i18n.locale}`, params: { slug: prev.slug } }"
         class="link prev"
       >
@@ -16,8 +17,9 @@
         <h4 class="title">{{ prev.title }}</h4>
       </NuxtLink>
       <span v-else>&nbsp;</span>
-      
-      <NuxtLink v-if="next"
+
+      <NuxtLink
+        v-if="next"
         :to="{ name: `blog-slug___${$i18n.locale}`, params: { slug: next.slug } }"
         class="link next"
       >
@@ -31,7 +33,7 @@
         <h4 class="title">{{ next.title }}</h4>
       </NuxtLink>
       <span v-else>&nbsp;</span>
-      
+
     </div>
   </div>
 </template>

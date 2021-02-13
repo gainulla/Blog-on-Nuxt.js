@@ -3,6 +3,14 @@
 </template>
 
 <style lang="scss">
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
 
 html {
   box-sizing: border-box;
@@ -76,7 +84,7 @@ span.icon {
   width: 36px;
   height: 36px;
   background-size: 36px 36px;
-  
+
   &.hashtag {
     background-image: url('~assets/svg/icon-image.svg');
   }

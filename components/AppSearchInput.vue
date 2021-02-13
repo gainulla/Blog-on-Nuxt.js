@@ -1,7 +1,7 @@
 <template>
   <div class="search">
     <div class="search-inner">
-      
+
       <input
         v-model="searchQuery"
         type="search"
@@ -10,10 +10,11 @@
       >
 
       <span v-if="articles.length == 0" class="icon search" />
-      
+
       <ul v-if="articles.length > 0">
         <li v-for="article of articles" :key="article.slug">
-          <NuxtLink :to="{
+          <NuxtLink
+            :to="{
               name: `blog-slug___${locale}`,
               params: { slug: article.slug }
             }"
@@ -27,17 +28,17 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       searchQuery: '',
-      articles: [],
+      articles: []
     }
   },
 
   props: ['locale'],
-  
+
   watch: {
-    async searchQuery(searchQuery) {
+    async searchQuery (searchQuery) {
       if (!searchQuery) {
         this.articles = []
         return

@@ -1,6 +1,6 @@
 <script>
 export default {
-  middleware({ redirect }) {
+  middleware ({ redirect }) {
     return redirect('301', '/blog/page/1')
   }
 }

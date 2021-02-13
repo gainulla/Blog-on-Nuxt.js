@@ -2,7 +2,7 @@
   <header>
     <div class="container clearfix">
       <div class="header">
-    
+
         <div class="logo-wrap">
           <nuxt-link :to="pathFor('/')" class="logo polygon">
             <img :src="require('~/assets/images/site-logo.svg')" />
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'Header',
+  name: 'Header'
 }
 </script>
 
@@ -94,5 +94,4 @@ export default {
     }
   }
 }
-
 </style>

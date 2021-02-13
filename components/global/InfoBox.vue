@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: "InfoBox"
+  name: 'InfoBox'
 }
 </script>

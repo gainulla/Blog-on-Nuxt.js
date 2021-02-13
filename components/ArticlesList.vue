@@ -3,10 +3,11 @@
     <article v-for="(article, i) in articles" :key="i">
       <div class="article-inner">
         <div class="row">
-          
+
           <div class="column _md-44 _lg-38">
             <nuxt-link :to="article.path" class="image-link">
-              <img :srcset="`
+              <img
+                :srcset="`
                 ${featImg(article.image)} 1024w,
                 ${featImg($appendImgSize(article.image, '_small'))} 600w,
                 ${featImg($appendImgSize(article.image, '_thumb'))} 320w
@@ -36,7 +37,9 @@
       </div>
     </article>
 
-    <Pagination v-if="total > perPage"
+    <Pagination
+      v-if="total
+    > perPage"
       :total="total"
       :perPage="perPage"
       :locale="locale" />
@@ -48,8 +51,6 @@
 </template>
 
 <script>
-import path from 'path'
-
 export default {
   name: 'ArticlesList',
 
@@ -68,7 +69,7 @@ export default {
     },
     locale: {
       type: String,
-      required: true 
+      required: true
     }
   }
 }

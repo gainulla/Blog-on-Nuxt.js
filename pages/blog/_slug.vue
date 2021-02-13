@@ -1,6 +1,6 @@
 <template>
   <div>
-    
+
     <Header>
       <LocaleSwitch
         slot="locale-switch"
@@ -13,12 +13,14 @@
 
       <div v-show="hostname == 'http://localhost:3000'" class="admin-area">
         <div class="row">
-          <nuxt-link :to="editArticleRoute" class="btn"
-          >Edit</nuxt-link>
-          <nuxt-link :to="newArticleRoute" class="btn"
-          >Add New</nuxt-link>
+          <nuxt-link :to="editArticleRoute" class="btn">
+            Edit
+          </nuxt-link>
+          <nuxt-link :to="newArticleRoute" class="btn">
+            Add New
+          </nuxt-link>
         </div>
-      </div> 
+      </div>
 
       <div class="page-content">
         <article>
@@ -51,20 +53,21 @@ import Prism from '~/plugins/prism'
 export default {
   name: 'Article',
 
-  data() {
+  data () {
     return {
       hostname: process.env.baseUrl
     }
   },
 
-  mounted() {
+  mounted () {
     Prism.highlightAll()
   },
 
-  async asyncData(context) {
-    const { $content, params, app, route, redirect, ssrContext } = context
-    const article = await $content(`${app.i18n.locale}/blog`, params.slug)
-                            .fetch()
+  async asyncData (context) {
+    const { $content, params, app } = context
+    const article = await $content(
+      `${app.i18n.locale}/blog`, params.slug
+    ).fetch()
 
     const [prev, next] = await $content(`${app.i18n.locale}/blog`)
       .only(['title', 'slug', 'image'])
@@ -72,32 +75,33 @@ export default {
       .surround(params.slug)
       .fetch()
 
-    return { 
+    return {
       article,
       slug: params.slug,
-      prev, next,
+      prev,
+      next,
       editArticleRoute: {
-        name: `admin-blog-slug___${ app.i18n.locale }`,
+        name: `admin-blog-slug___${app.i18n.locale}`,
         params: { slug: params.slug }
       },
       newArticleRoute: {
-        name: `admin-blog-new___${ app.i18n.locale }`,
+        name: `admin-blog-new___${app.i18n.locale}`
       }
     }
   },
 
   methods: {
-    formatDate(date) {
+    formatDate (date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('en', options)
     }
   },
 
-  head() {
+  head () {
     return {
       title: this.article.title,
       htmlAttrs: {
-        lang: this.$i18n.locale,
+        lang: this.$i18n.locale
       },
       meta: [
         {
@@ -130,7 +134,7 @@ export default {
     }
     &._md-36 {
       flex: 3.6;
-      
+
       &:nth-child(2) {
         text-align: left !important;
         margin-left: 1.5rem;
@@ -149,7 +153,7 @@ export default {
     background-color: darken(#b0c4c0, 10);
     color: white;
     padding: .5rem .8rem;
-    
+
     &:first-of-type {
       margin-left: auto;
     }
@@ -235,7 +239,7 @@ export default {
     padding-left: 4rem;
     padding-right: 4rem;
     padding-bottom: 1rem;
-    
+
     article img.featured {
       max-width: 100%;
     }

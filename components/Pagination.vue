@@ -7,7 +7,8 @@
       <span class="text">First</span>
     </span>
 
-    <nuxt-link v-else
+    <nuxt-link
+      v-else
       :to="{ name: `blog-page-page___${locale}`, params: { page: 1 } }"
       class="btn btn-left"
     >
@@ -15,13 +16,14 @@
       <span class="icon cheveron-left" style="margin-left: -1.8rem" />
       <span class="text">First</span>
     </nuxt-link>
-    
+
     <span v-if="currentPage === 1" class="btn btn-left disabled">
       <span class="icon cheveron-left" />
       <span class="text">Prev</span>
     </span>
 
-    <nuxt-link v-else
+    <nuxt-link
+      v-else
       :to="{ name: `blog-page-page___${locale}`, params: { page: prevPage } }"
       class="btn btn-left"
     >
@@ -34,7 +36,8 @@
       <span class="icon cheveron-right" />
     </span>
 
-    <nuxt-link v-else
+    <nuxt-link
+      v-else
       :to="{ name: `blog-page-page___${locale}`, params: { page: nextPage } }"
       class="btn btn-right"
     >
@@ -48,7 +51,8 @@
       <span class="icon cheveron-right" />
     </span>
 
-    <nuxt-link v-else
+    <nuxt-link
+      v-else
       :to="{ name: `blog-page-page___${locale}`, params: { page: totalPages } }"
       class="btn btn-right"
     >
@@ -77,16 +81,16 @@ export default {
     }
   },
   computed: {
-    totalPages() {
+    totalPages () {
       return Math.ceil(this.total / this.perPage)
     },
-    currentPage() {
+    currentPage () {
       return parseInt(this.$route.params.page) || 1
     },
-    prevPage() {
+    prevPage () {
       return this.currentPage > 1 ? this.currentPage - 1 : 1
     },
-    nextPage() {
+    nextPage () {
       return this.currentPage < this.totalPages
         ? this.currentPage + 1
         : this.totalPages

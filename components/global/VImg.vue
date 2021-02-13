@@ -21,8 +21,9 @@ export default {
       required: true
     }
   },
+
   methods: {
-    imgSrc() {
+    imgSrc () {
       try {
         return require(`~/assets/images/content/${this.src}`)
       } catch (error) {

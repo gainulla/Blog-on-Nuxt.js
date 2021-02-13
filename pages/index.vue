@@ -32,7 +32,7 @@
 export default {
   name: 'Home',
 
-  head() {
+  head () {
     return {
       title: 'Home'
     }
@@ -55,7 +55,7 @@ export default {
     //to top right, #FCDF87 50%, #CCB9B1 50%);
 
   // background: radial-gradient(ellipse at bottom,#1b2735 0%,#090a0f 100%);
-  // filter: drop-shadow(0 0 10px white);  
+  // filter: drop-shadow(0 0 10px white);
 
   @function random_range($min, $max) {
     $rand: random();
@@ -118,7 +118,7 @@ export default {
       align-items: center;
       text-transform: capitalize;
       cursor: pointer;
-      
+
       a.link {
         color:  lighten($north, 10);
         font-size: 1.6rem;

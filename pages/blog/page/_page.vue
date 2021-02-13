@@ -24,24 +24,24 @@ import getContent from '@/utils/get-content'
 export default {
   name: 'Blog',
 
-  async asyncData({ $content, app, params, error }) {
+  async asyncData ({ $content, app, params, error }) {
     const perPage = 5
     const content = await getContent($content, app, params, perPage, error)
 
     return {
       locale: app.i18n.locale,
       total: content.allArticles.length,
-      perPage: perPage,
+      perPage,
       articles: content.paginatedArticles.map(article => ({
         ...article,
-        path: app.i18n.locale == app.i18n.defaultLocale
-              ? article.path.replace(`/${app.i18n.locale}`, "")
-              : article.path,
-      })),
+        path: app.i18n.locale === app.i18n.defaultLocale
+          ? article.path.replace(`/${app.i18n.locale}`, '')
+          : article.path
+      }))
     }
   },
 
-  head() {
+  head () {
     return {
       title: 'Blog'
     }

@@ -21,7 +21,7 @@
 export default {
   name: 'Blog',
 
-  async asyncData({ $content, params, app, $tagsArr, $compareTags }) {
+  async asyncData ({ $content, params, app, $tagsArr, $compareTags }) {
     const currentLocale = app.i18n.locale
 
     const allArticles = await $content(`${currentLocale}/blog`)
@@ -29,12 +29,12 @@ export default {
       .sortBy('createdAt', 'desc')
       .fetch()
 
-    let tagArticles = []
+    const tagArticles = []
     let pageTag = ''
 
-    allArticles.forEach(article => {
+    allArticles.forEach((article) => {
       const tagsArr = $tagsArr(article.localesData)
-      tagsArr.forEach(tag => {
+      tagsArr.forEach((tag) => {
         if ($compareTags(tag, params.tag)) {
           pageTag = tag
           tagArticles.push(article)
@@ -44,13 +44,13 @@ export default {
 
     return {
       locale: app.i18n.locale,
-      pageTag: pageTag,
+      pageTag,
       localesData: tagArticles[0].localesData,
       articles: tagArticles.map(article => ({
         ...article,
-        path: currentLocale == app.i18n.defaultLocale
-              ? article.path.replace(`/${currentLocale}`, "")
-              : article.path,
+        path: currentLocale === app.i18n.defaultLocale
+          ? article.path.replace(`/${currentLocale}`, '')
+          : article.path
       }))
     }
   }
