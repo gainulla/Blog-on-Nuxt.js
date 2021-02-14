@@ -104,5 +104,11 @@ export default {
 
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-  }
+  },
+
+  /*
+  ** Customize the progress-bar color
+  */
+  loading: { color: '#FF5575', height: '3px', duration: 5000, failedColor: '#D71661', throttle: 0 }
+
 }
