@@ -1,14 +1,14 @@
 export default async ($content, app, params, perPage, error) => {
   const currentPage = parseInt(params.page)
   const allArticles = await $content(`${app.i18n.locale}/blog`)
-                      .without('body')
-                      .fetch()
+    .without('body')
+    .fetch()
   const totalArticles = allArticles.length
   const lastPage = Math.ceil(totalArticles / perPage)
-  const lastPageCount = (totalArticles % perPage != 0)
-                        ? totalArticles % perPage
-                        : perPage
-  
+  const lastPageCount = (totalArticles % perPage !== 0)
+    ? totalArticles % perPage
+    : perPage
+
   // console.log('CURRENT PAGE', currentPage)
   // console.log('LAST PAGE', lastPage)
   // console.log('LAST PAGE COUNT', lastPageCount)
@@ -16,7 +16,7 @@ export default async ($content, app, params, perPage, error) => {
 
   const skipNumber = () => {
     if (currentPage === 1) {
-      return 0;
+      return 0
     }
     if (currentPage === lastPage) {
       return totalArticles - lastPageCount
