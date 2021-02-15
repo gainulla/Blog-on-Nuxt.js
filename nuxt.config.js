@@ -109,6 +109,6 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#FF5575', height: '3px', duration: 5000, failedColor: '#D71661', throttle: 0 }
+  loading: { color: '#Fcdf87', height: '3px', duration: 5000, failedColor: '#CCB9B1', throttle: 0 }
 
 }
