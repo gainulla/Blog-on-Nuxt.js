@@ -1,6 +1,5 @@
 <template>
   <div class="pagination">
-
     <span v-if="currentPage === 1" class="btn btn-left disabled">
       <span class="icon cheveron-left" />
       <span class="icon cheveron-left" style="margin-left: -1.8rem" />
@@ -60,7 +59,6 @@
       <span class="icon cheveron-right" style="margin-right:-1.8rem" />
       <span class="icon cheveron-right" />
     </nuxt-link>
-
   </div>
 </template>
 

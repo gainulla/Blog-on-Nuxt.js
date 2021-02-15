@@ -2,10 +2,9 @@
   <header>
     <div class="container clearfix">
       <div class="header">
-
         <div class="logo-wrap">
           <nuxt-link :to="pathFor('/')" class="logo polygon">
-            <img :src="require('~/assets/images/site-logo.svg')" />
+            <img :src="require('~/assets/images/site-logo.svg')">
           </nuxt-link>
         </div>
 
@@ -18,7 +17,6 @@
         <div class="locale-switch-comp">
           <slot name="locale-switch" />
         </div>
-
       </div>
     </div>
   </header>

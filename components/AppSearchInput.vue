@@ -1,7 +1,6 @@
 <template>
   <div class="search">
     <div class="search-inner">
-
       <input
         v-model="searchQuery"
         type="search"
@@ -18,24 +17,30 @@
               name: `blog-slug___${locale}`,
               params: { slug: article.slug }
             }"
-          >{{ article.title }}</NuxtLink>
+          >
+            {{ article.title }}
+          </NuxtLink>
         </li>
       </ul>
-
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    locale: {
+      type: String,
+      required: true
+    }
+  },
+
   data () {
     return {
       searchQuery: '',
       articles: []
     }
   },
-
-  props: ['locale'],
 
   watch: {
     async searchQuery (searchQuery) {

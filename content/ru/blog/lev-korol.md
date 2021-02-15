@@ -1,17 +1,19 @@
 ---
 title: Лев - цар зверей
-description: Описание поста про царя зверей Описание поста про царя зверей Описание поста про царя зверей Описание поста про царя зверей Описание поста про царя зверей
+description: Описание поста про царя зверей Описание поста про царя зверей
+  Описание поста про царя зверей Описание поста про царя зверей Описание поста
+  про царя зверей
 image: lev-belyi-zoopark.jpg
 alt: Featured Alt
 published: 2021-02-03T00:00:00.000Z
 slug: lev-korol
 localesData:
-  - locale: en
-    slug: lion-king
-    tags: lion
   - locale: ru
     slug: lev-korol
     tags: лев
+  - locale: en
+    slug: lion-king
+    tags: lion
 ---
 
 # Белый лев

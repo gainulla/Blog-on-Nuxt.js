@@ -1,11 +1,16 @@
 <template>
   <div>
     <Header>
-      <LocaleSwitch slot="locale-switch" :path="`/blog/page/${$route.params.page}`" />
+      <LocaleSwitch
+        slot="locale-switch"
+        :path="`/blog/page/${$route.params.page}`"
+      />
     </Header>
 
     <div class="container">
-      <h1 class="headline text-center">{{ $t('headline1.blog') }}</h1>
+      <h1 class="headline text-center">
+        {{ $t('headline1.blog') }}
+      </h1>
 
       <ArticlesList
         :articles="articles"
@@ -13,7 +18,6 @@
         :per-page="perPage"
         :locale="locale"
       />
-
     </div>
   </div>
 </template>

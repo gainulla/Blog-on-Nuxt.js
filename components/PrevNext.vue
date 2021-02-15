@@ -1,7 +1,6 @@
 <template>
   <div class="prev-next-links">
     <div class="inner">
-
       <NuxtLink
         v-if="prev"
         :to="{ name: `blog-slug___${$i18n.locale}`, params: { slug: prev.slug } }"
@@ -12,9 +11,11 @@
           <span class="">{{ $t('nav.prev') }}</span>
         </nav>
         <span class="thumbnail">
-          <img :src="featImg($appendImgSize(prev.image, '_thumb'))" />
+          <img :src="featImg($appendImgSize(prev.image, '_thumb'))">
         </span>
-        <h4 class="title">{{ prev.title }}</h4>
+        <h4 class="title">
+          {{ prev.title }}
+        </h4>
       </NuxtLink>
       <span v-else>&nbsp;</span>
 
@@ -28,12 +29,13 @@
           <span class="icon cheveron-right" />
         </nav>
         <span class="thumbnail">
-          <img :src="featImg($appendImgSize(next.image, '_thumb'))" />
+          <img :src="featImg($appendImgSize(next.image, '_thumb'))">
         </span>
-        <h4 class="title">{{ next.title }}</h4>
+        <h4 class="title">
+          {{ next.title }}
+        </h4>
       </NuxtLink>
       <span v-else>&nbsp;</span>
-
     </div>
   </div>
 </template>

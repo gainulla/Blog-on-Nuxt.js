@@ -1,17 +1,18 @@
 ---
 title: Fox
-description: Short post entry text Short post entry text Short post entry text Short post entry text Short post entry text Short post entry text
+description: Short post entry text Short post entry text Short post entry text
+  Short post entry text Short post entry text Short post entry text
 image: lisa-les-trava-son.jpg
 alt: Image alt
 published: 2021-02-02T00:00:00.000Z
 slug: fox
 localesData:
-  - locale: en
-    slug: fox
-    tags: fox, test
   - locale: ru
     slug: lisa
     tags: лиса, тест
+  - locale: en
+    slug: fox
+    tags: fox, test
 ---
 
 # Sleeping Fox

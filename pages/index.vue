@@ -1,21 +1,20 @@
 <template>
   <div class="screen">
-    <span class="snow" v-for="num of 200" :key="num" />
+    <span v-for="num of 200" :key="num" class="snow" />
     <span class="border t odd" />
     <span class="border r even" />
     <span class="border b odd" />
     <span class="border l even" />
 
     <div class="hero">
-
       <span class="logo polygon">
-        <img :src="require('~/assets/images/site-logo.svg')" />
+        <img :src="require('~/assets/images/site-logo.svg')">
       </span>
 
       <div class="button polygon">
         <LocaleSwitch class="locale-switch-comp" />
         <nuxt-link :to="pathFor('/blog/page/1')" class="link">
-          {{$t('blog') }}
+          {{ $t('blog') }}
         </nuxt-link>
       </div>
 
@@ -24,7 +23,6 @@
         <p>{{ $t('metier') }}</p>
       </div>
     </div>
-
   </div>
 </template>
 

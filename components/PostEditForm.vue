@@ -1,36 +1,40 @@
 <template>
   <client-only>
     <div class="post-edit">
-      <h1 class="text-center mt-0">Edit post</h1>
+      <h1 class="text-center mt-0">
+        Edit post
+      </h1>
 
-      <p
-        v-if="error"
-        class="error">{{ error }}</p>
+      <p v-if="error" class="error">
+        {{ error }}
+      </p>
 
       <form
         class="editForm"
-        @submit.prevent="onSubmit"
         enctype="multipart/form-data"
-        style="font-size:1.1em; line-height:1.7em; font-family:'Bellota Text', sans-serif; font-weight:400 !important;"
+        style="font-size:1.1em; line-height:1.7em; font-family:'Nunito', sans-serif; font-weight:400 !important;"
+        @submit.prevent="onSubmit"
       >
         <div class="field w-100">
           <label>Images</label>
           <span class="dropper">
             <input
               type="file"
-              @change="onFileSelect($event.target.files)"
               multiple
               accept="image/*"
-            />
+              @change="onFileSelect($event.target.files)"
+            >
             <span class="icon hashtag" />
             <span class="image">{{ textImages }}</span>
           </span>
         </div>
         <div class="field w-100">
           <label>Content</label>
-          <vue-simplemde v-model="simpleMde" ref="contentEditor" class="content-editor" />
+          <vue-simplemde ref="contentEditor" v-model="simpleMde" class="content-editor" />
         </div>
-        <button type="button" @click="onSubmit">Save</button>
+        <button type="button" @click="onSubmit">
+          Save
+        </button>
       </form>
     </div>
   </client-only>
@@ -42,8 +46,14 @@ import parseMD from 'parse-md'
 import YAML from 'yaml'
 
 export default {
-  mounted () {
-    this.init()
+  props: {
+    data: {
+      type: Object,
+      default: () => ({
+        article: null,
+        content: 'Article...'
+      })
+    }
   },
 
   data () {
@@ -56,14 +66,8 @@ export default {
     }
   },
 
-  props: {
-    data: {
-      type: Object,
-      default: () => ({
-        article: null,
-        content: 'Article...'
-      })
-    }
+  mounted () {
+    this.init()
   },
 
   methods: {

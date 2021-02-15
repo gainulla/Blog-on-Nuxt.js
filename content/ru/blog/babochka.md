@@ -8,12 +8,12 @@ alt: Featured
 published: 2021-02-05T00:00:00.000Z
 slug: babochka
 localesData:
-  - locale: en
-    slug: butterfly
-    tags: butterfly, flowers, test
   - locale: ru
     slug: babochka
     tags: бабочка, цветы, тест
+  - locale: en
+    slug: butterfly
+    tags: butterfly, flowers, test
 ---
 
 # Бабочка

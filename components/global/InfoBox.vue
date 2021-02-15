@@ -1,6 +1,10 @@
 <template>
   <div class="test-style">
-    <p><slot name="info-box">default</slot></p>
+    <p>
+      <slot name="info-box">
+        default
+      </slot>
+    </p>
   </div>
 </template>
 

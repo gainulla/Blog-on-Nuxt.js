@@ -4,15 +4,16 @@
       <LocaleSwitch
         slot="locale-switch"
         :path="'/blog/tag'"
-        :localesData="localesData"
+        :locales-data="localesData"
       />
     </Header>
 
     <div class="container">
-      <h1 class="headline text-center">{{ pageTag }}</h1>
+      <h1 class="headline text-center">
+        {{ pageTag }}
+      </h1>
 
       <ArticlesList :articles="articles" :locale="locale" />
-
     </div>
   </div>
 </template>

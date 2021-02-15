@@ -58,22 +58,22 @@ export default {
             code: 'en',
             iso: 'en-US',
             name: 'English'
-          },
+          }
         ],
         defaultLocale: 'ru',
         noPrefixDefaultLocale: true,
         vueI18n: {
           fallbackLocale: 'ru',
           messages: {
-            en: require('./locales/en-us.json'),
-            ru: require('./locales/ru-ru.json')
+            ru: require('./locales/ru-ru.json'),
+            en: require('./locales/en-us.json')
           }
-        },
+        }
       }
     ]
   ],
 
-  //Build Configuration (https://go.nuxtjs.dev/config-build)
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extend (config, { isDev, isClient }) {
       config.node = {

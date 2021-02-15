@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <ul
       v-if="isContentPage || isTagPage"
       class="lang-switch"
@@ -8,17 +7,24 @@
       <li
         v-for="(lang, key) in localesData"
         :key="key"
-        :class="{ 'active': $i18n.locale == lang.locale }"
+        :class="{
+          'active': $i18n.locale == lang.locale,
+          'default': lang.locale == $i18n.defaultLocale
+        }"
       >
         <nuxt-link
           v-if="path == '/blog'"
           :to="pathFor(path, lang.locale, lang.slug)"
-        >{{ lang.locale }}</nuxt-link>
+        >
+          {{ lang.locale }}
+        </nuxt-link>
 
         <nuxt-link
           v-if="path == '/blog/tag'"
           :to="pathFor(path, lang.locale, $tagsArr(lang.tags)[tagPriority])"
-        >{{ lang.locale }}</nuxt-link>
+        >
+          {{ lang.locale }}
+        </nuxt-link>
       </li>
     </ul>
 
@@ -26,14 +32,16 @@
       <li
         v-for="(lang, key) in localesData"
         :key="key"
-        :class="{ 'active': $i18n.locale == lang.locale }"
+        :class="{
+          'active': $i18n.locale == lang.locale,
+          'default': lang.locale == $i18n.defaultLocale
+        }"
       >
         <nuxt-link :to="switchLocalePath(lang.locale)">
           {{ lang.locale }}
         </nuxt-link>
       </li>
     </ul>
-
   </div>
 </template>
 
@@ -45,12 +53,13 @@ export default {
     localesData: {
       type: Array,
       default: () => ([
-        { locale: 'en', slug: '', tags: '' },
-        { locale: 'ru', slug: '', tags: '' }
+        { locale: 'ru', slug: '', tags: '' },
+        { locale: 'en', slug: '', tags: '' }
       ])
     },
 
     path: {
+      type: String,
       default: () => '/'
     }
   },
@@ -83,7 +92,9 @@ export default {
 <style lang="scss" scoped>
 
 ul.lang-switch {
-  text-align: right;
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
 
   li {
     display: inline-block;
@@ -97,11 +108,19 @@ ul.lang-switch {
       background-color:  #f4f8f7;
       color: #9393ac;
       transition: opacity 200ms ease;
+    }
 
-      &.nuxt-link-exact-active {
-        color: #10a578;
-        background-color:  #c9fcec;
+    &.active {
+      a {
+        color: #10a578 !important;
+        background-color:  #c9fcec !important;
       }
+    }
+
+    order: 1;
+
+    &.default {
+      order: -1;
     }
   }
 }

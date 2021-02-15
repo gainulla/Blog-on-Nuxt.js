@@ -6,7 +6,7 @@
       ${contImg($appendImgSize(src, '_thumb'))} 320w
     `"
     :alt="alt"
-  />
+  >
 </template>
 
 <script>
@@ -19,16 +19,6 @@ export default {
     alt: {
       type: String,
       required: true
-    }
-  },
-
-  methods: {
-    imgSrc () {
-      try {
-        return require(`~/assets/images/content/${this.src}`)
-      } catch (error) {
-        return null
-      }
     }
   }
 }

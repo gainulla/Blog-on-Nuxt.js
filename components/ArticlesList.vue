@@ -3,50 +3,54 @@
     <article v-for="(article, i) in articles" :key="i">
       <div class="article-inner">
         <div class="row">
-
           <div class="column _md-44 _lg-38">
             <nuxt-link :to="article.path" class="image-link">
               <img
                 :srcset="`
                 ${featImg(article.image)} 1024w,
                 ${featImg($appendImgSize(article.image, '_small'))} 600w,
-                ${featImg($appendImgSize(article.image, '_thumb'))} 320w
-              `" />
+                ${featImg($appendImgSize(article.image, '_thumb'))} 320w`"
+              >
             </nuxt-link>
           </div>
 
           <div class="column _md-56 _lg-62">
             <div class="details">
               <nuxt-link :to="article.path" class="entry-text">
-                <h2 class="title">{{ article.title }}</h2>
-                <p class="description">{{ article.description }}...</p>
+                <h2 class="title">
+                  {{ article.title }}
+                </h2>
+                <p class="description">
+                  {{ article.description }}...
+                </p>
               </nuxt-link>
               <div class="tags">
                 <nuxt-link
-                  v-for="(tag, i) of $tagsArr(article.localesData)"
+                  v-for="(tag, j) of $tagsArr(article.localesData)"
+                  :key="j"
                   :to="pathFor('/blog/tag', $i18n.locale, tag)"
-                  :key="i"
-                >{{ $tagsArr(article.localesData).length > (i + 1)
-                  ? `${tag},` : tag }}
+                >
+                  {{ $tagsArr(article.localesData).length > (i + 1) ? `${tag},` : tag }}
                 </nuxt-link>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </article>
 
     <Pagination
-      v-if="total
-    > perPage"
+      v-if="total > perPage"
       :total="total"
-      :perPage="perPage"
-      :locale="locale" />
+      :per-page="perPage"
+      :locale="locale"
+    />
   </div>
 
   <div v-else class="articles">
-    <h3 class="text-center mt-2">No posts yet.</h3>
+    <h3 class="text-center mt-2">
+      No posts yet.
+    </h3>
   </div>
 </template>
 

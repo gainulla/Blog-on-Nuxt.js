@@ -1,16 +1,14 @@
 <template>
   <div>
-
     <Header>
       <LocaleSwitch
         slot="locale-switch"
         :path="'/blog'"
-        :localesData="article.localesData"
+        :locales-data="article.localesData"
       />
     </Header>
 
     <div class="container">
-
       <div v-show="hostname == 'http://localhost:3000'" class="admin-area">
         <div class="row">
           <nuxt-link :to="editArticleRoute" class="btn">
@@ -33,17 +31,19 @@
             :alt="article.alt"
             class="featured"
           >
-          <h1 class="title">{{ article.title }}</h1>
-          <p class="description">{{ article.description }}</p>
+          <h1 class="title">
+            {{ article.title }}
+          </h1>
+          <p class="description">
+            {{ article.description }}
+          </p>
           <small>{{ $t('published') }}: {{ formatDate(article.published) }}</small>
           <nuxt-content :document="article" class="content clearfix mb-1" />
         </article>
-
       </div>
 
       <PrevNext :prev="prev" :next="next" class="mb-2" />
     </div>
-
   </div>
 </template>
 
@@ -52,16 +52,6 @@ import Prism from '~/plugins/prism'
 
 export default {
   name: 'Article',
-
-  data () {
-    return {
-      hostname: process.env.baseUrl
-    }
-  },
-
-  mounted () {
-    Prism.highlightAll()
-  },
 
   async asyncData (context) {
     const { $content, params, app } = context
@@ -90,10 +80,9 @@ export default {
     }
   },
 
-  methods: {
-    formatDate (date) {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }
-      return new Date(date).toLocaleDateString('en', options)
+  data () {
+    return {
+      hostname: process.env.baseUrl
     }
   },
 
@@ -120,6 +109,17 @@ export default {
           content: process.env.baseUrl + '/' + this.article.image
         }
       ]
+    }
+  },
+
+  mounted () {
+    Prism.highlightAll()
+  },
+
+  methods: {
+    formatDate (date) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
+      return new Date(date).toLocaleDateString('en', options)
     }
   }
 }

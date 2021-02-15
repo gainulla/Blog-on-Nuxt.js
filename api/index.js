@@ -1,11 +1,11 @@
+const path = require('path')
+const fs = require('fs')
 const express = require('express')
 const router = express.Router()
 const bodyParser = require('body-parser')
 const write = require('write')
-const path = require('path')
 const fileUpload = require('express-fileupload')
 const cors = require('cors')
-const fs = require('fs')
 const jimp = require('jimp')
 const glob = require('../utils/global-funcs.js')
 
@@ -24,13 +24,11 @@ router.use((req, res, next) => {
 })
 
 router.post('/handle-form', async (req, res) => {
-
-  let imgData = []
+  const imgData = []
   const metadata = JSON.parse(req.body.metadata)
   const defImage = 'default.jpg'
 
   if (req.files) {
-
     let files = []
     let featImgName = false
 
@@ -40,15 +38,14 @@ router.post('/handle-form', async (req, res) => {
       files.push(req.files.images)
     }
 
-    for (let image of files) {
+    for (const image of files) {
       const featImg = path.normalize(`assets/images/featured/${image.name}`)
       const contImg = path.normalize(`assets/images/content/${image.name}`)
 
-      if (image.name == metadata.image) {
+      if (image.name === metadata.image) {
         await image.mv(featImg)
         await multiResizeImage(featImg)
         featImgName = image.name
-
       } else {
         await image.mv(contImg)
         await multiResizeImage(contImg)
@@ -61,40 +58,38 @@ router.post('/handle-form', async (req, res) => {
       })
     } // forEach
 
-    // if (req.body.isNewPost == 'false' && featImgName) {
-    //   if (req.body.image != featImgName && req.body.image != defImage) {
-    //     const featDir = 'assets/images/featured'
-    //     const featImgOld = path.normalize(`${featDir}/${req.body.image}`)
-    //     const small = glob.appendImgSize(featImgOld, '_small')
-    //     const thumb = glob.appendImgSize(featImgOld, '_thumb')
-    //     await fs.unlink(featImgOld, err => console.log(err))
-    //     await fs.unlink(small, err => console.log(err))
-    //     await fs.unlink(thumb, err => console.log(err))
-    //   }
-    // }
-
+    if (req.body.isNewPost === 'false' && featImgName) {
+      if (req.body.image !== featImgName && req.body.image !== defImage) {
+        const featDir = 'assets/images/featured'
+        const featImgOld = path.normalize(`${featDir}/${req.body.image}`)
+        const small = glob.appendImgSize(featImgOld, '_small')
+        const thumb = glob.appendImgSize(featImgOld, '_thumb')
+        await fs.unlink(featImgOld, err => console.log(err))
+        await fs.unlink(small, err => console.log(err))
+        await fs.unlink(thumb, err => console.log(err))
+      }
+    }
   } // req.files
 
   let filename = `content/${req.body.language}/blog/${metadata.slug}.md`
-    filename = path.normalize(filename)
+  filename = path.normalize(filename)
 
-  let message = ""
+  let message = ''
 
-  if (req.body.language == 'en') {
+  if (req.body.language === 'en') {
     message = 'Recorded!'
-  } else if (req.body.language == 'ru') {
+  } else if (req.body.language === 'ru') {
     message = 'Записано!'
   }
 
   write(filename, req.body.mdeValue).then(() => {
     res.send({
       status: true,
-      message: message,
-      filename: filename,
-      imgData: imgData
+      message,
+      filename,
+      imgData
     })
   })
-
 }) // router.post
 
 module.exports = {
