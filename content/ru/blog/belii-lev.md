@@ -6,13 +6,13 @@ description: Описание поста про царя зверей Описа
 image: lev-belyi-zoopark.jpg
 alt: Featured Alt
 published: 2021-02-03T00:00:00.000Z
-slug: lev-korol
+slug: белый-лев
 localesData:
   - locale: ru
-    slug: lev-korol
+    slug: белый-лев
     tags: лев
   - locale: en
-    slug: lion-king
+    slug: white-lion
     tags: lion
 ---
 

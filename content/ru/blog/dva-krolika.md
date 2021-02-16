@@ -5,13 +5,13 @@ description: Описание поста про кроликов Описани�
 image: hazen.jpg
 alt: Alt
 published: 2021-02-01T00:00:00.000Z
-slug: kroliki
+slug: два-кролика
 localesData:
   - locale: ru
-    slug: kroliki
+    slug: два-кролика
     tags: кролики, цветы
   - locale: en
-    slug: rabbits
+    slug: two-rabbits
     tags: rabbits, flowers
 ---
 # Кролики

@@ -13,7 +13,7 @@
 
       <div class="button polygon">
         <LocaleSwitch class="locale-switch-comp" />
-        <nuxt-link :to="pathFor('/blog/page/1')" class="link">
+        <nuxt-link :to="$urlFor('/blog/page/1')" class="link">
           {{ $t('blog') }}
         </nuxt-link>
       </div>

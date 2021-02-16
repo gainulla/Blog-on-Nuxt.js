@@ -15,5 +15,9 @@
   "searchPH": "Search...",
   "metier": "Web developer",
   "blog": "blog",
-  "published": "Article published"
+  "published": "Article published",
+  "edit": "Edit Artilce",
+  "images": "Images",
+  "content": "Content",
+  "save": "Save"
 }

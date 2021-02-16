@@ -1,20 +1,48 @@
+import settings from './utils/site-settings'
+import getSiteMeta from './utils/get-site-meta'
+
+const meta = getSiteMeta()
+
 export default {
   target: 'static',
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Blog',
+    title: 'Nuxt Static Blog',
+
     meta: [
+      ...meta,
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: settings.siteDesc || ''
+      },
+      { property: 'og:site_name', content: settings.siteName || '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: settings.siteDesc || ''
+      },
+      { property: 'og:image:width', content: '600' },
+      { property: 'og:image:height', content: '320' },
+      { name: 'twitter:site', content: settings.siteName || '' },
+      { name: 'twitter:card', content: 'summary_large_image' }
     ],
+
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
       { rel: 'manifest', href: '/site.webmanifest' },
+
+      {
+        hid: 'canonical',
+        rel: 'canonical',
+        href: settings.siteUrl
+      },
 
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       { href: 'https://fonts.googleapis.com/css2?family=Marmelad&family=Nunito:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Ubuntu+Mono:wght@400;700&display=swap', rel: 'stylesheet' }

@@ -3,12 +3,12 @@
     <div class="container clearfix">
       <div class="header">
         <div class="logo-wrap">
-          <nuxt-link :to="pathFor('/')" class="logo polygon">
+          <nuxt-link :to="$urlFor('/')" class="logo polygon">
             <img :src="require('~/assets/images/site-logo.svg')">
           </nuxt-link>
         </div>
 
-        <nuxt-link :to="pathFor('/blog')" class="to-blog featured">
+        <nuxt-link :to="$urlFor('/blog')" class="to-blog featured">
           {{ $t('nav.blog') }}
         </nuxt-link>
 

@@ -3,7 +3,7 @@
     <Header>
       <LocaleSwitch
         slot="locale-switch"
-        :path="'/blog/tag'"
+        :page-route="'/blog/tag'"
         :locales-data="localesData"
       />
     </Header>
@@ -23,9 +23,7 @@ export default {
   name: 'Blog',
 
   async asyncData ({ $content, params, app, $tagsArr, $compareTags }) {
-    const currentLocale = app.i18n.locale
-
-    const allArticles = await $content(`${currentLocale}/blog`)
+    const allArticles = await $content(`${app.i18n.locale}/blog`)
       .only(['title', 'description', 'image', 'slug', 'localesData', 'path'])
       .sortBy('createdAt', 'desc')
       .fetch()
@@ -49,8 +47,8 @@ export default {
       localesData: tagArticles[0].localesData,
       articles: tagArticles.map(article => ({
         ...article,
-        path: currentLocale === app.i18n.defaultLocale
-          ? article.path.replace(`/${currentLocale}`, '')
+        path: app.i18n.locale === app.i18n.defaultLocale
+          ? article.path.replace(`/${app.i18n.locale}`, '')
           : article.path
       }))
     }

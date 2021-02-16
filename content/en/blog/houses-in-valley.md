@@ -8,7 +8,7 @@ published: 2021-01-31T00:00:00.000Z
 slug: houses-in-valley
 localesData:
   - locale: ru
-    slug: domiki-v-doline
+    slug: домики-в-долине
     tags: домики, долина
   - locale: en
     slug: houses-in-valley

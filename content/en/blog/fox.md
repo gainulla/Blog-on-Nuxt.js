@@ -8,7 +8,7 @@ published: 2021-02-02T00:00:00.000Z
 slug: fox
 localesData:
   - locale: ru
-    slug: lisa
+    slug: лиса
     tags: лиса, тест
   - locale: en
     slug: fox

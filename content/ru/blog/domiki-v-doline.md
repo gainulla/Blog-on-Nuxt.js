@@ -5,10 +5,10 @@ description: Короткое описание поста Короткое оп�
 image: valley-home.jpg
 alt: Alt
 published: 2021-01-31T00:00:00.000Z
-slug: domiki-v-doline
+slug: домики-в-долине
 localesData:
   - locale: ru
-    slug: domiki-v-doline
+    slug: домики-в-долине
     tags: домики, долина
   - locale: en
     slug: houses-in-valley

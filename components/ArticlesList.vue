@@ -26,11 +26,11 @@
               </nuxt-link>
               <div class="tags">
                 <nuxt-link
-                  v-for="(tag, j) of $tagsArr(article.localesData)"
-                  :key="j"
-                  :to="pathFor('/blog/tag', $i18n.locale, tag)"
+                  v-for="(tag, i2) of $tagsArr(article.localesData)"
+                  :key="i2"
+                  :to="$urlFor(`/blog/tag/${tag}`, $i18n.locale)"
                 >
-                  {{ $tagsArr(article.localesData).length > (i + 1) ? `${tag},` : tag }}
+                  {{ $tagsArr(article.localesData).length > (i2 + 1) ? `${tag},` : tag }}
                 </nuxt-link>
               </div>
             </div>

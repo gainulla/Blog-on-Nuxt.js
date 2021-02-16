@@ -2,7 +2,7 @@
   <client-only>
     <div class="post-edit">
       <h1 class="text-center mt-0">
-        Edit post
+        {{ $t('edit') }}
       </h1>
 
       <p v-if="error" class="error">
@@ -16,7 +16,7 @@
         @submit.prevent="onSubmit"
       >
         <div class="field w-100">
-          <label>Images</label>
+          <label>{{ $t('images') }}</label>
           <span class="dropper">
             <input
               type="file"
@@ -29,11 +29,11 @@
           </span>
         </div>
         <div class="field w-100">
-          <label>Content</label>
+          <label>{{ $t('content') }}</label>
           <vue-simplemde ref="contentEditor" v-model="simpleMde" class="content-editor" />
         </div>
         <button type="button" @click="onSubmit">
-          Save
+          {{ $t('save') }}
         </button>
       </form>
     </div>
@@ -126,6 +126,13 @@ export default {
       }
 
       this.error = ''
+
+      data.metadata.slug = this.$cyrtt(data.metadata.slug)
+      data.metadata.localesData.forEach((lang, i) => {
+        if (lang.locale === 'ru') {
+          data.metadata.localesData[i].slug = this.$cyrtt(lang.slug)
+        }
+      })
 
       const formData = new FormData()
       formData.append('isNewPost', this.isNewPost)

@@ -3,7 +3,7 @@
     <Header>
       <LocaleSwitch
         slot="locale-switch"
-        :path="`/blog/page/${$route.params.page}`"
+        :page-route="`/blog/page/${$route.params.page}`"
       />
     </Header>
 

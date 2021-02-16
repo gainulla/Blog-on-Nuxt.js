@@ -6,10 +6,10 @@ description: Это короткое описание поста Это коро
 image: lisa-les-trava-son.jpg
 alt: Image alt
 published: 2021-02-02T00:00:00.000Z
-slug: lisa
+slug: лиса
 localesData:
   - locale: ru
-    slug: lisa
+    slug: лиса
     tags: лиса, тест
   - locale: en
     slug: fox

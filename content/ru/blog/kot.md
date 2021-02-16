@@ -5,10 +5,10 @@ description: Описание поста про кота Описание пос
 image: koshka-dom-uiut-26.jpg
 alt: Featured Second
 published: 2021-02-04T00:00:00.000Z
-slug: kot
+slug: кот
 localesData:
   - locale: ru
-    slug: kot
+    slug: кот
     tags: кот, тест
   - locale: en
     slug: cat

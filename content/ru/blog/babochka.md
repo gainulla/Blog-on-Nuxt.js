@@ -6,10 +6,10 @@ description: Вводный текст для статьи Вводный тек
 image: babochka-cvety-rozmytost.jpg
 alt: Featured
 published: 2021-02-05T00:00:00.000Z
-slug: babochka
+slug: бабочка
 localesData:
   - locale: ru
-    slug: babochka
+    slug: бабочка
     tags: бабочка, цветы, тест
   - locale: en
     slug: butterfly

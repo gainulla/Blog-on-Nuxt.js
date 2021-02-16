@@ -1,7 +1,11 @@
 <template>
   <div>
     <Header>
-      <LocaleSwitch slot="locale-switch" />
+      <LocaleSwitch
+        slot="locale-switch"
+        :page-route="`/admin/blog`"
+        :locales-data="data.article.localesData"
+      />
     </Header>
 
     <div class="container">

@@ -3,7 +3,7 @@
     <Header>
       <LocaleSwitch
         slot="locale-switch"
-        :path="'/blog'"
+        :page-route="'/blog'"
         :locales-data="article.localesData"
       />
     </Header>
@@ -49,6 +49,8 @@
 
 <script>
 import Prism from '~/plugins/prism'
+import settings from '~/utils/site-settings'
+import getSiteMeta from '~/utils/get-site-meta'
 
 export default {
   name: 'Article',
@@ -89,26 +91,47 @@ export default {
   head () {
     return {
       title: this.article.title,
-      htmlAttrs: {
-        lang: this.$i18n.locale
-      },
       meta: [
+        ...this.meta,
         {
-          property: 'og:title',
-          hid: 'og:title',
-          content: this.article.title
+          property: 'article:published_time',
+          content: this.article.createdAt
         },
         {
-          hid: 'og:description',
-          property: 'og:description',
-          content: this.article.description
+          property: 'article:modified_time',
+          content: this.article.updatedAt
         },
         {
-          hid: 'og:image',
-          property: 'og:image',
-          content: process.env.baseUrl + '/' + this.article.image
+          property: 'article:tag',
+          content: this.$tagsArr(this.article.localesData).join(',')
+        },
+        { name: 'twitter:label1', content: 'Written by' },
+        { name: 'twitter:data1', content: settings.author || '' },
+        { name: 'twitter:label2', content: 'Filed under' },
+        {
+          name: 'twitter:data2',
+          content: this.$tagsArr(this.article.localesData).join(',')
+        }
+      ],
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: `${settings.baseUrl}/blog/${this.$route.params.slug}`
         }
       ]
+    }
+  },
+
+  computed: {
+    meta () {
+      const metaData = {
+        type: 'article',
+        title: this.article.title,
+        description: this.article.description,
+        url: `${process.env.baseUrl}/blog/${this.$route.params.slug}`
+      }
+      return getSiteMeta(metaData)
     }
   },
 

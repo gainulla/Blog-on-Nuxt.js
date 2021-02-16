@@ -6,13 +6,13 @@ description: The post short description The post short description The post
 image: hazen.jpg
 alt: Alt
 published: 2021-02-01T00:00:00.000Z
-slug: rabbits
+slug: two-rabbits
 localesData:
   - locale: ru
-    slug: kroliki
+    slug: два-кролика
     tags: кролики, цветы
   - locale: en
-    slug: rabbits
+    slug: two-rabbits
     tags: rabbits, flowers
 ---
 The Rabbits

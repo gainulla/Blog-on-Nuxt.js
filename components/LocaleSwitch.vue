@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul
-      v-if="isContentPage || isTagPage"
+      v-if="isContentPage || isTagPage || isAdminPage"
       class="lang-switch"
     >
       <li
@@ -13,15 +13,15 @@
         }"
       >
         <nuxt-link
-          v-if="path == '/blog'"
-          :to="pathFor(path, lang.locale, lang.slug)"
+          v-if="pageRoute == '/blog' || pageRoute == '/admin/blog'"
+          :to="$urlFor(`${pageRoute}/${lang.slug}`, lang.locale)"
         >
           {{ lang.locale }}
         </nuxt-link>
 
         <nuxt-link
-          v-if="path == '/blog/tag'"
-          :to="pathFor(path, lang.locale, $tagsArr(lang.tags)[tagPriority])"
+          v-if="pageRoute == '/blog/tag'"
+          :to="$urlFor(`${pageRoute}/${$tagsArr(lang.tags)[tagPriority]}`, lang.locale)"
         >
           {{ lang.locale }}
         </nuxt-link>
@@ -58,7 +58,7 @@ export default {
       ])
     },
 
-    path: {
+    pageRoute: {
       type: String,
       default: () => '/'
     }
@@ -71,6 +71,10 @@ export default {
 
     isTagPage () {
       return this.$route.name.includes('tag')
+    },
+
+    isAdminPage () {
+      return this.$route.name.includes('admin')
     },
 
     tagPriority () {

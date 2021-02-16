@@ -1,20 +1,7 @@
 import Vue from 'vue'
-import CyrillicToTranslit from 'cyrillic-to-translit-js'
 
 Vue.mixin({
   methods: {
-
-    pathFor (path, locale = false, param = false) {
-      locale = !locale ? this.$i18n.locale : locale
-      param = param ? `/${param}` : ''
-      param = CyrillicToTranslit().transform(param, '-')
-
-      if (locale === this.$i18n.defaultLocale) {
-        return path + (param).replace(/\s+/g, '-')
-      } else {
-        return '/' + locale + path + param
-      }
-    },
 
     featImg (name) {
       return this.imgByType(name, 'featured')
