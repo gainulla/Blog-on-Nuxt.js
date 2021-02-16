@@ -15,7 +15,7 @@
           <NuxtLink
             :to="{
               name: `blog-slug___${locale}`,
-              params: { slug: article.slug }
+              params: { slug: $cyrtt(article.slug) }
             }"
           >
             {{ article.title }}
