@@ -3,7 +3,7 @@
     <div class="inner">
       <NuxtLink
         v-if="prev"
-        :to="{ name: `blog-slug___${$i18n.locale}`, params: { slug: prev.slug } }"
+        :to="{ name: `blog-slug___${$i18n.locale}`, params: { slug: $cyrtt(prev.slug) } }"
         class="link prev"
       >
         <nav class="nav prev">
@@ -21,7 +21,7 @@
 
       <NuxtLink
         v-if="next"
-        :to="{ name: `blog-slug___${$i18n.locale}`, params: { slug: next.slug } }"
+        :to="{ name: `blog-slug___${$i18n.locale}`, params: { slug: $cyrtt(next.slug) } }"
         class="link next"
       >
         <nav class="nav next">

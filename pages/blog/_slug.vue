@@ -64,7 +64,7 @@ export default {
     const [prev, next] = await $content(`${app.i18n.locale}/blog`)
       .only(['title', 'slug', 'image'])
       .sortBy('published', 'asc')
-      .surround(params.slug)
+      .surround(article.slug)
       .fetch()
 
     return {
