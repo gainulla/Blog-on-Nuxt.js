@@ -14,7 +14,7 @@
         <li v-for="article of articles" :key="article.slug">
           <NuxtLink
             :to="{
-              name: `blog-slug___${locale}`,
+              name: `blog-slug___${$i18n.locale}`,
               params: { slug: $cyrtt(article.slug) }
             }"
           >
@@ -28,13 +28,6 @@
 
 <script>
 export default {
-  props: {
-    locale: {
-      type: String,
-      required: true
-    }
-  },
-
   data () {
     return {
       searchQuery: '',
@@ -48,7 +41,7 @@ export default {
         this.articles = []
         return
       }
-      this.articles = await this.$content(`${this.locale}/blog`)
+      this.articles = await this.$content(`${this.$i18n.locale}/blog`)
         .limit(6)
         .search(searchQuery)
         .fetch()

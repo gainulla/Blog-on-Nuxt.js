@@ -12,7 +12,7 @@
           {{ $t('nav.blog') }}
         </nuxt-link>
 
-        <AppSearchInput :locale="$i18n.locale" class="app-search-comp" />
+        <AppSearchInput class="app-search-comp" />
 
         <div class="locale-switch-comp">
           <slot name="locale-switch" />

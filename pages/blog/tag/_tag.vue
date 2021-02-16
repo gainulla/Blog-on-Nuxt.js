@@ -13,7 +13,7 @@
         {{ pageTag }}
       </h1>
 
-      <ArticlesList :articles="articles" :locale="locale" />
+      <ArticlesList :articles="articles" />
     </div>
   </div>
 </template>
@@ -42,7 +42,6 @@ export default {
     })
 
     return {
-      locale: app.i18n.locale,
       pageTag,
       localesData: tagArticles[0].localesData,
       articles: tagArticles.map(article => ({

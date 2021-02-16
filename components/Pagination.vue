@@ -8,7 +8,7 @@
 
     <nuxt-link
       v-else
-      :to="{ name: `blog-page-page___${locale}`, params: { page: 1 } }"
+      :to="{ name: `blog-page-page___${$i18n.locale}`, params: { page: 1 } }"
       class="btn btn-left"
     >
       <span class="icon cheveron-left" />
@@ -23,7 +23,7 @@
 
     <nuxt-link
       v-else
-      :to="{ name: `blog-page-page___${locale}`, params: { page: prevPage } }"
+      :to="{ name: `blog-page-page___${$i18n.locale}`, params: { page: prevPage } }"
       class="btn btn-left"
     >
       <span class="icon cheveron-left" />
@@ -37,7 +37,7 @@
 
     <nuxt-link
       v-else
-      :to="{ name: `blog-page-page___${locale}`, params: { page: nextPage } }"
+      :to="{ name: `blog-page-page___${$i18n.locale}`, params: { page: nextPage } }"
       class="btn btn-right"
     >
       <span class="text">Next</span>
@@ -52,7 +52,7 @@
 
     <nuxt-link
       v-else
-      :to="{ name: `blog-page-page___${locale}`, params: { page: totalPages } }"
+      :to="{ name: `blog-page-page___${$i18n.locale}`, params: { page: totalPages } }"
       class="btn btn-right"
     >
       <span class="text">Last</span>
@@ -65,10 +65,6 @@
 <script>
 export default {
   props: {
-    locale: {
-      type: String,
-      required: true
-    },
     total: {
       type: Number,
       default: 0

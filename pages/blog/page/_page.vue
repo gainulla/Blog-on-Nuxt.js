@@ -16,7 +16,6 @@
         :articles="articles"
         :total="total"
         :per-page="perPage"
-        :locale="locale"
       />
     </div>
   </div>
@@ -33,7 +32,6 @@ export default {
     const content = await getContent($content, app, params, perPage, error)
 
     return {
-      locale: app.i18n.locale,
       total: content.allArticles.length,
       perPage,
       articles: content.paginatedArticles.map(article => ({

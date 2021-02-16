@@ -43,7 +43,6 @@
       v-if="total > perPage"
       :total="total"
       :per-page="perPage"
-      :locale="locale"
     />
   </div>
 
@@ -70,10 +69,6 @@ export default {
     perPage: {
       type: Number,
       default: 2
-    },
-    locale: {
-      type: String,
-      required: true
     }
   }
 }
