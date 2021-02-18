@@ -46,6 +46,9 @@ export default {
   head () {
     return {
       title: this.$i18n.t('seoMeta.blogTitle'),
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      },
       meta: [
         ...(this.$seoMeta())
       ],

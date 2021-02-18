@@ -23,6 +23,7 @@
       <div class="page-content">
         <article>
           <img
+            ref="feat-image"
             :srcset="`
               ${featImg(article.image)} 1024w,
               ${featImg($appendImgSize(article.image, '_small'))} 600w,
@@ -82,13 +83,17 @@ export default {
 
   data () {
     return {
-      hostname: process.env.baseUrl
+      hostname: process.env.baseUrl,
+      featImage: ''
     }
   },
 
   head () {
     return {
       title: this.article.title,
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      },
       meta: [
         ...this.meta,
         {
