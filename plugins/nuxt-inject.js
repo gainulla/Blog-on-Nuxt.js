@@ -59,6 +59,7 @@ export default (context, inject) => {
    */
   inject('seoMeta', (meta) => {
     const { app } = context
+    const mainImage = `${process.env.baseUrl}/${conf.mainImage}`
 
     return [
       {
@@ -89,7 +90,7 @@ export default (context, inject) => {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: (meta && meta.mainImage) || process.env.baseUrl + conf.mainImage
+        content: (meta && meta.mainImage) || mainImage
       },
       {
         hid: 'twitter:url',
@@ -109,8 +110,13 @@ export default (context, inject) => {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: (meta && meta.mainImage) || process.env.baseUrl + conf.mainImage
-      }
+        content: (meta && meta.mainImage) || mainImage
+      },
+
+      { property: 'og:image:width', content: '740' },
+      { property: 'og:image:height', content: '300' },
+      { name: 'twitter:site', content: app.i18n.t('seoMeta.siteName') },
+      { name: 'twitter:card', content: 'summary_large_image' }
     ]
   })
 }

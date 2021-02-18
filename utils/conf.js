@@ -6,6 +6,6 @@ export default {
 
   githubURL: 'https://github.com/gainoolla',
 
-  mainImage: '/assets/images/default.jpg'
+  mainImage: 'whale.jpeg' // image in static folder
 
 }
