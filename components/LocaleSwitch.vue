@@ -98,7 +98,7 @@ export default {
 ul.lang-switch {
   width: 100px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 
   li {
     display: inline-block;

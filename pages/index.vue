@@ -145,12 +145,10 @@ export default {
 
       .locale-switch-comp {
         position: absolute;
-        top: 15px;
+        top: 0;
         left: 50%;
         width: 100px;
         transform: translateX(-50%);
-        display: flex;
-        justify-content: center;
       }
     }
 
