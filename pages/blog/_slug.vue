@@ -49,17 +49,15 @@
 
 <script>
 import Prism from '~/plugins/prism'
-import settings from '~/utils/site-settings'
-import getSiteMeta from '~/utils/get-site-meta'
+import conf from '~/utils/conf'
 
 export default {
   name: 'Article',
 
   async asyncData (context) {
     const { $content, params, app } = context
-    const article = await $content(
-      `${app.i18n.locale}/blog`, params.slug
-    ).fetch()
+    const article = await $content(`${app.i18n.locale}/blog`, params.slug)
+      .fetch()
 
     const [prev, next] = await $content(`${app.i18n.locale}/blog`)
       .only(['title', 'slug', 'image'])
@@ -103,21 +101,21 @@ export default {
         },
         {
           property: 'article:tag',
-          content: this.$tagsArr(this.article.localesData).join(',')
+          content: this.$tagsArr(this.article.localesData).join(', ')
         },
         { name: 'twitter:label1', content: 'Written by' },
-        { name: 'twitter:data1', content: settings.author || '' },
+        { name: 'twitter:data1', content: conf.author || '' },
         { name: 'twitter:label2', content: 'Filed under' },
         {
           name: 'twitter:data2',
-          content: this.$tagsArr(this.article.localesData).join(',')
+          content: this.$tagsArr(this.article.localesData).join(', ')
         }
       ],
       link: [
         {
           hid: 'canonical',
           rel: 'canonical',
-          href: `${settings.baseUrl}/blog/${this.$route.params.slug}`
+          href: this.$fullUrl(`/blog/${this.$route.params.slug}`)
         }
       ]
     }
@@ -125,13 +123,12 @@ export default {
 
   computed: {
     meta () {
-      const metaData = {
+      return this.$seoMeta({
         type: 'article',
         title: this.article.title,
         description: this.article.description,
         url: `${process.env.baseUrl}/blog/${this.$route.params.slug}`
-      }
-      return getSiteMeta(metaData)
+      })
     }
   },
 

@@ -13,7 +13,7 @@ localesData:
     tags: бабочка, цветы, тест
   - locale: en
     slug: butterfly
-    tags: butterfly, flowers, test
+		tags: butterfly, flowers, test
 ---
 
 # Бабочка

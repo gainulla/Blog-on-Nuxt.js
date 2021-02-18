@@ -8,7 +8,7 @@
       >
         <nav class="nav prev">
           <span class="icon cheveron-left" />
-          <span class="">{{ $t('nav.prev') }}</span>
+          <span class="">{{ $t('prev') }}</span>
         </nav>
         <span class="thumbnail">
           <img :src="featImg($appendImgSize(prev.image, '_thumb'))">
@@ -25,7 +25,7 @@
         class="link next"
       >
         <nav class="nav next">
-          <span>{{ $t('nav.next') }}</span>
+          <span>{{ $t('next') }}</span>
           <span class="icon cheveron-right" />
         </nav>
         <span class="thumbnail">

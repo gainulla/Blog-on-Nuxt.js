@@ -19,7 +19,7 @@
       </div>
 
       <div class="text">
-        <h1>{{ $t('headline1.home') }}</h1>
+        <h1>{{ $t('helloHeading') }}</h1>
         <p>{{ $t('metier') }}</p>
       </div>
     </div>
@@ -32,7 +32,28 @@ export default {
 
   head () {
     return {
-      title: 'Home'
+      title: this.$i18n.t('seoMeta.'),
+      meta: [
+        ...this.meta
+      ],
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: this.$fullUrl('/')
+        }
+      ]
+    }
+  },
+
+  computed: {
+    meta () {
+      return this.$seoMeta({
+        type: 'page',
+        title: this.$i18n.t('seoMeta.homeTitle'),
+        description: this.$i18n.t('seoMeta.homeDesc'),
+        url: this.$fullUrl('/')
+      })
     }
   }
 }
@@ -49,11 +70,6 @@ export default {
 
   background: linear-gradient(
     to top right, #FFB629 20%, #Fcdf87 42%, #F6F9CA 50%, #E2D4C4 50.1%, #CCB9B1 58%, #C08267 80%);
-    //to top right, #F6F9CA 50%, #E2D4C4 50%);
-    //to top right, #FCDF87 50%, #CCB9B1 50%);
-
-  // background: radial-gradient(ellipse at bottom,#1b2735 0%,#090a0f 100%);
-  // filter: drop-shadow(0 0 10px white);
 
   @function random_range($min, $max) {
     $rand: random();

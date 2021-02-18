@@ -120,7 +120,7 @@ export default {
       try {
         data = parseMD(this.simpleMde)
       } catch (e) {
-        this.error = this.$t('postForm.error')
+        this.error = this.$t('mdParseErr')
         alert(this.error)
         return
       }

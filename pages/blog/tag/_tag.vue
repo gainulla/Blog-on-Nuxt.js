@@ -51,8 +51,23 @@ export default {
           : article.path
       }))
     }
-  }
+  },
 
+  head () {
+    return {
+      title: this.$i18n.t('seoMeta.blogTitle'),
+      meta: [
+        ...(this.$seoMeta())
+      ],
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: this.$fullUrl(`/blog/tag/${this.$route.params.tag}`)
+        }
+      ]
+    }
+  }
 }
 </script>
 

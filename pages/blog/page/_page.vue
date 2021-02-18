@@ -9,7 +9,7 @@
 
     <div class="container">
       <h1 class="headline text-center">
-        {{ $t('headline1.blog') }}
+        {{ $t('latestPosts') }}
       </h1>
 
       <ArticlesList
@@ -45,7 +45,17 @@ export default {
 
   head () {
     return {
-      title: 'Blog'
+      title: this.$i18n.t('seoMeta.blogTitle'),
+      meta: [
+        ...(this.$seoMeta())
+      ],
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: this.$fullUrl(`/blog/page/${this.$route.params.page}`)
+        }
+      ]
     }
   }
 }

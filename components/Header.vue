@@ -9,7 +9,7 @@
         </div>
 
         <nuxt-link :to="$urlFor('/blog')" class="to-blog featured">
-          {{ $t('nav.blog') }}
+          {{ $t('blog') }}
         </nuxt-link>
 
         <AppSearchInput class="app-search-comp" />

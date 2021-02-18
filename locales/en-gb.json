@@ -1,0 +1,28 @@
+{
+  "home": "Home",
+  "blog": "Blog",
+  "prev": "Prev",
+  "next": "Next",
+  "first": "First",
+  "last": "Last",
+  "helloHeading": "Hello, I'm Gainoolla",
+  "latestPosts": "Latest Posts",
+  "mdParseErr": "Fail to parse markdown!",
+  "searchPH": "Search...",
+  "metier": "Web developer",
+  "published": "Article published",
+  "edit": "Edit Artilce",
+  "images": "Images",
+  "content": "Content",
+  "save": "Save",
+
+  "seoMeta": {
+    "blogTitle": "Blog",
+    "blogDesc": "Just amazing Blog about animals",
+    "homeTitle": "Home",
+    "homeDesc": "Nuxt Good Start",
+    "siteName": "Blog about animals",
+    "siteType": "website",
+    "author": "Dale Wood"
+  }
+}

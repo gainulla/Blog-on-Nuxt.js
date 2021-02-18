@@ -3,7 +3,7 @@
     <span v-if="currentPage === 1" class="btn btn-left disabled">
       <span class="icon cheveron-left" />
       <span class="icon cheveron-left" style="margin-left: -1.8rem" />
-      <span class="text">First</span>
+      <span class="text">{{ $t('first') }}</span>
     </span>
 
     <nuxt-link
@@ -13,12 +13,12 @@
     >
       <span class="icon cheveron-left" />
       <span class="icon cheveron-left" style="margin-left: -1.8rem" />
-      <span class="text">First</span>
+      <span class="text">{{ $t('first') }}</span>
     </nuxt-link>
 
     <span v-if="currentPage === 1" class="btn btn-left disabled">
       <span class="icon cheveron-left" />
-      <span class="text">Prev</span>
+      <span class="text">{{ $t('prev') }}</span>
     </span>
 
     <nuxt-link
@@ -27,11 +27,11 @@
       class="btn btn-left"
     >
       <span class="icon cheveron-left" />
-      <span class="text">Prev</span>
+      <span class="text">{{ $t('prev') }}</span>
     </nuxt-link>
 
     <span v-if="currentPage === totalPages" class="btn btn-right disabled">
-      <span class="text">Next</span>
+      <span class="text">{{ $t('next') }}</span>
       <span class="icon cheveron-right" />
     </span>
 
@@ -40,12 +40,12 @@
       :to="{ name: `blog-page-page___${$i18n.locale}`, params: { page: nextPage } }"
       class="btn btn-right"
     >
-      <span class="text">Next</span>
+      <span class="text">{{ $t('next') }}</span>
       <span class="icon cheveron-right" />
     </nuxt-link>
 
     <span v-if="currentPage === totalPages" class="btn btn-right disabled">
-      <span class="text">Last</span>
+      <span class="text">{{ $t('last') }}</span>
       <span class="icon cheveron-right" style="margin-right:-1.8rem" />
       <span class="icon cheveron-right" />
     </span>
@@ -55,7 +55,7 @@
       :to="{ name: `blog-page-page___${$i18n.locale}`, params: { page: totalPages } }"
       class="btn btn-right"
     >
-      <span class="text">Last</span>
+      <span class="text">{{ $t('last') }}</span>
       <span class="icon cheveron-right" style="margin-right:-1.8rem" />
       <span class="icon cheveron-right" />
     </nuxt-link>
