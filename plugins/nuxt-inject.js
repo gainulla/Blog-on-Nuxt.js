@@ -54,9 +54,6 @@ export default (context, inject) => {
     return tagsArr
   })
 
-  /**
-   * Nuxt Module `nuxt-seo-meta` options
-   */
   inject('seoMeta', (meta) => {
     const { app } = context
     const mainImage = `${process.env.baseUrl}/${conf.mainImage}`

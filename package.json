@@ -29,7 +29,6 @@
     "fibers": "^5.0.0",
     "fs": "^0.0.1-security",
     "jimp": "^0.16.1",
-    "nuxt-seo-meta": "^2.2.0",
     "parse-md": "^2.0.4",
     "path": "^0.12.7",
     "prism-themes": "^1.5.0",
