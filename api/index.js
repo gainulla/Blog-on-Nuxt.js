@@ -31,6 +31,8 @@ router.post('/handle-form', async (req, res) => {
   if (req.files) {
     let files = []
     let featImgName = false
+    const featDir = 'assets/images/featured'
+    const contDir = 'assets/images/content'
 
     if (req.files.images.length) {
       files = req.files.images
@@ -39,8 +41,8 @@ router.post('/handle-form', async (req, res) => {
     }
 
     for (const image of files) {
-      const featImg = path.normalize(`assets/images/featured/${image.name}`)
-      const contImg = path.normalize(`assets/images/content/${image.name}`)
+      const featImg = path.normalize(`${featDir}/${image.name}`)
+      const contImg = path.normalize(`${contDir}/${image.name}`)
 
       if (image.name === metadata.image) {
         await image.mv(featImg)
@@ -56,17 +58,16 @@ router.post('/handle-form', async (req, res) => {
         mimetype: image.mimetype,
         size: image.size
       })
-    } // forEach
+    } // for
 
     if (req.body.isNewPost === 'false' && featImgName) {
       if (req.body.image !== featImgName && req.body.image !== defImage) {
-        const featDir = 'assets/images/featured'
         const featImgOld = path.normalize(`${featDir}/${req.body.image}`)
         const small = glob.appendImgSize(featImgOld, '_small')
         const thumb = glob.appendImgSize(featImgOld, '_thumb')
-        await fs.unlink(featImgOld, err => console.log(err))
-        await fs.unlink(small, err => console.log(err))
-        await fs.unlink(thumb, err => console.log(err))
+        await fs.unlink(featImgOld, err => imgData.push({ err }))
+        await fs.unlink(small, err => imgData.push({ err }))
+        await fs.unlink(thumb, err => imgData.push({ err }))
       }
     }
   } // req.files
@@ -74,18 +75,10 @@ router.post('/handle-form', async (req, res) => {
   let filename = `content/${req.body.language}/blog/${metadata.slug}.md`
   filename = path.normalize(filename)
 
-  let message = ''
-
-  if (req.body.language === 'en') {
-    message = 'Recorded!'
-  } else if (req.body.language === 'ru') {
-    message = 'Записано!'
-  }
-
   write(filename, req.body.mdeValue).then(() => {
     res.send({
       status: true,
-      message,
+      message: 'success',
       filename,
       imgData
     })

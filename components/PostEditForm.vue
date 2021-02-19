@@ -153,12 +153,14 @@ export default {
     },
 
     submit (data) {
-      // for (let value of data.values()) {
-      //   console.log('FORM VALUE', value)
-      // }
+      // debug: console.log('FORM VALUES', data.values())
+
       axios.post('http://localhost:3000/api/handle-form', data)
         .then((res) => {
-          alert(res.data.message)
+          if (res.data.message === 'success') {
+            alert(this.$i18n.t('mdFileSuccess'))
+            // debug: console.log('IMG DATA', res.data.imgData)
+          }
         })
     }
 
