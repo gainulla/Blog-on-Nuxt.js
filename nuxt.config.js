@@ -1,3 +1,5 @@
+import getRoutes from './utils/get-routes'
+
 export default {
   target: 'static',
 
@@ -47,6 +49,7 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     '@nuxt/content',
+    '@nuxtjs/sitemap',
     [
       'nuxt-i18n',
       {
@@ -82,6 +85,16 @@ export default {
         fs: 'empty'
       }
     }
+  },
+
+  sitemap: {
+    hostname: process.env.BASE_URL || 'http://localhost:3000',
+    routes () {
+      return getRoutes()
+    },
+    exclude: [
+      '/admin/**'
+    ]
   },
 
   serverMiddleware: [
