@@ -32,7 +32,7 @@ export default {
 
   head () {
     return {
-      title: this.$i18n.t('seoMeta.'),
+      title: this.$i18n.t('seoMeta.homeTitle'),
       meta: [
         ...this.meta
       ],
