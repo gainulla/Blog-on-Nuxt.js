@@ -1,5 +1,7 @@
 import getRoutes from './utils/get-routes'
 
+const siteDefaultLocale = 'ru'
+
 export default {
   target: 'static',
 
@@ -65,10 +67,10 @@ export default {
             name: 'English'
           }
         ],
-        defaultLocale: 'ru',
+        defaultLocale: siteDefaultLocale,
         noPrefixDefaultLocale: true,
         vueI18n: {
-          fallbackLocale: 'ru',
+          fallbackLocale: siteDefaultLocale,
           messages: {
             ru: require('./locales/ru-ru.json'),
             en: require('./locales/en-gb.json')
@@ -90,7 +92,7 @@ export default {
   sitemap: {
     hostname: process.env.BASE_URL || 'http://localhost:3000',
     routes () {
-      return getRoutes()
+      return getRoutes(siteDefaultLocale, ['ru', 'en'])
     },
     exclude: [
       '/admin/**'
