@@ -18,7 +18,7 @@ export default async (defaultLocale, locales) => {
     routes.push(fp)
   })
 
-  // Add other routes for locale except default one
+  // Add other locale routes for home and blog page
   locales.forEach((locale) => {
     if (locale !== defaultLocale) {
       routes.push(`/${locale}`)
