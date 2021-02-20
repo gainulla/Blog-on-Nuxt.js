@@ -101,7 +101,7 @@ export default {
   justify-content: center;
 
   .btn {
-    background-color: #b0c4c0;
+    border: 1px solid #b0c4c0;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -117,12 +117,14 @@ export default {
       opacity: .7;
     }
     &:hover, &:focus {
-      background-color: #c2dbd6;
-      color: #000;
+      background-color: darken(#c2dbd6, 30);
+      color: #FFF;
     }
 
     &.disabled {
+      border: #DDD !important;
       background-color: #DDD !important;
+      color: initial !important;
 
       .text {
         opacity: .7;

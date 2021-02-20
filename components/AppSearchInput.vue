@@ -79,7 +79,7 @@ $search-height: 2.4rem;
 
     .icon.search {
       position: absolute;
-      top: 4px;
+      top: 5px;
       right: 0;
       align-self: flex-end;
       width: 34px;

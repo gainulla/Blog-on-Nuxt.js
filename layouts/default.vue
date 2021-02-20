@@ -39,7 +39,7 @@ body {
 
 a {
   font-family: var(--primary-font);
-  transition: color 200ms ease-in;
+  transition: color 200ms ease-out;
 
   &:link {
     text-decoration: none;
@@ -138,7 +138,7 @@ span.icon {
   width: 100px;
   height: 100px;
   background-color: white;
-  background-image: linear-gradient(25deg, #F6F6F8 50%, #f0f2f3 50%);
+  background-image: linear-gradient(25deg, lighten(#E2D4C4, 12) 50%, lighten(#CCB9B1, 18) 50%);
   padding: 20px;
 
   img {

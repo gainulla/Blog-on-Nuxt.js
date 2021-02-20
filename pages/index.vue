@@ -245,23 +245,32 @@ export default {
 }
 
 @media (min-width: 768px) {
-  .screen .hero .text {
-    h1 {
-      font-size: 3.4rem;
+  .screen .hero {
+    .text {
+      h1 {
+        font-size: 3.4rem;
+      }
+      p {
+        font-size: 1.4rem;
+      }
     }
-    p {
-      font-size: 1.4rem;
+  }
+  .screen .hero {
+    .button .locale-switch-comp {
+      top: 10px;
     }
   }
 }
 
 @media (min-width: 992px) {
-  .screen .hero .text {
-    h1 {
-      font-size: 4.4rem;
-    }
-    p {
-      font-size: 1.8rem;
+  .screen .hero {
+    .text {
+      h1 {
+        font-size: 4.4rem;
+      }
+      p {
+        font-size: 1.8rem;
+      }
     }
   }
 }

@@ -178,7 +178,7 @@ export default {
   a.btn {
     text-transform: uppercase;
     margin-left: .2rem;
-    background-color: darken(#b0c4c0, 10);
+    background-color: darken(#b0c4c0, 20);
     color: white;
     padding: .5rem .8rem;
 

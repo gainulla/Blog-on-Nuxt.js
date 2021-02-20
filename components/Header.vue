@@ -42,10 +42,10 @@ export default {
     transform: translateX(-50%);
     z-index: 101;
     font-size: 1.2rem;
+    text-decoration: underline;
 
     &:hover {
       color: initial;
-      text-decoration: underline;
     }
   }
 

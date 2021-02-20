@@ -96,7 +96,7 @@ export default {
 <style lang="scss" scoped>
 
 ul.lang-switch {
-  width: 100px;
+  width: 100%;
   display: flex;
   justify-content: center;
 
@@ -105,19 +105,20 @@ ul.lang-switch {
     background-color: white;
 
     a {
-      font-family: var(--tertiary-font);
+      font-family: var(--primary-font);
+      font-weight: 400;
       display: block;
       text-transform: uppercase;
-      padding: .6rem .7rem;
-      background-color:  #f4f8f7;
-      color: #9393ac;
+      padding: .6rem .8rem;
+      background-color:#f4f8f7;
+      color: darken(#b0c4c0, 20);
       transition: opacity 200ms ease;
     }
 
     &.active {
       a {
-        color: #10a578 !important;
-        background-color:  #c9fcec !important;
+        color: darken(#b0c4c0, 30) !important;
+        background-color:  lighten(#b0c4c0, 20) !important; // #c9fcec !important;
       }
     }
 
