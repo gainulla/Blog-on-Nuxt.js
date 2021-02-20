@@ -220,7 +220,7 @@ export default {
     article:first-of-type {
       .article-inner {
         padding-top: 0;
-        margin-top: 4rem;
+        margin-top: 2rem;
       }
     }
   }

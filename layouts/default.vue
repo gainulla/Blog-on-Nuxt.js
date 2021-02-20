@@ -78,6 +78,13 @@ h1, h2, h3, h4, h5 {
   font-family: var(--primary-font);
 }
 
+.border-b {
+  box-shadow: -1px -1px 12px 6px rgba(darken(#CCB9B1, 50), .05);
+  &.border-b--darker {
+    box-shadow: -1px -1px 12px 6px rgba(darken(#CCB9B1, 70), .05);
+  }
+}
+
 span.icon {
   background-repeat: no-repeat;
   display: inline-block;
@@ -102,6 +109,15 @@ span.icon {
   }
   &.cheveron-left {
     background-image: url('~assets/svg/icon-cheveron-left.svg');
+  }
+  &.github {
+    background-image: url('~assets/svg/icon-ext-github.svg');
+  }
+  &.twitter {
+    background-image: url('~assets/svg/icon-ext-twitter.svg');
+  }
+  &.rss {
+    background-image: url('~assets/svg/icon-ext-rss.svg');
   }
 }
 

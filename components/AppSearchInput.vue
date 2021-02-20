@@ -57,6 +57,7 @@ $search-height: 2.4rem;
 .search {
   width: 100%;
   height: $search-height;
+  margin-bottom: 1.5rem;
 
   .search-inner {
     position: relative;

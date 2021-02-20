@@ -15,6 +15,8 @@
 
       <ArticlesList :articles="articles" />
     </div>
+
+    <Footer />
   </div>
 </template>
 

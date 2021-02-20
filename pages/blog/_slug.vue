@@ -9,7 +9,7 @@
     </Header>
 
     <div class="container">
-      <div v-show="hostname == 'http://localhost:3000'" class="admin-area">
+      <div v-if="hostname == 'http://localhost:3000'" class="admin-area">
         <div class="row">
           <nuxt-link :to="editArticleRoute" class="btn">
             Edit
@@ -45,6 +45,8 @@
 
       <PrevNext :prev="prev" :next="next" class="mb-2" />
     </div>
+
+    <Footer />
   </div>
 </template>
 
@@ -170,7 +172,8 @@ export default {
 
 .admin-area {
   width: 100%;
-  background-color:#c2dbd6;
+  margin-top: 1rem;
+  margin-bottom: -3rem;
 
   a.btn {
     text-transform: uppercase;

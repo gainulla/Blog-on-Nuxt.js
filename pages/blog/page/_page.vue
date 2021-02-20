@@ -18,6 +18,8 @@
         :per-page="perPage"
       />
     </div>
+
+    <Footer />
   </div>
 </template>
 

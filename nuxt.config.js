@@ -1,4 +1,5 @@
 import getRoutes from './utils/get-routes'
+import conf from './utils/conf'
 
 const siteDefaultLocale = 'ru'
 
@@ -48,10 +49,20 @@ export default {
     '@nuxtjs/eslint-module'
   ],
 
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
+  build: {
+    extend (config, { isDev, isClient }) {
+      config.node = {
+        fs: 'empty'
+      }
+    }
+  },
+
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     '@nuxt/content',
     '@nuxtjs/sitemap',
+    '@nuxtjs/feed',
     [
       'nuxt-i18n',
       {
@@ -80,15 +91,6 @@ export default {
     ]
   ],
 
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {
-    extend (config, { isDev, isClient }) {
-      config.node = {
-        fs: 'empty'
-      }
-    }
-  },
-
   sitemap: {
     hostname: process.env.BASE_URL || 'http://localhost:3000',
     routes () {
@@ -97,6 +99,50 @@ export default {
     exclude: [
       '/admin/**'
     ]
+  },
+
+  feed () {
+    const defaultLocale = siteDefaultLocale
+    const locales = ['ru', 'en']
+    const blogFeedLink = '/blog'
+    const baseUrl = process.env.BASE_URL || 'http://localhost:3000'
+    const { $content } = require('@nuxt/content')
+
+    return locales.map((locale) => {
+      return {
+        path: `${blogFeedLink}/rss-${locale}.xml`,
+        type: 'rss2',
+        cacheTime: 1000,
+        async create (feed) {
+          const localePath = (locale !== defaultLocale)
+            ? `${baseUrl}/${locale}`
+            : `${baseUrl}`
+          const blogLocaleUrl = `${localePath}/blog`
+
+          feed.options = {
+            title: conf.siteName[locale] || '',
+            description: conf.siteDesc[locale] || '',
+            link: blogLocaleUrl
+          }
+
+          const articles = await $content(`${locale}/blog`).fetch()
+
+          articles.forEach((article) => {
+            const url = `${blogLocaleUrl}/${article.slug}`
+
+            feed.addItem({
+              title: article.title,
+              id: url,
+              link: url,
+              date: new Date(article.published),
+              description: article.description,
+              content: article.description,
+              author: conf.twitterHandle
+            })
+          })
+        }
+      }
+    })
   },
 
   serverMiddleware: [

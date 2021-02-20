@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="border-b">
     <div class="container clearfix">
       <div class="header">
         <div class="logo-wrap">
@@ -29,10 +29,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .header {
   position: relative;
-  height: 12rem;
+  height: 13.5rem;
   display: flex;
   flex-flow: row wrap;
 
