@@ -9,7 +9,7 @@
     </Header>
 
     <div class="container">
-      <div v-if="hostname == 'http://localhost:3000'" class="admin-area">
+      <div v-if="hostname == 'http://localhost:300'" class="admin-area">
         <div class="row">
           <nuxt-link :to="editArticleRoute" class="btn">
             Edit
@@ -189,8 +189,7 @@ export default {
 }
 
 .page-content {
-  margin-top: 2rem;
-  padding-top: 2rem;
+  padding-top: 2.5rem;
 
   article {
     font-size: 1.2rem;
@@ -253,7 +252,7 @@ export default {
 
 @media (min-width: 768px) {
   .page-content {
-    margin-top: 3rem;
+    margin-top: 1.2rem;
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 3rem;
@@ -263,7 +262,6 @@ export default {
 
 @media (min-width: 992px) {
   .page-content {
-    margin-top: 4rem;
     padding-left: 4rem;
     padding-right: 4rem;
     padding-bottom: 1rem;
