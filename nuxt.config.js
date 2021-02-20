@@ -1,5 +1,6 @@
 import getRoutes from './utils/get-routes'
 import conf from './utils/conf'
+import CyrillicToTranslit from 'cyrillic-to-translit-js'
 
 const siteDefaultLocale = 'ru'
 
@@ -128,7 +129,13 @@ export default {
           const articles = await $content(`${locale}/blog`).fetch()
 
           articles.forEach((article) => {
-            const url = `${blogLocaleUrl}/${article.slug}`
+            let slug = ''
+            if (locale === 'ru') {
+              slug = CyrillicToTranslit().transform(article.slug)
+            } else {
+              slug = article.slug
+            }
+            const url = `${blogLocaleUrl}/${slug}`
 
             feed.addItem({
               title: article.title,
