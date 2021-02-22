@@ -200,6 +200,7 @@ export default {
 
 .page-content {
   padding-top: 2.5rem;
+  padding-bottom: 1rem;
 
   article {
     font-size: 1.2rem;
