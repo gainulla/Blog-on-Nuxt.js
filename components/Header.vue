@@ -48,8 +48,10 @@ export default {
 }
 
 header {
-  // background-image: linear-gradient(to bottom, #f8f7e8, #ccbab1);
   background-image: linear-gradient(to top, #83d495 20%, #cff5dc);
+  .container {
+    z-index: 600;
+  }
 }
 
 .header {
