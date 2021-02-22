@@ -126,7 +126,7 @@ $polygon-height: 90px;
     77% 96%, 74.5% 99%, 72% 100%, 27% 100%, 24.5% 99%, 22% 96%,
     2% 55%, 1% 50%, 2% 45%
   );
-  background-color: #94AAA3;
+  background-color: #B6C3C5;
   width: $polygon-width;
   height: $polygon-height;
 

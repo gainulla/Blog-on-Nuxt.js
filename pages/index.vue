@@ -113,12 +113,12 @@ export default {
         top: 45%;
         left: 50%;
         transform: translateX(-50%);
-        color:  lighten($north, 10);
+        color: #81958f;
         font-size: 1.6rem;
         font-weight: 500;
         margin-bottom: -20px;
         &:hover {
-          color: lighten($south, 10);
+          color: #59d670;
         }
       }
 
