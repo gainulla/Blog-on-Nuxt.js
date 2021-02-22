@@ -72,9 +72,10 @@ $search-height: 2.4rem;
       font-size: 1.1rem;
       font-weight: 300;
       padding: .46rem .8rem;
-      border: 1px solid #EEE;
+      border: 1px solid rgba(#444, .2);
       border-radius: 1.2rem;
       outline: none;
+      background-color: transparent;
     }
 
     .icon.search {
@@ -83,7 +84,7 @@ $search-height: 2.4rem;
       right: 0;
       align-self: flex-end;
       width: 34px;
-      opacity: .24;
+      opacity: .14;
       cursor: pointer;
     }
 

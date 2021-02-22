@@ -40,6 +40,16 @@
           </p>
           <small>{{ $t('published') }}: {{ formatDate(article.published) }}</small>
           <nuxt-content :document="article" class="content clearfix mb-1" />
+
+          <div class="tags">
+            <nuxt-link
+              v-for="(tag, i2) of $tagsArr(article.localesData)"
+              :key="i2"
+              :to="$urlFor(`/blog/tag/${tag}`, $i18n.locale)"
+            >
+              {{ $tagsArr(article.localesData).length > (i2 + 1) ? `${tag},` : tag }}
+            </nuxt-link>
+          </div>
         </article>
       </div>
 
@@ -247,6 +257,16 @@ export default {
         margin-bottom: 1.5rem;
       }
     }
+
+    .tags {
+      border-top: 1px dashed #DDD;
+      padding-top: .2rem;
+      align-self: flex-end;
+      a {
+        font-size: 1.2em;
+        font-family: var(--secondary-font);
+      }
+    }
   }
 }
 
@@ -264,7 +284,6 @@ export default {
   .page-content {
     padding-left: 4rem;
     padding-right: 4rem;
-    padding-bottom: 1rem;
 
     article img.featured {
       max-width: 100%;

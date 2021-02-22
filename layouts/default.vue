@@ -78,13 +78,6 @@ h1, h2, h3, h4, h5 {
   font-family: var(--primary-font);
 }
 
-.border-b {
-  box-shadow: -1px -1px 12px 6px rgba(darken(#CCB9B1, 50), .05);
-  &.border-b--darker {
-    box-shadow: -1px -1px 12px 6px rgba(darken(#CCB9B1, 70), .05);
-  }
-}
-
 span.icon {
   background-repeat: no-repeat;
   display: inline-block;
@@ -121,41 +114,54 @@ span.icon {
   }
 }
 
-.logo {
-  position: absolute;
-  top: 10%;
-  left: 15%;
-}
+$polygon-width: 150px;
+$polygon-height: 130px;
 
 .polygon {
   display: block;
   clip-path: polygon(
-    0 28%, 28% 0,
-    72% 0, 100% 28%,
-    100% 72%, 72% 100%,
-    28% 100%, 0 72%
+    22% 4%, 24.5% 1%, 27% 0, 72% 0%, 74.5% 1%, 77% 4%,
+    98% 45%, 99% 50%, 98% 55%,
+    77% 96%, 74.5% 99%, 72% 100%, 27% 100%, 24.5% 99%, 22% 96%,
+    2% 55%, 1% 50%, 2% 45%
   );
-  width: 100px;
-  height: 100px;
-  background-color: white;
-  background-image: linear-gradient(25deg, lighten(#E2D4C4, 12) 50%, lighten(#CCB9B1, 18) 50%);
-  padding: 20px;
+  background-color: #94AAA3; //#B1BFBF;
+  width: $polygon-width;
+  height: $polygon-height;
 
-  img {
-    width: 60px;
-    height: 60px;
+  .polygon-inner {
+    position: absolute;
+    width: 150px;
+    height: 130px;
+    transform: scale(.94);
+    z-index: 999;
+    background-color: #EDEDED;
+    clip-path: polygon(
+      22% 4%, 24.5% 1%, 27% 0, 72% 0%, 74.5% 1%, 77% 4%,
+      98% 45%, 99% 50%, 98% 55%,
+      77% 96%, 74.5% 99%, 72% 100%, 27% 100%, 24.5% 99%, 22% 96%,
+      2% 55%, 1% 50%, 2% 45%
+    );
+    padding: 15px;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $polygon-width;
+      height: $polygon-height;
+      padding: 1rem;
+    }
   }
 }
 
-@media (min-width: 768px) {
-  .polygon {
-    min-width: 130px;
-    min-height: 130px;
-    padding: 25px;
-    img {
-      width: 86px;
-      height: 86px;
-    }
+.logo {
+  position: absolute;
+  top: 10.6%;
+  left: 15%;
+  transform: rotate(-12deg);
+  img {
+    transform: rotate(12deg);
   }
 }
 
@@ -163,8 +169,10 @@ span.icon {
   margin: 0 auto;
   max-width: 1024px;
   min-width: 320px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  z-index: 500;
 }
 
 /*

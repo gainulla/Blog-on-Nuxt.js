@@ -1,25 +1,34 @@
 <template>
-  <header class="border-b">
-    <div class="container clearfix">
-      <div class="header">
-        <div class="logo-wrap">
+  <div>
+    <header class="border-b">
+      <div class="container clearfix">
+        <div class="header">
           <nuxt-link :to="$urlFor('/')" class="logo polygon">
-            <img :src="require('~/assets/images/site-logo.svg')">
+            <div class="polygon-inner">
+              <img :src="require('~/assets/images/site-logo.svg')">
+            </div>
           </nuxt-link>
-        </div>
 
-        <nuxt-link :to="$urlFor('/blog')" class="to-blog featured">
-          {{ $t('blog') }}
-        </nuxt-link>
+          <nuxt-link :to="$urlFor('/blog')" class="to-blog featured">
+            {{ $t('blog') }}
+          </nuxt-link>
 
-        <AppSearchInput class="app-search-comp" />
+          <AppSearchInput class="app-search-comp" />
 
-        <div class="locale-switch-comp">
-          <slot name="locale-switch" />
+          <div class="locale-switch-comp">
+            <slot name="locale-switch" />
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
+
+    <div class="wave" />
+    <svg>
+      <clipPath id="wave" clipPathUnits="objectBoundingBox">
+        <path class="st0" d="M1,0c0,0-0.1,0.1-0.3,0.1S0.3,0,0,0.1V1h1L1,0z" />
+      </clipPath>
+    </svg>
+  </div>
 </template>
 
 <script>
@@ -29,9 +38,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.wave {
+  margin-top: -30px;
+  margin-bottom: -420px;
+  height: 300px;
+  clip-path: url(#wave);
+  background-color: #FFF;
+  z-index: -1;
+}
+
+header {
+  // background-image: linear-gradient(to bottom, #f8f7e8, #ccbab1);
+  background-image: linear-gradient(to top, #83d495 20%, #cff5dc);
+}
+
 .header {
   position: relative;
-  height: 13.5rem;
+  height: 15rem;
   display: flex;
   flex-flow: row wrap;
 
@@ -49,16 +72,10 @@ export default {
     }
   }
 
-  .logo-wrap {
-    width: 8rem;
-    height: 8.5rem;
-    padding: 8px;
-
-    .logo {
-      position: relative;
-      top: 10px;
-      left: 0;
-    }
+  .logo {
+    position: relative;
+    top: 1.5rem;
+    left: 0;
   }
 
   .app-search-comp {
@@ -69,7 +86,7 @@ export default {
 
   .locale-switch-comp {
     position: absolute;
-    top: 15px;
+    top: 1rem;
     right: 0;
   }
 }
