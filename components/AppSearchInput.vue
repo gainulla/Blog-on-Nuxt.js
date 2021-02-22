@@ -57,7 +57,6 @@ $search-height: 2.4rem;
 .search {
   width: 100%;
   height: $search-height;
-  margin-bottom: 1.5rem;
 
   .search-inner {
     position: relative;
@@ -65,7 +64,7 @@ $search-height: 2.4rem;
     flex-flow: row wrap;
     width: 260px;
     height: $search-height;
-    margin: 0 auto;
+    margin: auto;
 
     input {
       width: 100%;

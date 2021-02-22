@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header-wrapper">
     <header class="border-b">
       <div class="container clearfix">
         <div class="header">
@@ -38,9 +38,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.header-wrapper {
+  min-width: 320px;
+}
+
 .wave {
   margin-top: -30px;
   margin-bottom: -420px;
+  min-width: 320px;
   height: 300px;
   clip-path: url(#wave);
   background-color: #FFF;
@@ -68,16 +73,13 @@ header {
     z-index: 101;
     font-size: 1.2rem;
     text-decoration: underline;
-
-    &:hover {
-      color: initial;
-    }
+    color: var(--text-featured) !important;
   }
 
   .logo {
     position: relative;
     top: 1.5rem;
-    left: 0;
+    left: -5px;
   }
 
   .app-search-comp {
@@ -105,7 +107,7 @@ header {
       align-items: flex-end;
       flex-grow: 1;
       width: auto;
-      margin: 7.2rem auto;
+      margin: 8.5rem auto;
       margin-left: -9.6rem;
     }
   }

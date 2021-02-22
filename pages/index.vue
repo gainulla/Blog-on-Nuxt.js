@@ -133,7 +133,7 @@ export default {
 
     .text {
       display: inline-block;
-      color: darken(#94AAA3, 20);
+      color: var(--text-featured);
       padding-top: 1rem;
 
       h1 {

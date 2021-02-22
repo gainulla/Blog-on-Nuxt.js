@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="footer-wrapper">
     <div class="wave" />
     <svg>
       <clipPath id="wave" clipPathUnits="objectBoundingBox">
@@ -47,6 +47,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.footer-wrapper {
+  min-width: 320px;
+}
 
 .wave {
   margin-bottom: -250px;

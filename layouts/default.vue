@@ -23,6 +23,7 @@ html {
   --primary-font: 'Nunito', sans-serif;
   --secondary-font: 'Ubuntu Mono', monospace;
   --tertiary-font: 'Marmelad', sans-serif;
+  --text-featured: #{ darken(#94AAA3, 20) };
 }
 
 *, *::before, *::after {
@@ -114,8 +115,8 @@ span.icon {
   }
 }
 
-$polygon-width: 150px;
-$polygon-height: 130px;
+$polygon-width: 110px;
+$polygon-height: 90px;
 
 .polygon {
   display: block;
@@ -125,14 +126,14 @@ $polygon-height: 130px;
     77% 96%, 74.5% 99%, 72% 100%, 27% 100%, 24.5% 99%, 22% 96%,
     2% 55%, 1% 50%, 2% 45%
   );
-  background-color: #94AAA3; //#B1BFBF;
+  background-color: #94AAA3;
   width: $polygon-width;
   height: $polygon-height;
 
   .polygon-inner {
     position: absolute;
-    width: 150px;
-    height: 130px;
+    width: $polygon-width;
+    height: $polygon-height;
     transform: scale(.94);
     z-index: 999;
     background-color: #EDEDED;
@@ -152,6 +153,15 @@ $polygon-height: 130px;
       height: $polygon-height;
       padding: 1rem;
     }
+  }
+}
+
+@media (min-width: 992px) {
+  .polygon,
+  .polygon .polygon-inner,
+  .polygon .polygon-inner img {
+    width: 150px;
+    height: 130px;
   }
 }
 
