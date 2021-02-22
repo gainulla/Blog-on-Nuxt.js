@@ -88,7 +88,7 @@ export default {
       height: 100%;
       width: 100%;
       background-color: #fff;
-      animation: lighting .3s linear infinite;
+      animation: lightning 10s ease-out infinite;
       opacity: 0;
     }
   }
@@ -253,6 +253,18 @@ export default {
 @keyframes rain {
   0% {
     background-position: 0 100%;
+  }
+}
+
+@keyframes lightning {
+  0%, 14.7%, 17.7%, 29% {
+    opacity: 0;
+  }
+  15%, 18%, 30% {
+    opacity: 1;
+  }
+  17%, 18.3%, 32%, 100%  {
+    opacity: 0;
   }
 }
 </style>
