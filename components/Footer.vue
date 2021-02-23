@@ -7,7 +7,7 @@
       </clipPath>
     </svg>
 
-    <footer class="border-b border-b--darker">
+    <footer>
       <div class="container">
         <div class="social">
           <a :href="`${hostname}/blog/rss-${$i18n.locale}.xml`" target="_blank">

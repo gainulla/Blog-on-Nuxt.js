@@ -130,6 +130,10 @@ $polygon-height: 90px;
   width: $polygon-width;
   height: $polygon-height;
 
+  &.border-green {
+    background-color: #CFE1C9 !important;
+  }
+
   .polygon-inner {
     position: absolute;
     width: inherit;

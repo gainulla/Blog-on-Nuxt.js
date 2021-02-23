@@ -1,6 +1,6 @@
 <template>
   <div class="header-wrapper">
-    <header class="border-b">
+    <header>
       <div class="container clearfix">
         <div class="header">
           <nuxt-link :to="$urlFor('/')" class="logo polygon">

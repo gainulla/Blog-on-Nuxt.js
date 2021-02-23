@@ -8,7 +8,7 @@
           </div>
         </span>
 
-        <div class="button polygon polygon-more">
+        <div class="button polygon polygon-more border-green">
           <div class="polygon-inner">
             <LocaleSwitch class="locale-switch-comp" />
             <nuxt-link :to="$urlFor('/blog/page/1')" class="link">
@@ -78,8 +78,8 @@ export default {
     width: 100%;
     height: 100vh;
     background: url(~assets/images/rain.png), linear-gradient(
-      16deg, #D0E1CA 5%, #ABE0AB 15%, #78E08B 30%, #78E08B 50%,
-      #94AAA3 50.1%, #94AAA3 60%, #B9C5C7 80%, 90%, #D5DADD
+      to top left, #78E08B 10%,#78E08B  30%, #D0E1CA 50%,
+       #D5DADD 50.1%, #B9C5C7 60%, 80%,#94AAA3
     );
     animation: rain .4s linear infinite;
     &::before {
@@ -139,10 +139,10 @@ export default {
       padding-top: 1rem;
 
       h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         font-family: var(--secondary-font);
         margin: 0;
-        line-height: 3rem;
+        line-height: 2.5rem;
       }
       p {
         font-size: 1rem;
@@ -163,7 +163,7 @@ export default {
 
     &.t {
       left: 32px;
-      width: calc(100% - 64px);
+      width: calc(100vw - 64px);
     }
 
     &.r {
@@ -177,7 +177,7 @@ export default {
     &.b {
       bottom: 0;
       margin-left: 32px;
-      width: calc(100% - 64px);
+      width: calc(100vw - 64px);
       transform: rotate(180deg);
     }
 
@@ -231,6 +231,7 @@ export default {
       padding-top: 3.5rem;
       h1 {
         font-size: 3.4rem;
+        line-height: 3rem;
       }
       p {
         font-size: 1.4rem;
