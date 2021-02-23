@@ -67,7 +67,7 @@ footer {
   width: 100%;
   height: 180px;
   min-width: 320px;
-  background-color: #83d495;
+  background-color: #83d487;
 
   .social {
     height: 180px;

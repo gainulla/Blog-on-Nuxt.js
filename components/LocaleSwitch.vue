@@ -112,7 +112,7 @@ ul.lang-switch {
       font-weight: 400;
       display: block;
       text-transform: uppercase;
-      padding: .6rem .8rem;
+      padding: .4rem .8rem;
       color: darken(#b0c4c0, 10);
       transition: opacity 200ms ease;
     }

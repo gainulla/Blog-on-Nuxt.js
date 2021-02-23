@@ -8,7 +8,7 @@
           </div>
         </span>
 
-        <div class="button polygon">
+        <div class="button polygon polygon-more">
           <div class="polygon-inner">
             <LocaleSwitch class="locale-switch-comp" />
             <nuxt-link :to="$urlFor('/blog/page/1')" class="link">
@@ -103,16 +103,18 @@ export default {
     align-items: center;
 
     .button {
+      transform: scale(1.1);
       position: absolute;
       bottom: 10%;
       right: 15%;
+      transform: rotate(20deg);
 
       a.link {
         display: block;
         position: absolute;
-        top: 45%;
-        left: 50%;
-        transform: translateX(-50%);
+        top: 50%;
+        left: 55%;
+        transform: translateX(-50%) rotate(-20deg);
         color: #81958f;
         font-size: 1.6rem;
         font-weight: 500;
@@ -124,10 +126,10 @@ export default {
 
       .locale-switch-comp {
         position: absolute;
-        top: 0;
+        top: 12%;
         left: 50%;
         width: 100px;
-        transform: translateX(-50%);
+        transform: translateX(-60%) rotate(-20deg);
       }
     }
 

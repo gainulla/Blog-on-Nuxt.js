@@ -132,8 +132,8 @@ $polygon-height: 90px;
 
   .polygon-inner {
     position: absolute;
-    width: $polygon-width;
-    height: $polygon-height;
+    width: inherit;
+    height: inherit;
     transform: scale(.94);
     z-index: 999;
     background-color: #EDEDED;
@@ -149,17 +149,21 @@ $polygon-height: 90px;
       position: absolute;
       top: 0;
       left: 0;
-      width: $polygon-width;
-      height: $polygon-height;
+      width: inherit;
+      height: inherit;
       padding: 1rem;
     }
   }
 }
 
+.polygon-more {
+  width: 130px;
+  height: 110px;
+}
+
 @media (min-width: 992px) {
   .polygon,
-  .polygon .polygon-inner,
-  .polygon .polygon-inner img {
+  .polygon-more {
     width: 150px;
     height: 130px;
   }
