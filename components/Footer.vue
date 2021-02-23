@@ -52,19 +52,26 @@ export default {
 }
 
 .wave {
-  margin-bottom: -250px;
-  height: 130px;
+  position: relative;
+  margin-top: -280px;
+  margin-bottom: -240px;
+  height: 300px;
   clip-path: url(#wave);
-  background-color: #D5DADD;
-  z-index: -1;
+  background-color: #FFF;
+  z-index: 1;
+  transform: rotate(180deg);
 }
 
 footer {
+  position: relative;
   width: 100%;
+  height: 180px;
   min-width: 320px;
+  background-color: #83d495;
 
   .social {
-    height: 80px;
+    height: 180px;
+    padding-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;

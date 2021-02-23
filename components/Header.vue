@@ -49,7 +49,6 @@ export default {
   height: 300px;
   clip-path: url(#wave);
   background-color: #FFF;
-  z-index: -1;
 }
 
 header {
