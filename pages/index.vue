@@ -1,5 +1,5 @@
 <template>
-  <div class="screen">
+  <div class="borders">
     <div class="rain">
       <div class="hero">
         <span class="logo polygon">
@@ -24,10 +24,10 @@
       </div>
     </div>
 
-    <span class="border t odd" />
-    <span class="border r even" />
-    <span class="border b odd" />
-    <span class="border l even" />
+    <span class="borders__x borders__x--t" />
+    <span class="borders__y borders__y--r" />
+    <span class="borders__x borders__x--b" />
+    <span class="borders__y borders__y--l" />
   </div>
 </template>
 
@@ -65,168 +65,240 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.screen {
+.borders {
+  $b-width: 32px;
+  $b-margin: 31px;
+  $b-color: #EDEDED;
+  $b-normal: solid 16px $b-color;
+  $b-larger: solid 18px $b-color;
+
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+  background-color: darkgoldenrod;
 
-  $south: #3D184E;
-  $north: #1B3865;
-
-  .rain {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    background: url(~assets/images/rain.png), linear-gradient(
-      to top left, #78E08B 10%,#78E08B  30%, #D0E1CA 50%,
-       #D5DADD 50.1%, #B9C5C7 60%, 80%,#94AAA3
-    );
-    animation: rain .4s linear infinite;
-    &::before {
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background-color: #fff;
-      animation: lightning 10s ease-out infinite;
-      opacity: 0;
-    }
-  }
-
-  .hero {
-    position: relative;
-    height: 100vh;
-    padding: 0 3rem;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-
-    .button {
-      transform: scale(1.1);
-      position: absolute;
-      bottom: 10%;
-      right: 15%;
-      transform: rotate(20deg);
-
-      a.link {
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 55%;
-        transform: translateX(-50%) rotate(-20deg);
-        color: #81958f;
-        font-size: 1.6rem;
-        font-weight: 500;
-        margin-bottom: -20px;
-        &:hover {
-          color: #59d670;
-        }
-      }
-
-      .locale-switch-comp {
-        position: absolute;
-        top: 12%;
-        left: 50%;
-        width: 100px;
-        transform: translateX(-60%) rotate(-20deg);
-      }
-    }
-
-    .text {
-      display: inline-block;
-      color: var(--text-featured);
-      padding-top: 1rem;
-
-      h1 {
-        font-size: 2.2rem;
-        font-family: var(--secondary-font);
-        margin: 0;
-        line-height: 2.5rem;
-      }
-      p {
-        font-size: 1rem;
-        letter-spacing: .05rem;
-        font-family: var(--bold-font);
-        &:first-letter {
-          text-transform: capitalize;
-        }
-      }
-    }
-  }
-
-  .border {
+  .borders__x, .borders__y {
     position: fixed;
-    display: block;
-    background-color: white;
-    height: 32px;
+    background-color: #fff;
+  }
 
-    &.t {
-      left: 32px;
-      width: calc(100vw - 64px);
+  .borders__x {
+    height: $b-width;
+    border-bottom: $b-normal;
+    z-index: 1;
+
+    &--t {
+      width: calc(100% - #{ $b-margin * 2 });
+      left: 31px;
+      border-color: darken($b-color, 5);
     }
-
-    &.r {
-      right: calc(-100vh + 64px);
-      width: calc(100vh - 64px);
-      transform-origin: 0 0;
-      transform: rotate(90deg);
-      margin-top: 32px;
-    }
-
-    &.b {
+    &--b {
+      width: calc(100% - #{ $b-margin * 2 });
       bottom: 0;
-      margin-left: 32px;
-      width: calc(100vw - 64px);
+      left: $b-margin;
       transform: rotate(180deg);
+      transform-origin: 50% 16px;
     }
 
-    &.l {
-      bottom: 0;
-      width: calc(100vh - 64px);
-      transform-origin: 0 0;
-      transform: rotate(-90deg);
+    &::before, &::after {
+      content: ' ';
+      display: block;
+      width: calc(#{ $b-width } + 14px);
+      height: calc(#{ $b-width } + 8px);
+      position: absolute;
+      transform: rotate(-45deg);
+      background-color: #fff;
+      border-bottom: $b-larger;
+      clip-path: polygon(
+        0 0, 100% 0,
+        85% 100%, 15% 100%
+      )
     }
-
     &::before {
-      position: absolute;
-      content: "";
-      width: 22px;
-      height: 22px;
-      margin-left: -12px;
-      margin-top: 20px;
-      transform: rotate(45deg);
+      top: 9px;
+      left: -26px;
     }
-
     &::after {
-      content: "";
-      position: absolute;
-      width: 18px;
-      height: 60px;
-      margin-left: -23px;
-      margin-top: -12px;
+      top: 9px;
+      right: -26px;
       transform: rotate(45deg);
-      background-color: white;
     }
+  }
 
-    &.odd {
-      border-bottom: solid 16px #DDD;
-      &::before {
-        background-color: #EDEDED;
+  .borders__y {
+    width: $b-width;
+    border-left: $b-normal;
+
+    &--r {
+      height: calc(100% - #{ $b-margin * 2 });
+      top: $b-margin;
+      right: 0;
+    }
+    &--l {
+      top: $b-margin;
+      height: calc(100% - #{ $b-margin } * 2);
+      transform: rotate(180deg);
+      transform-origin: 16px 50%;
+    }
+  }
+}
+
+$south: #3D184E;
+$north: #1B3865;
+
+.rain {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: url(~assets/images/rain.png), linear-gradient(
+    to top left, #78E08B 10%,#78E08B  30%, #D0E1CA 50%,
+      #D5DADD 50.1%, #B9C5C7 60%, 80%,#94AAA3
+  );
+  animation: rain .4s linear infinite;
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    animation: lightning 10s ease-out infinite;
+    opacity: 0;
+  }
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  padding: 0 3rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  .button {
+    transform: scale(1.1);
+    position: absolute;
+    bottom: 10%;
+    right: 15%;
+    transform: rotate(20deg);
+
+    a.link {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 55%;
+      transform: translateX(-50%) rotate(-20deg);
+      color: #81958f;
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: -20px;
+      &:hover {
+        color: #59d670;
       }
     }
 
-    &.even {
-      border-bottom: solid 16px #EDEDED;
-      &::before {
-        background-color: #DDD;
+    .locale-switch-comp {
+      position: absolute;
+      top: 12%;
+      left: 50%;
+      width: 100px;
+      transform: translateX(-60%) rotate(-20deg);
+    }
+  }
+
+  .text {
+    display: inline-block;
+    color: var(--text-featured);
+    padding-top: 1rem;
+
+    h1 {
+      font-size: 2.2rem;
+      font-family: var(--secondary-font);
+      margin: 0;
+      line-height: 2.5rem;
+    }
+    p {
+      font-size: 1rem;
+      letter-spacing: .05rem;
+      font-family: var(--bold-font);
+      &:first-letter {
+        text-transform: capitalize;
       }
     }
   }
 }
 
+.border {
+  position: fixed;
+  display: block;
+  background-color: white;
+  height: 32px;
+
+  &.t {
+    left: 32px;
+    width: calc(100vw - 64px);
+  }
+
+  &.r {
+    right: calc(-100vh + 64px);
+    width: calc(100vh - 64px);
+    transform-origin: 0 0;
+    transform: rotate(90deg);
+    margin-top: 32px;
+  }
+
+  &.b {
+    bottom: 0;
+    margin-left: 32px;
+    width: calc(100vw - 64px);
+    transform: rotate(180deg);
+  }
+
+  &.l {
+    bottom: 0;
+    width: calc(100vh - 64px);
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 22px;
+    height: 22px;
+    margin-left: -12px;
+    margin-top: 20px;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 60px;
+    margin-left: -23px;
+    margin-top: -12px;
+    transform: rotate(45deg);
+    background-color: white;
+  }
+
+  &.odd {
+    border-bottom: solid 16px #DDD;
+    &::before {
+      background-color: #EDEDED;
+    }
+  }
+
+  &.even {
+    border-bottom: solid 16px #EDEDED;
+    &::before {
+      background-color: #DDD;
+    }
+  }
+}
+
 @media (min-width: 768px) {
-  .screen .hero {
+  .hero {
     .text {
       padding-top: 3.5rem;
       h1 {
@@ -241,7 +313,7 @@ export default {
 }
 
 @media (min-width: 992px) {
-  .screen .hero {
+  .hero {
     .text {
       h1 {
         font-size: 4.4rem;
