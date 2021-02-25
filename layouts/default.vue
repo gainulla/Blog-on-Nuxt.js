@@ -118,14 +118,15 @@ h1, h2, h3, h4, h5 {
 .polygon {
   $polygon-width: 110px;
   $polygon-height: 90px;
-
-  display: block;
-  clip-path: polygon(
+  $polygon: polygon(
     22% 4%, 24.5% 1%, 27% 0, 72% 0%, 74.5% 1%, 77% 4%,
     98% 45%, 99% 50%, 98% 55%,
     77% 96%, 74.5% 99%, 72% 100%, 27% 100%, 24.5% 99%, 22% 96%,
     2% 55%, 1% 50%, 2% 45%
   );
+
+  display: block;
+  clip-path: $polygon;
   background-color: #B6C3C5;
   width: $polygon-width;
   height: $polygon-height;
@@ -137,23 +138,8 @@ h1, h2, h3, h4, h5 {
     transform: scale(.94);
     z-index: 999;
     background-color: #EDEDED;
-    clip-path: polygon(
-      22% 4%, 24.5% 1%, 27% 0, 72% 0%, 74.5% 1%, 77% 4%,
-      98% 45%, 99% 50%, 98% 55%,
-      77% 96%, 74.5% 99%, 72% 100%, 27% 100%, 24.5% 99%, 22% 96%,
-      2% 55%, 1% 50%, 2% 45%
-    );
+    clip-path: $polygon;
     padding: 15px;
-
-    .logo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: inherit;
-      height: inherit;
-      padding: 1rem;
-      transform: rotate(12deg);
-    }
   }
 
   &--logo {
@@ -177,6 +163,19 @@ h1, h2, h3, h4, h5 {
     width: 150px;
     height: 130px;
   }
+}
+
+/**
+---------- Site Logo ---------- */
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  padding: 1rem;
+  transform: rotate(12deg);
 }
 
 /**

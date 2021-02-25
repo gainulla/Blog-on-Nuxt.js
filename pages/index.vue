@@ -1,5 +1,5 @@
 <template>
-  <div class="borders borders--rain">
+  <div class="borders borders--green-hill">
     <div class="borders__inside">
       <span class="polygon polygon--logo">
         <div class="polygon__inner">
@@ -161,21 +161,14 @@ export default {
     }
   }
 
-  &--rain {
-    background: url(~assets/images/rain.png), linear-gradient(
-      to top left, #00BF2B, #78E08B 36%, #D0E1CA 50%,
-        #D5DADD 50.1%, #B9C5C7 60%, 80%,#94AAA3
+  &--green-hill {
+    background:
+      url(~assets/images/tree.svg) 100% / contain no-repeat,
+      linear-gradient(
+        to top left,
+      #00BF2B, #78E08B 36%, #D0E1CA 50%,
+      #D5DADD 50.1%, #B9C5C7 60%, 80%,#94AAA3
     );
-    animation: rain .4s linear infinite;
-    &::before {
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 120%;
-      background-color: #fff;
-      animation: lightning 10s ease-out infinite;
-      opacity: 0;
-    }
   }
 
   .borders__inside {
@@ -187,6 +180,33 @@ export default {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .borders {
+    &--green-hill {
+      background:
+        url(~assets/images/rain.png),
+        url(~assets/images/tree.svg) 100% / contain no-repeat,
+        linear-gradient(
+            to top left,
+          #00BF2B, #78E08B 36%, #D0E1CA 50%,
+          #D5DADD 50.1%, #B9C5C7 60%, 80%,#94AAA3
+        );
+
+      animation: rain .4s linear infinite;
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #fff;
+        animation: lightning 10s ease-out infinite;
+        opacity: 0;
+      }
+    }
   }
 }
 
@@ -260,7 +280,7 @@ export default {
 
 @keyframes rain {
   0% {
-    background-position: 16% 100%;
+    background-position: 0% 100%;
   }
   100% {
     background-position: 0 0;
