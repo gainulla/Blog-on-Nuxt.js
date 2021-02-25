@@ -24,7 +24,7 @@
               accept="image/*"
               @change="onFileSelect($event.target.files)"
             >
-            <span class="icon hashtag" />
+            <span class="icon icon__hashtag" />
             <span class="image">{{ textImages }}</span>
           </span>
         </div>

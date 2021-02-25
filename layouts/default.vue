@@ -79,41 +79,41 @@ h1, h2, h3, h4, h5 {
   font-family: var(--primary-font);
 }
 
-span.icon {
+/**
+---------- Icon Module ---------- */
+
+.icon {
   background-repeat: no-repeat;
   display: inline-block;
   width: 36px;
   height: 36px;
   background-size: 36px 36px;
 
-  &.hashtag {
+  &.icon__hashtag {
     background-image: url('~assets/svg/icon-image.svg');
   }
-  &.arrow-left {
-    background-image: url('~assets/svg/icon-arrow-left.svg');
-  }
-  &.arrow-right {
-    background-image: url('~assets/svg/icon-arrow-right.svg');
-  }
-  &.search {
+  &.icon__search {
     background-image: url('~assets/svg/icon-search.svg');
   }
-  &.cheveron-right {
+  &.icon__cheveron-right {
     background-image: url('~assets/svg/icon-cheveron-right.svg');
   }
-  &.cheveron-left {
+  &.icon__cheveron-left {
     background-image: url('~assets/svg/icon-cheveron-left.svg');
   }
-  &.github {
+  &.icon__github {
     background-image: url('~assets/svg/icon-ext-github.svg');
   }
-  &.twitter {
+  &.icon__twitter {
     background-image: url('~assets/svg/icon-ext-twitter.svg');
   }
-  &.rss {
+  &.icon__rss {
     background-image: url('~assets/svg/icon-ext-rss.svg');
   }
 }
+
+/**
+---------- Polygon Module ---------- */
 
 .polygon {
   $polygon-width: 110px;
@@ -162,11 +162,8 @@ span.icon {
 
   &--btn {
     transform: scale(1.1);
-    position: absolute;
-    bottom: 10%;
-    right: 15%;
     transform: rotate(20deg);
-    background-color: #CFE1C9;
+    background-color: #c3dbbc;
   }
 
   &--xs-larger {
@@ -182,6 +179,9 @@ span.icon {
   }
 }
 
+/**
+---------- Container ---------- */
+
 .container {
   margin: 0 auto;
   max-width: 1024px;
@@ -193,20 +193,50 @@ span.icon {
 }
 
 /*
- * ------------ Customizable flexbox grid ------------ */
+ * ------------ Flexbox  Grid Module ------------ */
 
 .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 
-  .column {
+  .row__col {
     flex-basis: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .row {
+    .row__col {
+      &.row__col-md-44 {
+        flex: 4.4;
+      }
+      &.row__col-md-56 {
+        flex: 5.6;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .row {
+    .row__col {
+      &.row__col-lg-38 {
+        flex: 3.8;
+      }
+      &.row__col-lg-62 {
+        flex: 6.2;
+      }
+    }
   }
 }
 
 /*
  * ------------ Helper classes ------------ */
+
+.w-min {
+  min-width: 320px;
+}
 
 .clearfix {
   &::before, &::after {

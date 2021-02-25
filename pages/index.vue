@@ -62,12 +62,19 @@ export default {
 
 <style lang="scss" scoped>
 /**
----------- Logo position ---------- */
+---------- Polygon logo and button positions ---------- */
 
-.polygon.polygon--logo {
-  position: absolute;
-  top: 10.6%;
-  left: 15%;
+.polygon {
+  &.polygon--logo {
+    position: absolute;
+    top: 10.6%;
+    left: 15%;
+  }
+  &.polygon--btn {
+    position: absolute;
+    bottom: 10%;
+    right: 15%;
+  }
 }
 
 /*
@@ -156,7 +163,7 @@ export default {
 
   &--rain {
     background: url(~assets/images/rain.png), linear-gradient(
-      to top left, #78E08B 10%,#78E08B  30%, #D0E1CA 50%,
+      to top left, #00BF2B, #78E08B 36%, #D0E1CA 50%,
         #D5DADD 50.1%, #B9C5C7 60%, 80%,#94AAA3
     );
     animation: rain .4s linear infinite;
@@ -164,7 +171,7 @@ export default {
       content: '';
       position: absolute;
       height: 100%;
-      width: 100%;
+      width: 120%;
       background-color: #fff;
       animation: lightning 10s ease-out infinite;
       opacity: 0;
@@ -253,7 +260,10 @@ export default {
 
 @keyframes rain {
   0% {
-    background-position: 0 100%;
+    background-position: 16% 100%;
+  }
+  100% {
+    background-position: 0 0;
   }
 }
 

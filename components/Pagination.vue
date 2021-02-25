@@ -1,8 +1,8 @@
 <template>
   <div class="pagination">
     <span v-if="currentPage === 1" class="btn btn-left disabled">
-      <span class="icon cheveron-left" />
-      <span class="icon cheveron-left" style="margin-left: -1.8rem" />
+      <span class="icon icon__cheveron-left" />
+      <span class="icon icon__cheveron-left" style="margin-left: -1.8rem" />
       <span class="text">{{ $t('first') }}</span>
     </span>
 
@@ -11,13 +11,13 @@
       :to="{ name: `blog-page-page___${$i18n.locale}`, params: { page: 1 } }"
       class="btn btn-left"
     >
-      <span class="icon cheveron-left" />
-      <span class="icon cheveron-left" style="margin-left: -1.8rem" />
+      <span class="icon icon__cheveron-left" />
+      <span class="icon icon__cheveron-left" style="margin-left: -1.8rem" />
       <span class="text">{{ $t('first') }}</span>
     </nuxt-link>
 
     <span v-if="currentPage === 1" class="btn btn-left disabled">
-      <span class="icon cheveron-left" />
+      <span class="icon icon__cheveron-left" />
       <span class="text">{{ $t('prev') }}</span>
     </span>
 
@@ -26,13 +26,13 @@
       :to="{ name: `blog-page-page___${$i18n.locale}`, params: { page: prevPage } }"
       class="btn btn-left"
     >
-      <span class="icon cheveron-left" />
+      <span class="icon icon__cheveron-left" />
       <span class="text">{{ $t('prev') }}</span>
     </nuxt-link>
 
     <span v-if="currentPage === totalPages" class="btn btn-right disabled">
       <span class="text">{{ $t('next') }}</span>
-      <span class="icon cheveron-right" />
+      <span class="icon icon__cheveron-right" />
     </span>
 
     <nuxt-link
@@ -41,13 +41,13 @@
       class="btn btn-right"
     >
       <span class="text">{{ $t('next') }}</span>
-      <span class="icon cheveron-right" />
+      <span class="icon icon__cheveron-right" />
     </nuxt-link>
 
     <span v-if="currentPage === totalPages" class="btn btn-right disabled">
       <span class="text">{{ $t('last') }}</span>
-      <span class="icon cheveron-right" style="margin-right:-1.8rem" />
-      <span class="icon cheveron-right" />
+      <span class="icon icon__cheveron-right" style="margin-right:-1.8rem" />
+      <span class="icon icon__cheveron-right" />
     </span>
 
     <nuxt-link
@@ -56,8 +56,8 @@
       class="btn btn-right"
     >
       <span class="text">{{ $t('last') }}</span>
-      <span class="icon cheveron-right" style="margin-right:-1.8rem" />
-      <span class="icon cheveron-right" />
+      <span class="icon icon__cheveron-right" style="margin-right:-1.8rem" />
+      <span class="icon icon__cheveron-right" />
     </nuxt-link>
   </div>
 </template>

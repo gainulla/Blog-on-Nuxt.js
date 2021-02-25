@@ -1,5 +1,5 @@
 <template>
-  <div class="header-wrapper">
+  <div class="w-min">
     <header>
       <div class="container clearfix">
         <div class="header">
@@ -22,7 +22,7 @@
       </div>
     </header>
 
-    <div class="wave" />
+    <div class="wave w-min" />
     <svg>
       <clipPath id="wave" clipPathUnits="objectBoundingBox">
         <path class="st0" d="M1,0c0,0-0.1,0.1-0.3,0.1S0.3,0,0,0.1V1h1L1,0z" />
@@ -47,14 +47,9 @@ export default {
   left: -5px;
 }
 
-.header-wrapper {
-  min-width: 320px;
-}
-
 .wave {
   margin-top: -30px;
   margin-bottom: -420px;
-  min-width: 320px;
   height: 300px;
   clip-path: url(#wave);
   background-color: #FFF;

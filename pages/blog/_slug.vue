@@ -164,22 +164,6 @@ export default {
 
 <style lang="scss">
 
-@media (min-width: 768px) {
-  .row .column {
-    &._md-64 {
-      flex: 6.4;
-    }
-    &._md-36 {
-      flex: 3.6;
-
-      &:nth-child(2) {
-        text-align: left !important;
-        margin-left: 1.5rem;
-      }
-    }
-  }
-}
-
 .admin-area {
   width: 100%;
   margin-top: 1rem;

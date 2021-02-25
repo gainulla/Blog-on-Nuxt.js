@@ -3,7 +3,7 @@
     <article v-for="(article, i) in articles" :key="i">
       <div class="article-inner">
         <div class="row">
-          <div class="column _md-44 _lg-38">
+          <div class="row__col row__col-md-44 row__col-lg-38">
             <nuxt-link :to="article.path" class="image-link">
               <img
                 :srcset="`
@@ -14,7 +14,7 @@
             </nuxt-link>
           </div>
 
-          <div class="column _md-56 _lg-62">
+          <div class="row__col row__col-md-56 row__col-lg-62">
             <div class="details">
               <nuxt-link :to="article.path" class="entry-text">
                 <h2 class="title">
@@ -75,32 +75,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-/* Customize flexbox grid for image */
-
-@media (min-width: 768px) {
-  .row .column {
-    &._md-44 {
-      flex: 4.4;
-    }
-    &._md-56 {
-      flex: 5.6;
-    }
-  }
-}
-
-@media (min-width: 992px) {
-  .row .column {
-    &._lg-38 {
-      flex: 3.8;
-    }
-    &._lg-62 {
-      flex: 6.2;
-    }
-  }
-}
-
-/* Article Styles */
+/**
+---------- Article Styles ---------- */
 
 .articles {
   padding-bottom: 2rem;

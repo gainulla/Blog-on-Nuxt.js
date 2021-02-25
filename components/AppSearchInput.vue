@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-    <div class="search-inner">
+    <div class="search__inner">
       <input
         v-model="searchQuery"
         type="search"
@@ -8,7 +8,7 @@
         :placeholder="$t('searchPH')"
       >
 
-      <span v-if="articles.length == 0" class="icon search" />
+      <span v-if="articles.length == 0" class="icon icon__search" />
 
       <ul v-if="articles.length > 0">
         <li v-for="article of articles" :key="article.slug">
@@ -52,17 +52,28 @@ export default {
 
 <style lang="scss" scoped>
 
-$search-height: 2.4rem;
+.icon.icon__search {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  align-self: flex-end;
+  width: 34px;
+  opacity: .14;
+  cursor: pointer;
+}
 
 .search {
+  $search-height: 2.4rem;
+
   width: 100%;
   height: $search-height;
 
-  .search-inner {
+  .search__inner {
     position: relative;
     display: flex;
     flex-flow: row wrap;
-    width: 260px;
+    width: 100%;
+    max-width: 320px;
     height: $search-height;
     margin: auto;
 
@@ -77,16 +88,6 @@ $search-height: 2.4rem;
       background-color: transparent;
     }
 
-    .icon.search {
-      position: absolute;
-      top: 5px;
-      right: 0;
-      align-self: flex-end;
-      width: 34px;
-      opacity: .14;
-      cursor: pointer;
-    }
-
     ul {
       width: 100%;
       padding: 1rem;
@@ -96,12 +97,6 @@ $search-height: 2.4rem;
         padding: .2rem 0;
       }
     }
-  }
-}
-
-@media (min-width: 768px) {
-  .search .search-inner {
-    min-width: 320px;
   }
 }
 </style>

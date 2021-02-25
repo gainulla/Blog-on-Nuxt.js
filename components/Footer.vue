@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-wrapper">
+  <div class="w-min">
     <div class="wave" />
     <svg>
       <clipPath id="wave" clipPathUnits="objectBoundingBox">
@@ -11,13 +11,13 @@
       <div class="container">
         <div class="social">
           <a :href="`${hostname}/blog/rss-${$i18n.locale}.xml`" target="_blank">
-            <span class="icon rss" />
+            <span class="icon icon__rss" />
           </a>
           <a :href="twitterUrl" target="_blank">
-            <span class="icon twitter" />
+            <span class="icon icon__twitter" />
           </a>
           <a :href="githubUrl" target="_blank">
-            <span class="icon github" />
+            <span class="icon icon__github" />
           </a>
         </div>
       </div>
@@ -47,10 +47,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.footer-wrapper {
-  min-width: 320px;
-}
-
 .wave {
   position: relative;
   margin-top: -280px;
@@ -66,7 +62,6 @@ footer {
   position: relative;
   width: 100%;
   height: 180px;
-  min-width: 320px;
   background-color: #83d487;
 
   .social {
