@@ -115,10 +115,10 @@ span.icon {
   }
 }
 
-$polygon-width: 110px;
-$polygon-height: 90px;
-
 .polygon {
+  $polygon-width: 110px;
+  $polygon-height: 90px;
+
   display: block;
   clip-path: polygon(
     22% 4%, 24.5% 1%, 27% 0, 72% 0%, 74.5% 1%, 77% 4%,
@@ -130,11 +130,7 @@ $polygon-height: 90px;
   width: $polygon-width;
   height: $polygon-height;
 
-  &.border-green {
-    background-color: #CFE1C9 !important;
-  }
-
-  .polygon-inner {
+  .polygon__inner {
     position: absolute;
     width: inherit;
     height: inherit;
@@ -149,37 +145,40 @@ $polygon-height: 90px;
     );
     padding: 15px;
 
-    img {
+    .logo {
       position: absolute;
       top: 0;
       left: 0;
       width: inherit;
       height: inherit;
       padding: 1rem;
+      transform: rotate(12deg);
     }
   }
-}
 
-.polygon-more {
-  width: 130px;
-  height: 110px;
+  &--logo {
+    transform: rotate(-12deg);
+  }
+
+  &--btn {
+    transform: scale(1.1);
+    position: absolute;
+    bottom: 10%;
+    right: 15%;
+    transform: rotate(20deg);
+    background-color: #CFE1C9;
+  }
+
+  &--xs-larger {
+    width: 130px;
+    height: 110px;
+  }
 }
 
 @media (min-width: 992px) {
-  .polygon,
-  .polygon-more {
+  .polygon {
     width: 150px;
     height: 130px;
-  }
-}
-
-.logo {
-  position: absolute;
-  top: 10.6%;
-  left: 15%;
-  transform: rotate(-12deg);
-  img {
-    transform: rotate(12deg);
   }
 }
 

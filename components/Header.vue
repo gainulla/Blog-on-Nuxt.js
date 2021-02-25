@@ -3,9 +3,9 @@
     <header>
       <div class="container clearfix">
         <div class="header">
-          <nuxt-link :to="$urlFor('/')" class="logo polygon">
-            <div class="polygon-inner">
-              <img :src="require('~/assets/images/site-logo.svg')">
+          <nuxt-link :to="$urlFor('/')" class="polygon polygon--logo">
+            <div class="polygon__inner">
+              <img :src="require('~/assets/images/site-logo.svg')" class="logo">
             </div>
           </nuxt-link>
 
@@ -38,6 +38,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+/**
+---------- Logo position ---------- */
+
+.polygon.polygon--logo {
+  position: relative;
+  top: 1.5rem;
+  left: -5px;
+}
+
 .header-wrapper {
   min-width: 320px;
 }
@@ -75,12 +84,6 @@ header {
     color: var(--text-featured) !important;
   }
 
-  .logo {
-    position: relative;
-    top: 1.5rem;
-    left: -5px;
-  }
-
   .app-search-comp {
     padding: 0;
     display: flex;
@@ -96,11 +99,6 @@ header {
 
 @media (min-width: 576px) {
   .header {
-    .logo-wrap {
-      width: 10rem;
-      height: 10.5rem;
-    }
-
     .app-search-comp {
       display: flex;
       align-items: flex-end;
