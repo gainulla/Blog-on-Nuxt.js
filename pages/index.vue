@@ -163,7 +163,7 @@ export default {
 
   &--green-hill {
     background:
-      url(~assets/images/tree.png) 100% / contain no-repeat,
+      url(~assets/images/tree.png) bottom left / contain no-repeat,
       linear-gradient(
         to top left,
       #00BF2B, #78E08B 36%, #D0E1CA 50%,
@@ -188,7 +188,7 @@ export default {
     &--green-hill {
       background:
         url(~assets/images/rain.png),
-        url(~assets/images/tree.png) 100% / contain no-repeat,
+        url(~assets/images/tree.png) bottom left / contain no-repeat,
         linear-gradient(
           to top left,
         #00BF2B, #78E08B 36%, #D0E1CA 50%,
@@ -238,9 +238,8 @@ export default {
   padding-top: 1rem;
 
   h1 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-family: var(--secondary-font);
-    font-weight: bold;
     margin: 0;
     margin-top: 4rem;
     line-height: 2.5rem;
@@ -271,7 +270,6 @@ export default {
     padding-top: 3.5rem;
     h1 {
       font-size: 3.4rem;
-      font-weight: 400;
       line-height: 3rem;
     }
     p {

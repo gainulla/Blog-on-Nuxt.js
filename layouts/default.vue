@@ -23,7 +23,7 @@ html {
   --primary-font: 'Nunito', sans-serif;
   --secondary-font: 'Ubuntu Mono', monospace;
   --tertiary-font: 'Marmelad', sans-serif;
-  --text-featured: #{ darken(#94AAA3, 30) };
+  --text-featured: #{ darken(#94AAA3, 20) };
 }
 
 *, *::before, *::after {
