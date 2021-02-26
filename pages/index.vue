@@ -163,12 +163,12 @@ export default {
 
   &--green-hill {
     background:
-      url(~assets/images/tree.svg) 100% / contain no-repeat,
+      url(~assets/images/tree.png) 100% / contain no-repeat,
       linear-gradient(
         to top left,
       #00BF2B, #78E08B 36%, #D0E1CA 50%,
       #D5DADD 50.1%, #B9C5C7 60%, 80%,#94AAA3
-    );
+      );
   }
 
   .borders__inside {
@@ -188,11 +188,11 @@ export default {
     &--green-hill {
       background:
         url(~assets/images/rain.png),
-        url(~assets/images/tree.svg) 100% / contain no-repeat,
+        url(~assets/images/tree.png) 100% / contain no-repeat,
         linear-gradient(
-            to top left,
-          #00BF2B, #78E08B 36%, #D0E1CA 50%,
-          #D5DADD 50.1%, #B9C5C7 60%, 80%,#94AAA3
+          to top left,
+        #00BF2B, #78E08B 36%, #D0E1CA 50%,
+        #D5DADD 50.1%, #B9C5C7 60%, 80%,#94AAA3
         );
 
       animation: rain .4s linear infinite;
@@ -204,7 +204,6 @@ export default {
         width: 100%;
         background-color: #fff;
         animation: lightning 10s ease-out infinite;
-        opacity: 0;
       }
     }
   }
@@ -241,15 +240,28 @@ export default {
   h1 {
     font-size: 2.2rem;
     font-family: var(--secondary-font);
+    font-weight: bold;
     margin: 0;
+    margin-top: 4rem;
     line-height: 2.5rem;
   }
   p {
     font-size: 1rem;
+    font-weight: bold;
     letter-spacing: .05rem;
     font-family: var(--bold-font);
     &:first-letter {
       text-transform: capitalize;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .greeting-headline {
+    padding-top: 3rem;
+    h1 {
+      font-size: 2.6rem;
+      line-height: 2.8rem;
     }
   }
 }
@@ -259,6 +271,7 @@ export default {
     padding-top: 3.5rem;
     h1 {
       font-size: 3.4rem;
+      font-weight: 400;
       line-height: 3rem;
     }
     p {
@@ -280,7 +293,7 @@ export default {
 
 @keyframes rain {
   0% {
-    background-position: 0% 100%;
+    background-position: 0 100%;
   }
   100% {
     background-position: 0 0;
@@ -288,13 +301,13 @@ export default {
 }
 
 @keyframes lightning {
-  0%, 14.7%, 17.7%, 29% {
+  0%, 14.7%, 17.7%, 29.5% {
     opacity: 0;
   }
   15%, 18%, 30% {
-    opacity: 1;
+    opacity: .99;
   }
-  17%, 18.3%, 32%, 100%  {
+  17%, 18.3%, 31.5%, 100%  {
     opacity: 0;
   }
 }

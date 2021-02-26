@@ -56,7 +56,7 @@ export default {
 }
 
 header {
-  background-image: linear-gradient(to top, #83d495 20%, #cff5dc);
+  background-image: linear-gradient(to top, #51d884 10%, #dbfae6);
   .container {
     z-index: 600;
   }
