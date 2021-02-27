@@ -163,11 +163,11 @@ export default {
 
   &--green-hill {
     background:
-      url(~assets/images/tree.png) bottom left / contain no-repeat,
+      url(~assets/images/tree-small.png) bottom left / contain no-repeat,
       linear-gradient(
         to top left,
-      #00BF2B, #78E08B 36%, #D0E1CA 50%,
-      #D5DADD 50.1%, #B9C5C7 60%, 80%,#94AAA3
+        #41912a 5%, #7bc957 36%, #b3ec79 50%,
+        #94AAA3 50.1%, #B9C5C7 75%, #D5DADD 95%,
       );
   }
 
@@ -188,11 +188,13 @@ export default {
     &--green-hill {
       background:
         url(~assets/images/rain.png),
-        url(~assets/images/tree.png) bottom left / contain no-repeat,
+        url(~assets/images/tree-large.png) bottom left / contain no-repeat,
         linear-gradient(
           to top left,
-        #00BF2B, #78E08B 36%, #D0E1CA 50%,
-        #D5DADD 50.1%, #B9C5C7 60%, 80%,#94AAA3
+        #41912a 5%, #7bc957 36%, #b3ec79 50%,
+        /* #00BF2B, #78E08B 36%, #D0E1CA 50%, */
+        #94AAA3 50.1%, #B9C5C7 75%, #D5DADD 95%,
+        /* #D5DADD 50.1%, #B9C5C7 60%, 80%,#94AAA3 */
         );
 
       animation: rain .4s linear infinite;
@@ -220,7 +222,8 @@ export default {
   font-weight: 500;
   margin-bottom: -20px;
   &:hover {
-    color: #59d670;
+    /* color: #59d670; */
+    color: #4E9E34;
   }
 }
 
@@ -234,14 +237,13 @@ export default {
 
 .greeting-headline {
   display: inline-block;
-  color: var(--text-featured);
+  color: white;
   padding-top: 1rem;
 
   h1 {
     font-size: 2.4rem;
     font-family: var(--secondary-font);
     margin: 0;
-    margin-top: 4rem;
     line-height: 2.5rem;
   }
   p {
@@ -291,21 +293,21 @@ export default {
 
 @keyframes rain {
   0% {
-    background-position: 0 100%;
+    background-position: 50% 100%;
   }
   100% {
-    background-position: 0 0;
+    background-position: 50% 0;
   }
 }
 
 @keyframes lightning {
-  0%, 14.7%, 17.7%, 29.5% {
+  0%, 14.7%, 17.7% {
     opacity: 0;
   }
-  15%, 18%, 30% {
+  15%, 18% {
     opacity: .99;
   }
-  17%, 18.3%, 31.5%, 100%  {
+  17%, 18.3%, 100%  {
     opacity: 0;
   }
 }

@@ -62,7 +62,8 @@ footer {
   position: relative;
   width: 100%;
   height: 180px;
-  background-image: linear-gradient(#c0f5c7 20%,#51d86e);
+  /* background-image: linear-gradient(#c0f5c7 20%,#51d86e); */
+  background-color: #D1DDDF;
 
   .social {
     height: 180px;

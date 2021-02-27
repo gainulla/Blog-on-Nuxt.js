@@ -23,7 +23,7 @@ html {
   --primary-font: 'Nunito', sans-serif;
   --secondary-font: 'Ubuntu Mono', monospace;
   --tertiary-font: 'Marmelad', sans-serif;
-  --text-featured: #{ darken(#94AAA3, 20) };
+  --text-featured: #{ darken(#94AAA3, 25) };
 }
 
 *, *::before, *::after {
@@ -137,7 +137,7 @@ h1, h2, h3, h4, h5 {
     height: inherit;
     transform: scale(.94);
     z-index: 999;
-    background-color: #EDEDED;
+    background-color: #f6f6f6;
     clip-path: $polygon;
     padding: 15px;
   }
@@ -283,20 +283,22 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 3rem !important;
 }
 
+$ph-color: #444;
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   font-family:  var(--primary-font);
-  color: #A7A7A7 !important;
+  color: $ph-color !important;
   font-weight: 300 !important;
   opacity: 1; /* Firefox */
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
   font-family: var(--primary-font);
-  color: #A7A7A7 !important;
+  color: $ph-color !important;
   font-weight: 300 !important;
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
   font-family: var(--primary-font);
-  color: #A7A7A7 !important;
+  color: $ph-color !important;
   font-weight: 300 !important;
 }
 </style>
