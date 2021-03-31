@@ -165,7 +165,7 @@ export default {
     background:
       url(~assets/images/tree-small.png) bottom left / contain no-repeat,
       linear-gradient(
-        to top left,
+        to top right,
         #41912a 5%, #7bc957 36%, #b3ec79 50%,
         #94AAA3 50.1%, #B9C5C7 75%, #D5DADD 95%,
       );
@@ -190,11 +190,9 @@ export default {
         url(~assets/images/rain.png),
         url(~assets/images/tree-large.png) bottom left / contain no-repeat,
         linear-gradient(
-          to top left,
+          to top right,
         #41912a 5%, #7bc957 36%, #b3ec79 50%,
-        /* #00BF2B, #78E08B 36%, #D0E1CA 50%, */
         #94AAA3 50.1%, #B9C5C7 75%, #D5DADD 95%,
-        /* #D5DADD 50.1%, #B9C5C7 60%, 80%,#94AAA3 */
         );
 
       animation: rain .4s linear infinite;
