@@ -1,5 +1,5 @@
 {
-  "home": "Home",
+  "home": "Blog",
   "blog": "Blog",
   "prev": "Prev",
   "next": "Next",
@@ -20,10 +20,10 @@
   "seoMeta": {
     "blogTitle": "Animals World",
     "blogDesc": "Just amazing Blog about animals",
-    "homeTitle": "Home",
+    "homeTitle": "Blog",
     "homeDesc": "Nuxt Good Start",
     "siteName": "Blog about animals",
     "siteType": "website",
-    "author": "Dale Wood"
+    "author": "Gainulla Yusupov"
   }
 }

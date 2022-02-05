@@ -9,7 +9,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Nuxt Blog',
+    title: 'Блог',
 
     meta: [
       { charset: 'utf-8' },

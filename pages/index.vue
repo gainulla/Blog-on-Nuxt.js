@@ -15,8 +15,8 @@
         </div>
       </div>
       <div class="greeting-headline">
-        <h1>{{ $t('helloHeading') }}</h1>
-        <p>{{ $t('metier') }}</p>
+        <!-- <h1>{{ $t('helloHeading') }}</h1>
+        <p>{{ $t('metier') }}</p> -->
       </div>
     </div>
 
@@ -163,7 +163,7 @@ export default {
 
   &--green-hill {
     background:
-      url(~assets/images/tree-small.png) bottom left / contain no-repeat,
+      //url(~assets/images/tree-small.png) bottom left / contain no-repeat,
       linear-gradient(
         to top right,
         #41912a 5%, #7bc957 36%, #b3ec79 50%,
@@ -183,31 +183,31 @@ export default {
   }
 }
 
-@media (min-width: 768px) {
-  .borders {
-    &--green-hill {
-      background:
-        url(~assets/images/rain.png),
-        url(~assets/images/tree-large.png) bottom left / contain no-repeat,
-        linear-gradient(
-          to top right,
-        #41912a 5%, #7bc957 36%, #b3ec79 50%,
-        #94AAA3 50.1%, #B9C5C7 75%, #D5DADD 95%,
-        );
+//@media (min-width: 768px) {
+  //.borders {
+    //&--green-hill {
+      // background:
+      //   url(~assets/images/rain.png),
+      //   url(~assets/images/tree-large.png) bottom left / contain no-repeat,
+      //   linear-gradient(
+      //     to top right,
+      //   #41912a 5%, #7bc957 36%, #b3ec79 50%,
+      //   #94AAA3 50.1%, #B9C5C7 75%, #D5DADD 95%,
+      //   );
 
-      animation: rain .4s linear infinite;
+      //animation: rain .4s linear infinite;
 
-      &::before {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-color: #fff;
-        animation: lightning 10s ease-out infinite;
-      }
-    }
-  }
-}
+    //   &::before {
+    //     content: '';
+    //     position: absolute;
+    //     height: 100%;
+    //     width: 100%;
+    //     background-color: #fff;
+    //     //animation: lightning 10s ease-out infinite;
+    //   }
+    // }
+  //}
+//}
 
 .blog-link {
   display: block;
