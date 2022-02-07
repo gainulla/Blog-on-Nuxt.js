@@ -187,7 +187,7 @@ export default {
   .borders {
     &--green-hill {
       background:
-        url(~assets/images/rain.png),
+        //url(~assets/images/rain.png),
         url(~assets/images/tree-large.png) bottom left / contain no-repeat,
         linear-gradient(
           to top right,
@@ -197,14 +197,14 @@ export default {
 
       animation: rain .4s linear infinite;
 
-      &::before {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-color: #fff;
-        animation: lightning 10s ease-out infinite;
-      }
+      // &::before {
+      //   content: '';
+      //   position: absolute;
+      //   height: 100%;
+      //   width: 100%;
+      //   background-color: #fff;
+      //   animation: lightning 10s ease-out infinite;
+      // }
     }
   }
 }
