@@ -14,7 +14,7 @@ export default {
 
   twitterURL: 'https://twitter.com/orioleux',
 
-  githubURL: 'https://github.com/gainoolla',
+  githubURL: 'https://github.com/gainulla',
 
   mainImage: 'whale.jpeg' // image in static folder
 
